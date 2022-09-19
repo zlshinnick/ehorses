@@ -6,13 +6,13 @@ using namespace std;
 class horse {
 public:
 
-	string name;
-	double max_speed;
+    string name;
+    double max_speed;
     double min_speed;
     int level;
 
     horse();
-	horse(string _name, double max, double min, int l);
+    horse(string _name, double max, double min, int l);
 
     set_max(double max);
     set_min(double min);
