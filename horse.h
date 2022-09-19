@@ -4,24 +4,27 @@
 using namespace std;
 
 class horse {
-public:
+//this is a general class for all horses
+  
+  public:
 
     //attributes
 	string name;
     int division;
-    double race_time;    //note: race time will be left uninitialised until sub_class
+    double race_time;    
 
     //contructors
     horse();
-    horse(string _name, int d);
+	horse(string _name, int div, double time);
 
-    //set each attribuye
+    //set and get for each attributes
     void set_name(string n);
     string get_name();
 
     void set_div(int d);
     int get_div();
 
+    double get_racet();
 
 };
 #endif
