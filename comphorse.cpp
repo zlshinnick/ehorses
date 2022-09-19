@@ -13,6 +13,7 @@ comphorse::comphorse() {
 
 //constuctor of bot horse
 comphorse::comphorse(int div) {
+srand(time(NULL));  
   if (div > 0 && div < 4) {    
     
     //setting initial name & level of horse
@@ -20,7 +21,7 @@ comphorse::comphorse(int div) {
     division=div;
     
     //creates random number between 0.0 and 3.0
-    srand(time(NULL));
+    //srand(time(NULL));
     double rand_n = (rand()%300)/10; rand_n = (rand_n/10);   //creates random number between 0.0 and 3.0
     
     //assigning a time based on level
@@ -43,9 +44,5 @@ comphorse::comphorse(int div) {
     race_time = 0;
     division = 0;   
   }
-
-
-   //this is a test push
-
 
 }
