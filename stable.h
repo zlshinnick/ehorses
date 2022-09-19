@@ -1,6 +1,7 @@
 #ifndef STABLE_H
 #define STABLE_H
 #include "horse.h"
+#include "userhorse.h"
 #include <algorithm>
 #include <vector>
 #include <iostream>
@@ -11,8 +12,9 @@ class stable{
         vector<int> stable;
 
     public:
-       breed_horses();
-
+        userhorse breed_horses(userhorse, userhorse);
+        vector add_horse();
+                
 
 
 };

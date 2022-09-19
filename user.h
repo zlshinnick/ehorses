@@ -9,11 +9,28 @@ class user{
     private:
         string name;
         double bank_account;
+        int user_wins;
+        int exp;
+        int exp_next_level;
+        int level;
+        int allowed_num_horses;
+
+
     public:
+    //constructors
         user();
-        double update_bank();
-        int feed_horse();
-        int place_bet();
- 
+    //functions
+    void level_up();
+    //accessprs
+    string get_name();
+    double get_bank_account();
+    int get_wins();
+    int get_wins();
+    int get_exp();
+    int get_exp_next_level();
+    int get_level();
+
+    
+    //modifiers
 };
 #endif
