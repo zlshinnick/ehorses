@@ -18,6 +18,7 @@ class game{
 
         //functions
         void main_menu();
+        void travel_menu();
         void initialize_game();
 
         //accecssors

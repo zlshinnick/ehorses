@@ -23,6 +23,12 @@ void game::initialize_game(){
 
 }
 
+void game::travel_menu(){
+    cout<<"***Travel***"<<endl;
+}
+
+
+
 void game::main_menu(){
     cout<< "************ MAIN MENU ******"<<endl;
     cout<< "0: Travel"<<endl;;

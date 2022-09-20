@@ -33,6 +33,7 @@ class user{
     int get_exp();
     int get_exp_next_level();
     int get_level();
+    int get_allowed_num_horses();
 
     
     //modifiers
