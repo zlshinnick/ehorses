@@ -27,6 +27,10 @@ int userhorse::get_level() { return level;}
 void userhorse::set_points(int p) {points = p;}
 int userhorse::get_points() {return points;}
 
+int userhorse::get_wins() {return num_wins;}
+
+void userhorse::increment_wins() {num_wins++;}
+
 
 //sets random race time in max_speed to min_speed interval (call before each race)
 void userhorse::set_rand_race_time() { //TO DO

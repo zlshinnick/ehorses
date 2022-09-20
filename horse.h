@@ -15,6 +15,7 @@ class horse {
     double min_speed;
     int level;
     int points;   
+    int num_wins;
 
     //contructors
     horse();
