@@ -12,6 +12,7 @@ int main(){
 
     //making horse and adding to stable is working 
    /* horse h1 =  horse("horse1",3,10);
+    horse h1 =  horse("horse1");
     stable user_stables = stable();
 
 

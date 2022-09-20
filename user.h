@@ -1,6 +1,7 @@
 #ifndef USER_H
 #define USER_H
 #include "horse.h"
+#include "stable.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -14,6 +15,9 @@ class user{
         int exp;
         int exp_next_level;
         int level;
+
+        stable stable;
+        horse horse;
 
         int num_horses;
         int allowed_num_horses;

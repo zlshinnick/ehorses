@@ -18,7 +18,7 @@ void stable::print_stable(){
     for(int i = 0; i<num_of_horses;i++){
         cout<<endl;
         cout<<"Name:"<<stables[i].get_name()<<endl;
-        cout<<"Division:"<<stables[i].get_div()<<endl;
+      //  cout<<"Division:"<<stables[i].get_div()<<endl;
 
     }
 }

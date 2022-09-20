@@ -17,6 +17,7 @@ void user::initialize(string user_name){
   user_wins = 0;
   exp = 0;
   level = 1;
+  num_horses = 0;
 
 //next level exp gets expoentially harder
   exp_next_level = static_cast <int> //type casting to ensure its a int
