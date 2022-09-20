@@ -9,13 +9,13 @@ class horse {
   public:
 
     //attributes
-	string name;
-    double race_time; 
-  	double max_speed;
-    double min_speed;
-    int level;
-    int points;   
-    int num_wins;
+	string name;         //all horses
+    double race_time;    //all horses
+  	double max_speed;    //userhorse
+    double min_speed;    //userhorse
+    int level;           //userhorse
+    int points;          //userhorse
+    int num_wins;        //userhorse
 
     //contructors
     horse();
