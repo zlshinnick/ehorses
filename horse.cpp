@@ -3,22 +3,22 @@
 #include "horse.h"
 using namespace std;
 
+  //default constructor (not to be used)
 	horse::horse() {
       name = "";
-      division = 3;
       race_time = 15;
     }
 
-	horse::horse(string _name, int div, double time) {
-      name = _name;
-      division = div;  
-      race_time = time;
+  //normal constructor (use this if creating horse)
+	horse::horse(string _name) {
+      name = _name; 
+      race_time = 15;
     }
 
+  //get and set each attribute
     void horse::set_name(string n) { name = n;}
     string horse::get_name() { return name;}
 
-    void horse::set_div(int d) { division = d;}
-    int horse::get_div() { return division;}
-    double horse::get_racet() {return race_time;}
+    void horse::set_race_t(double t) { race_time = t;}
+    double horse::get_race_t() {return race_time;}
 

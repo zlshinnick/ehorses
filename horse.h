@@ -10,21 +10,18 @@ class horse {
 
     //attributes
 	string name;
-    int division;
     double race_time;    
 
     //contructors
     horse();
-	horse(string _name, int div, double time);
+	horse(string _name);
 
     //set and get for each attributes
     void set_name(string n);
     string get_name();
 
-    void set_div(int d);
-    int get_div();
-
-    double get_racet();
+    void set_race_t(double t);
+    double get_race_t();
 
 };
 #endif

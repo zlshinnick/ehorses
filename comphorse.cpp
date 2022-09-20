@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "horse.h"
 #include "comphorse.h"
 
