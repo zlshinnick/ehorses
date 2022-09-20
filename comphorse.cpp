@@ -2,6 +2,7 @@
 #include <string>
 #include "horse.h"
 #include "comphorse.h"
+#include <ctime>
 using namespace std;
 
 //default constructor of bot horse (probably shouldnt be used)
