@@ -5,14 +5,6 @@
 #include "userhorse.h"
 using namespace std;
 
-//contructor
-userhorse::userhorse(double max, double min, int l) {    
-    max_speed=max;
-    min_speed=min;
-    level=l;
-    points=0;
-}
-
 //get and set functions
 void userhorse::set_max(double max){ max_speed = max;}
 double userhorse::get_max() { return max_speed;}

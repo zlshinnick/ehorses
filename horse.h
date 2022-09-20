@@ -10,16 +10,19 @@ class horse {
 
     //attributes
 	string name;
-    double race_time;    
+    double race_time; 
+  	double max_speed;
+    double min_speed;
+    int level;
+    int points;   
 
     //contructors
     horse();
 	horse(string _name);
 
-    //set and get for each attributes
+    //set and get for name and race_time attributes
     void set_name(string n);
     string get_name();
-
     void set_race_t(double t);
     double get_race_t();
 

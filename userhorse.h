@@ -7,13 +7,6 @@ using namespace std;
 class userhorse : public horse {
 
   public:
-  	double max_speed;
-    double min_speed;
-    int level;
-    int points;
-
-    userhorse(double max, double min, int l);    //normal constructor
-
 
     //get and set each attribute
     void set_max(double max);

@@ -10,7 +10,7 @@ users horse. each bot horse will be randomly generated based on division */
   
   public:
 
-    comphorse(int div);    //constructs a horse for a respective race
+    void set_bot_race_t(int div);
 
 };
 #endif

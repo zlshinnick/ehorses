@@ -9,13 +9,13 @@ using namespace std;
 
 
 //constuctor of bot horse
-comphorse::comphorse(int div) {
-srand(time(NULL));  
+void comphorse::set_bot_race_t(int div) {
+  srand(time(NULL));  
   if (div > 0 && div < 4) {    
     
     //setting initial name & level of horse
     name = "tba";
-    
+
     //creates random number between 0.0 and 3.0
     srand(time(NULL));
     double rand_n = (rand()%300)/10; rand_n = (rand_n/10);   //creates random number between 0.0 and 3.0
