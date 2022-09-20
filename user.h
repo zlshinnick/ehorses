@@ -10,6 +10,7 @@ class user{
         string name;
         double bank_account;
         int user_wins;
+        double prize_money;
         int exp;
         int exp_next_level;
         int level;
@@ -18,13 +19,16 @@ class user{
 
     public:
     //constructors
-        user();
+    user();
     //functions
+    void initialize(string user_name);
     void level_up();
+
+    void print_user_stats();
     //accessprs
     string get_name();
     double get_bank_account();
-    int get_wins();
+    double get_prize_money();
     int get_wins();
     int get_exp();
     int get_exp_next_level();
