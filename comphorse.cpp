@@ -3,15 +3,8 @@
 #include <ctime>
 #include "horse.h"
 #include "comphorse.h"
-
 using namespace std;
 
-//default constructor of bot horse (probably shouldnt be used)
-comphorse::comphorse() {
-  name = "invalid";
-  race_time = 0;
-  division = 0;    
-}
 
 //constuctor of bot horse
 comphorse::comphorse(int div) {
@@ -20,7 +13,6 @@ srand(time(NULL));
     
     //setting initial name & level of horse
     name = "tba";
-    division=div;
     
     //creates random number between 0.0 and 3.0
     //srand(time(NULL));
@@ -44,7 +36,6 @@ srand(time(NULL));
     //if invalid entry entered characteristics will be set to:
     name = "invalid";
     race_time = 0;
-    division = 0;   
   }
 
 }

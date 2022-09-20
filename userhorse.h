@@ -12,15 +12,21 @@ class userhorse : public horse {
     int level;
     int points;
 
-    userhorse();                                 //default constructor (probably shouldnt use)
     userhorse(double max, double min, int l);    //normal constructor
 
+
+    //get and set each attribute
     void set_max(double max);
     void set_min(double min);
     void set_level(int l);
+    void set_points(int p);
     double get_max();
     double get_min();
     int get_level();
+    int get_points();
+
+    //sets random race time in max_speed to min_speed interval (call before each race)
+    void set_rand_race_time();
 
 };
 #endif

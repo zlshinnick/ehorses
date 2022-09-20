@@ -9,7 +9,7 @@ class comphorse : public horse {
 users horse. each bot horse will be randomly generated based on division */
   
   public:
-    comphorse();              //default constructor (probably shouldnt use)
+
     comphorse(int div);    //constructs a horse for a respective race
 
 };

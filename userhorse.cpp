@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "horse.h"
 #include "userhorse.h"
 using namespace std;
 
-//default constructor
-userhorse::userhorse() {         //TO DO
-}
-
-userhorse::userhorse(double max, double min, int l) {    //TO DO
+//contructor
+userhorse::userhorse(double max, double min, int l) {    
+    max_speed=max;
+    min_speed=min;
+    level=l;
+    points=0;
 }
 
 //get and set functions
@@ -20,3 +22,12 @@ double userhorse::get_min() { return min_speed;}
 
 void userhorse::set_level(int l) { level = l;}
 int userhorse::get_level() { return level;}
+
+void userhorse::set_points(int p) {points = p;}
+int userhorse::get_points() {return points;}
+
+//sets random race time in max_speed to min_speed interval (call before each race)
+void userhorse::set_rand_race_time() {
+
+
+}
