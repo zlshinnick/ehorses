@@ -10,6 +10,7 @@ class userhorse : public horse {
   	double max_speed;
     double min_speed;
     int level;
+    int points;
 
     userhorse();                                 //default constructor (probably shouldnt use)
     userhorse(double max, double min, int l);    //normal constructor
