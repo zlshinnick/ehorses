@@ -37,6 +37,7 @@ int user::get_exp() { return exp;}
 int user::get_exp_next_level(){return exp_next_level;}
 int user::get_level(){return level;}
 int user::get_allowed_num_horses(){return allowed_num_horses;}
+int user::get_num_horses(){return num_horses;}
 
 void user::print_user_stats(){
     cout<< endl;
@@ -44,7 +45,8 @@ void user::print_user_stats(){
     cout << "* Name: "<<name<<endl;
     cout << "* Bank Account: "<<get_bank_account()<<endl;
     cout << "* Level: "<<get_level()<<endl;
-    cout<<"****************************"<<endl;
+    cout << "* Horses In Stable: "<<get_num_horses();
+    cout <<"****************************"<<endl;
     cout << "* Exp: "<<get_exp()<<endl;
     cout << "* Exp For Next Level: "<<get_exp_next_level()<<endl;    
     cout << "* Total Wins: "<<get_wins()<<endl;

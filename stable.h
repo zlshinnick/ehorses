@@ -14,11 +14,9 @@ class stable{
 
     public:
         stable();
-        ~stable();
-        void stable_initalize();
         userhorse breed_horses(userhorse, userhorse);
         void add_horse(horse);
-                
+        void print_stable();
 
 
 };

@@ -14,6 +14,8 @@ class user{
         int exp;
         int exp_next_level;
         int level;
+
+        int num_horses;
         int allowed_num_horses;
 
 
@@ -33,6 +35,8 @@ class user{
     int get_exp();
     int get_exp_next_level();
     int get_level();
+
+    int get_num_horses();
     int get_allowed_num_horses();
 
     

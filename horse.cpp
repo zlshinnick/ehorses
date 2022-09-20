@@ -20,6 +20,5 @@ using namespace std;
 
     void horse::set_div(int d) { division = d;}
     int horse::get_div() { return division;}
-
     double horse::get_racet() {return race_time;}
 
