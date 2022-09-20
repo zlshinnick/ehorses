@@ -2,6 +2,7 @@
 #include <string>
 #include <ctime>
 #include <random>
+#include <cmath>
 #include "horse.h"
 #include "comphorse.h"
 using namespace std;
