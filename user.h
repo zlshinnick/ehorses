@@ -25,6 +25,7 @@ class user{
     //functions
     void initialize(string user_name);
     void level_up();
+    string get_as_string();
 
     void print_user_stats();
     //accessprs

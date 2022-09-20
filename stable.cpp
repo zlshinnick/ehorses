@@ -7,7 +7,7 @@ stable::stable(){
     
 };
 
-void stable::add_horse(horse new_horse){
+void stable::add_horse(userhorse new_horse){
     if (num_of_horses < capacity){
         stables.push_back(new_horse);
         num_of_horses++;

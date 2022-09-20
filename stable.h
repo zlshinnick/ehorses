@@ -9,13 +9,13 @@
 class stable{
     private:
         int num_of_horses;
-        vector  <horse> stables;
+        vector  <userhorse> stables;
         int capacity;
 
     public:
         stable();
         userhorse breed_horses(userhorse, userhorse);
-        void add_horse(horse);
+        void add_horse(userhorse);
         void print_stable();
 
 

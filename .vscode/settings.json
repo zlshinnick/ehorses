@@ -5,6 +5,8 @@
         "iterator": "cpp",
         "ostream": "cpp",
         "iostream": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "string": "cpp",
+        "filesystem": "cpp"
     }
 }

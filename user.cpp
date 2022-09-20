@@ -25,7 +25,7 @@ void user::initialize(string user_name){
          (400 * level)) / 3;; 
 
 
-  allowed_num_horses = 1;
+  allowed_num_horses = 1; 
   prize_money=0.0;
 }
 
@@ -45,7 +45,7 @@ void user::print_user_stats(){
     cout << "* Name: "<<name<<endl;
     cout << "* Bank Account: "<<get_bank_account()<<endl;
     cout << "* Level: "<<get_level()<<endl;
-    cout << "* Horses In Stable: "<<get_num_horses();
+    cout << "* Horses In Stable: "<<get_num_horses()<<endl;
     cout <<"****************************"<<endl;
     cout << "* Exp: "<<get_exp()<<endl;
     cout << "* Exp For Next Level: "<<get_exp_next_level()<<endl;    
@@ -60,4 +60,16 @@ void user::level_up() {
         exp_next_level =pow(level,2)*10;
         allowed_num_horses++;
     }
+}
+
+string user::get_as_string(){
+  return name + " "
+    + to_string(bank_account) + " "
+    + to_string(user_wins) + " "
+    + to_string(exp) + " "
+    + to_string(exp_next_level) + " "
+    + to_string(level) + " "
+    + to_string(num_horses) + " "
+    + to_string(allowed_num_horses);
+
 }

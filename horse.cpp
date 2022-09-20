@@ -17,7 +17,6 @@ using namespace std;
 
     void horse::set_name(string n) { name = n;}
     string horse::get_name() { return name;}
-
     void horse::set_div(int d) { division = d;}
     int horse::get_div() { return division;}
     double horse::get_racet() {return race_time;}

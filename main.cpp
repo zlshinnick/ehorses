@@ -11,16 +11,15 @@ int main(){
 
 
     //making horse and adding to stable is working 
-    horse h1 =  horse("horse1",3,10);
+   /* horse h1 =  horse("horse1",3,10);
     stable user_stables = stable();
 
 
 
     user_stables.add_horse(h1);
-    user_stables.print_stable();
+    user_stables.print_stable();*/
 
-    while (game.get_playing()==true){
         game.main_menu();   
 
-    }
+    
 }
