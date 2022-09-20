@@ -3,12 +3,14 @@
 #include "comphorse.h"
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <random>
 using namespace std;
 
 int main() {
 
   srand(time(NULL));
-  
+
   comphorse c1 = comphorse(1);
   comphorse c2 = comphorse(1);
   comphorse c3 = comphorse(2);
