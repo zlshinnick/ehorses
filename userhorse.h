@@ -11,8 +11,8 @@ class userhorse : public horse {
     double min_speed;
     int level;
 
-    userhorse();    //default constructor (probably shouldnt use)
-    userhorse(double max, double min, int l);    //constructs a horse for a respective race
+    userhorse();                                 //default constructor (probably shouldnt use)
+    userhorse(double max, double min, int l);    //normal constructor
 
     void set_max(double max);
     void set_min(double min);
