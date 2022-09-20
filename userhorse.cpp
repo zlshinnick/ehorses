@@ -27,7 +27,10 @@ void userhorse::set_points(int p) {points = p;}
 int userhorse::get_points() {return points;}
 
 //sets random race time in max_speed to min_speed interval (call before each race)
-void userhorse::set_rand_race_time() {
+void userhorse::set_rand_race_time() { //TO DO
+  
+  double rand_n; 
+  //method which assigns rand_n a val between max and min
 
-
+  race_time = rand_n;
 }

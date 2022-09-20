@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <random>
 #include "horse.h"
 #include "comphorse.h"
 using namespace std;
@@ -15,7 +16,7 @@ srand(time(NULL));
     name = "tba";
     
     //creates random number between 0.0 and 3.0
-    //srand(time(NULL));
+    srand(time(NULL));
     double rand_n = (rand()%300)/10; rand_n = (rand_n/10);   //creates random number between 0.0 and 3.0
     
     //assigning a time based on level
