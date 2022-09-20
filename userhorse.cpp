@@ -29,6 +29,7 @@ int userhorse::get_points() {return points;}
 
 int userhorse::get_wins() {return num_wins;}
 
+//increments number of wins (call when race is won)
 void userhorse::increment_wins() {num_wins++;}
 
 

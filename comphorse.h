@@ -5,11 +5,9 @@
 using namespace std;
 
 class comphorse : public horse {
-/*this is a class for bot race horses which will be generated at the start of each race to compete against
-users horse. each bot horse will be randomly generated based on division */
   
   public:
-
+    //calling this function will assign random time in an interval based on the division parameter
     void set_bot_race_t(int div);
 
 };
