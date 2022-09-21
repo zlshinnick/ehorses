@@ -9,8 +9,7 @@ using namespace std;
 
 int main() {
 
-  srand(time(NULL)); //tried adding this to fix it
-
+  srand(time(NULL));
   //generating 3 horses then setting their race time to be div 1 using comphorse function
   comphorse c1; c1.set_bot_race_t(1);
   comphorse c2; c2.set_bot_race_t(1);
@@ -24,7 +23,7 @@ int main() {
   comphorse c8; c8.set_bot_race_t(3);
   comphorse c9; c9.set_bot_race_t(3);     
 
-  //outputting each horse time
+  // //outputting each horse time
   cout << c1.get_race_t() << endl;
   cout << c2.get_race_t() << endl;
   cout << c3.get_race_t() << endl;

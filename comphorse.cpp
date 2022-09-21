@@ -10,16 +10,17 @@ using namespace std;
 
 //calling this function will assign random time in an interval based on the division parameter
 void comphorse::set_bot_race_t(int div) {
-  srand(time(NULL));  
-  if (div > 0 && div < 4) {    
 
     //creates random number between 0.0 and 3.0
-    srand(time(NULL));
-    double rand_n = (rand()%300)/10; rand_n = (rand_n/10);   //creates random number between 0.0 and 3.0
+    double rand_n = (rand()%300)/10;
+    rand_n /= 10;  //creates random number between 0.0 and 3.0
+
+  if (div > 0 && div < 4) {    
     
     //assigning a time based on level
     if (div == 1) {
       //bots in division 1 will have a random time between 8 and 11 seconds
+    
       race_time = rand_n + 8;
 
     } else if (div == 2) {
@@ -33,8 +34,8 @@ void comphorse::set_bot_race_t(int div) {
     
   } else {
     //if invalid entry entered characteristics will be set to:
-    name = "invalid";
+    cout << "Invalid Input";
+    
     race_time = 0;
   }
-
-}
+  }
