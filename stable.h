@@ -16,8 +16,8 @@ class stable{
         stable();
         userhorse breed_horses(userhorse, userhorse);
         void add_horse(userhorse);
-        void print_stable();
-
+        userhorse operator[](const int index);
+        void initialize();
 
 };
 #endif

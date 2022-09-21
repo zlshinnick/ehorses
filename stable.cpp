@@ -2,7 +2,7 @@
 #include "user.h"
 #include "horse.h"
 stable::stable(){
-    capacity = 1;
+    capacity = 0;
     num_of_horses =0;
     
 };
@@ -14,11 +14,16 @@ void stable::add_horse(userhorse new_horse){
     }
 }
 
-void stable::print_stable(){
-    for(int i = 0; i<num_of_horses;i++){
-        cout<<endl;
-        cout<<"Name:"<<stables[i].get_name()<<endl;
-      //  cout<<"Division:"<<stables[i].get_div()<<endl;
-
+userhorse stable::operator[](const int index){
+    if(index<0||index>num_of_horses){
+            throw("Invalid");
+    
     }
+        return stables[index];
 }
+
+void stable::initialize(){
+    capacity=1;
+    num_of_horses=0;
+}
+

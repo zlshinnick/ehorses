@@ -16,6 +16,18 @@ void game::initialize_game() {
   cout << "Enter name for user: ";
   cin >> name;
   user.initialize(name);
+
+  stable stable;
+  stable.initialize();
+  stable.add_horse(userhorse()) ;
+
+  string horse_name;
+
+  cout<<"What Would You Like To Name Your First Horse:";
+  cin>>horse_name;
+  stable[0].set_name(horse_name);
+  cout<<stable[0].get_name()<<endl;
+  
 }
 
 void game::travel_menu() {
@@ -34,7 +46,7 @@ void game::travel_menu() {
 
   switch (choice) {
     case 1:
-      cout << "STABLES";
+    cout<< "stables";
       break;
     case 2:
       break;
