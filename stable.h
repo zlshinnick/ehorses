@@ -9,15 +9,20 @@
 class stable{
     private:
         int num_of_horses;
-        vector  <userhorse> stables;
-        int capacity;
+        horse* array;
+        int max;
 
     public:
         stable();
-        userhorse breed_horses(userhorse, userhorse);
-        void add_horse(userhorse);
-        userhorse operator[](const int index);
-        void initialize();
+        stable(int size);
+
+        int get_current_num_horses();
+
+        horse* get_horses();
+
+        bool add_horse(horse h);
+
+        void print_stable();
 
 };
 #endif
