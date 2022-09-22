@@ -23,10 +23,10 @@ class horse {
 
     //set and get for name and race_time attributes
     void set_name(string n);
-    string * get_name();
+    string get_name();
 
     void set_race_t(double t);
-    double *  get_race_t();
+    double get_race_t();
 
 };
 #endif

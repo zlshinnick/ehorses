@@ -21,15 +21,15 @@ void comphorse::set_bot_race_t(int div) {
     if (div == 1) {
       //bots in division 1 will have a random time between 8 and 11 seconds
     
-      race_time = rand_n + 8;
+      this->race_time = rand_n + 8;
 
     } else if (div == 2) {
       //bots in division 2 will have a random time between 10 and 13 seconds
-      race_time = rand_n + 10;
+      this->race_time = rand_n + 10;
 
     } else if (div == 3) {
       //bots in division 3 will have a random time between 12 and 15 seconds
-      race_time = rand_n + 12;
+      this->race_time = rand_n + 12;
     }
     
   } else {
