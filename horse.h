@@ -9,7 +9,7 @@ class horse {
   public:
 
     //attributes
-	string name;         //all horses
+	  string name;         //all horses
     double race_time;    //all horses
   	double max_speed;    //userhorse
     double min_speed;    //userhorse
@@ -19,13 +19,14 @@ class horse {
 
     //contructors
     horse();
-	horse(string _name);
+	  horse(string _name);
 
     //set and get for name and race_time attributes
     void set_name(string n);
-    string get_name();
+    string * get_name();
+
     void set_race_t(double t);
-    double get_race_t();
+    double *  get_race_t();
 
 };
 #endif

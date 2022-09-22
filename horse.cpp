@@ -16,11 +16,11 @@ using namespace std;
     }
 
   //get and set each attribute
-    void horse::set_name(string n) { name = n;}
-    string horse::get_name() { return name;}
+    void horse::set_name(string n) { this->name = n;}
+    string * horse::get_name() { return &name;}
 
-    void horse::set_race_t(double t) { race_time = t;}
-    double horse::get_race_t() {return race_time;}
+    void horse::set_race_t(double t) { this->race_time = t;}
+    double * horse::get_race_t() {return &race_time;}
 
     
 
