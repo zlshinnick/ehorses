@@ -22,5 +22,14 @@ using namespace std;
     void horse::set_race_t(double t) { this->race_time = t;}
     double horse::get_race_t() {return race_time;}
 
+    void horse::print_horse() {
+      cout << "name: " << name << endl;
+      cout << "max speed: " << max_speed << endl;
+      cout << "level: " << level << endl;
+      cout << "points: " << points << endl;
+      cout << "number of wins: " << num_wins << endl;
+
+    }
+
     
 

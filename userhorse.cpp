@@ -6,11 +6,12 @@
 using namespace std;
 
 //setting userhorse variables (esstenitally a constructor)
-void userhorse::set_userhorse(double max, double min) {
-  max_speed = max;
-  min_speed = min;
-  level=0;
-  points=0;
+void userhorse::set_userhorse(string _name, double max, double min) {
+  this->name=_name;
+  this->max_speed = max;
+  this->min_speed = min;
+  this->level=0;
+  this->points=0;
 }
 
 

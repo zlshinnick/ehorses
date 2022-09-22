@@ -28,5 +28,8 @@ class horse {
     void set_race_t(double t);
     double get_race_t();
 
+    //prints all of horses attributes(mainly for testing) 
+    void print_horse();
+
 };
 #endif

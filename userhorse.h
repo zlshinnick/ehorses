@@ -9,7 +9,7 @@ class userhorse : public horse {
   public:
 
     //setting userhorse variables (esstenitally a constructor)
-    void set_userhorse(double max_speed, double min_speed);
+    void set_userhorse(string _name, double max, double min);
   
     //get and set each attribute
     void set_max(double max);
