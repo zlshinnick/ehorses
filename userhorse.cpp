@@ -15,22 +15,22 @@ void userhorse::set_userhorse(double max, double min) {
 
 
 //get and set functions
-void userhorse::set_max(double max){ max_speed = max;}
+void userhorse::set_max(double max){ this->max_speed = max;}
 double userhorse::get_max() { return max_speed;}
 
-void userhorse::set_min(double min) { min_speed = min;}
+void userhorse::set_min(double min) { this->min_speed = min;}
 double userhorse::get_min() { return min_speed;}
 
-void userhorse::set_level(int l) { level = l;}
+void userhorse::set_level(int l) { this->level = l;}
 int userhorse::get_level() { return level;}
 
-void userhorse::set_points(int p) {points = p;}
+void userhorse::set_points(int p) { this->points = p;}
 int userhorse::get_points() {return points;}
 
 int userhorse::get_wins() {return num_wins;}
 
 //increments number of wins (call when race is won)
-void userhorse::increment_wins() {num_wins++;}
+void userhorse::increment_wins() {this->num_wins++;}
 
 
 //sets random race time in max_speed to min_speed interval (call before each race)

@@ -9,6 +9,12 @@ using namespace std;
 
 int main() {
 
+
+
+
+
+
+  
   srand(time(NULL));
   //generating 3 horses then setting their race time to be div 1 using comphorse function
   comphorse c1; c1.set_bot_race_t(1);
