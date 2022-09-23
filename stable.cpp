@@ -8,10 +8,10 @@ stable::stable(){
     
 };
 
-stable::stable(int size){
-    max = size;
+void stable::initialize(){
+    max = 10;
     num_of_horses = 0;
-    array = new horse[size];
+    array = new horse[max];
 }
 
 bool stable::add_horse(horse h){
@@ -29,7 +29,16 @@ horse* stable::get_horses(){
 }
 
 void stable::print_stable(){
+    cout<<endl;
     for(int i=0; i< num_of_horses;i++){
-        cout<<array[i].get_name()<<endl;
+        cout<<"*Horse "<<i+1<<"*"<<endl;
+        array[i].print_horse();
     }
+    
+
+
+}
+
+int stable::get_current_num_horses(){
+    return num_of_horses;
 }

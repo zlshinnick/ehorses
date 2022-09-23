@@ -17,7 +17,7 @@ int main(){
     user_stables.add_horse(h1);
     user_stables.print_stable();*/
 
-        game.main_menu();   
+ game.main_menu();   
 
     
 }

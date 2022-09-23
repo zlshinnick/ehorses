@@ -7,6 +7,7 @@ using namespace std;
 	horse::horse() {
       name = "THIS IS AN ERROR";
       race_time = 15;
+      level =1;
     }
 
   //normal constructor (use this if creating horse)
@@ -23,11 +24,11 @@ using namespace std;
     double horse::get_race_t() {return race_time;}
 
     void horse::print_horse() {
-      cout << "name: " << name << endl;
-      cout << "max speed: " << max_speed << endl;
-      cout << "level: " << level << endl;
-      cout << "points: " << points << endl;
-      cout << "number of wins: " << num_wins << endl;
+      cout << "Name: " << name << endl;
+      cout << "Max Speed: " << max_speed << endl;
+      cout << "Level: " << level << endl;
+      cout << "Points: " << points << endl;
+      cout << "Number of Wins: " << num_wins << endl;
 
     }
 

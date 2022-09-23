@@ -23,6 +23,7 @@ class stable{
         bool add_horse(horse h);
 
         void print_stable();
+        void initialize();
 
 };
 #endif

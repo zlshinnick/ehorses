@@ -7,7 +7,6 @@ user::user() {
   user_wins = 0;
   exp = 0;
   exp_next_level = 0; 
-  allowed_num_horses = 0;
   prize_money=0.0;
 }
 
@@ -17,16 +16,13 @@ void user::initialize(string user_name){
   user_wins = 0;
   exp = 0;
   level = 1;
-  num_horses = 0;
+  stable.initialize();
 
 //next level exp gets expoentially harder
   exp_next_level = static_cast <int> //type casting to ensure its a int
       ((50 * pow(level, 3)) - 
        (150 * pow(level, 2)) + 
          (400 * level)) / 3;; 
-
-
-  allowed_num_horses = 1; 
   prize_money=0.0;
 }
 
@@ -37,8 +33,7 @@ int user::get_wins() { return user_wins; }
 int user::get_exp() { return exp;}
 int user::get_exp_next_level(){return exp_next_level;}
 int user::get_level(){return level;}
-int user::get_allowed_num_horses(){return allowed_num_horses;}
-int user::get_num_horses(){return num_horses;}
+
 
 void user::print_user_stats(){
     cout<< endl;
@@ -46,7 +41,7 @@ void user::print_user_stats(){
     cout << "* Name: "<<name<<endl;
     cout << "* Bank Account: "<<get_bank_account()<<endl;
     cout << "* Level: "<<get_level()<<endl;
-    cout << "* Horses In Stable: "<<get_num_horses()<<endl;
+    cout << "* Horses In Stable: "<<stable.get_current_num_horses()<<endl;
     cout <<"****************************"<<endl;
     cout << "* Exp: "<<get_exp()<<endl;
     cout << "* Exp For Next Level: "<<get_exp_next_level()<<endl;    
@@ -59,7 +54,6 @@ void user::level_up() {
         level++;
         exp = exp-exp_next_level;
         exp_next_level =pow(level,2)*10;
-        allowed_num_horses++;
     }
 }
 
@@ -69,8 +63,17 @@ string user::get_as_string(){
     + to_string(user_wins) + " "
     + to_string(exp) + " "
     + to_string(exp_next_level) + " "
-    + to_string(level) + " "
-    + to_string(num_horses) + " "
-    + to_string(allowed_num_horses);
+    + to_string(level) + " ";
+}
 
+void user::add_horse_to_stable(horse new_horse){
+  stable.add_horse(new_horse);
+}
+
+int user::get_num_horses(){
+  return stable.get_current_num_horses();
+}
+
+void user:: print_stables(){
+  stable.print_stable();
 }

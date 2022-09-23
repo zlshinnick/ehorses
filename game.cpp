@@ -12,24 +12,24 @@ game::game() {
 int game::get_playing() { return playing; }
 
 void game::initialize_game() {
-  string name;
-  cout << "Enter name for user: ";
-  cin >> name;
-  user.initialize(name);
+     string name;
+     cout << "Enter name for user: ";
+     cin >> name;
+     user.initialize(name);
 
-  horse h1 = userhorse();
+    string horse_name;
+    cout << "Enter name for Horse: ";
+     cin >> horse_name; 
+    horse h1 = userhorse();
+    h1.set_name(horse_name);
 
-h1.set_name("zach");
+    user.add_horse_to_stable(h1);
 
-  stable user_stable = stable(5);
-
-  user_stable.add_horse(h1);
-
-  horse* ptr = user_stable.get_horses();
-
-  cout<<ptr[0].get_name()<<endl;
+    cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
 
 }
+
+
 
 void game::travel_menu() {
   cout << endl;
@@ -46,13 +46,19 @@ void game::travel_menu() {
   cin >> choice;
 
   switch (choice) {
-    case 1:
-    cout<<"Stable";
-        break;
-    case 2:
-      break;
-    case 3:
-      break;
+        case 1:
+            user.print_stables();
+            cout << "9: Return to Main Menu" << endl;
+            cout << endl;
+            cout << "Choice:";
+            cin >> choice;
+            if (choice==9){
+                main_menu();
+            }
+        case 2:
+             break;
+        case 3:
+            break;
     default:
       break;
     case 9:
@@ -68,7 +74,6 @@ void game::main_menu() {
   cout << "2: User Stats" << endl;
   cout << "3: Save Game" << endl;
   cout << "4: Load Game" << endl;
-
   cout << "9: Quit" << endl;
   cout << endl;
   cout << "Choice:";
@@ -91,13 +96,13 @@ void game::main_menu() {
       }
 
       break;
-	case 3:
-	save_game();
-		break;
+    case 3:
+      save_game();
+      break;
 
-	case 4: 
+    case 4:
 
-		break;
+      break;
     case 9:
       playing = false;
       break;
@@ -106,15 +111,13 @@ void game::main_menu() {
   }
 }
 
-void game::save_game(){
-	ofstream outFile(file_name);
+void game::save_game() {
+  ofstream outFile(file_name);
 
-	if(outFile.is_open()){
-		outFile<<user.get_as_string();
-	}
-	outFile.close();
+  if (outFile.is_open()) {
+    outFile << user.get_as_string();
+  }
+  outFile.close();
 }
 
-void game::load_game(){
-	
-}
+void game::load_game() {}
