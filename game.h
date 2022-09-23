@@ -2,6 +2,8 @@
 #ifndef GAME_H
 #define GAME_H
 #include "user.h"
+#include "shop.h"
+#include "item.h"
 #include <fstream>
 
 class game{
@@ -12,6 +14,7 @@ class game{
         bool playing;
 
         user user; 
+        shop shop;
         string file_name;
 
     public:

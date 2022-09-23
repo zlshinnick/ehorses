@@ -2,28 +2,27 @@
 #include <math.h>
 
 user::user() {
-  name = "";
-  bank_account = 0;
-  user_wins = 0;
-  exp = 0;
-  exp_next_level = 0; 
-  prize_money=0.0;
+    name = "";
+    bank_account = 0;
+    user_wins = 0;
+    exp = 0;
+    exp_next_level = 0; 
+    prize_money=0.0;
 }
 
 void user::initialize(string user_name){
-  name = user_name;
-  bank_account = 100;
-  user_wins = 0;
-  exp = 0;
-  level = 1;
-  stable.initialize();
+    name = user_name;
+    bank_account = 100;
+    user_wins = 0;
+    exp = 0;
+    level = 1;
+    stable.initialize();
 
-//next level exp gets expoentially harder
-  exp_next_level = static_cast <int> //type casting to ensure its a int
+    exp_next_level = static_cast <int> //type casting to ensure its a int
       ((50 * pow(level, 3)) - 
        (150 * pow(level, 2)) + 
          (400 * level)) / 3;; 
-  prize_money=0.0;
+    prize_money=0.0;
 }
 
 string user::get_name() { return name; }
@@ -67,13 +66,13 @@ string user::get_as_string(){
 }
 
 void user::add_horse_to_stable(horse new_horse){
-  stable.add_horse(new_horse);
+    stable.add_horse(new_horse);
 }
 
 int user::get_num_horses(){
-  return stable.get_current_num_horses();
+    return stable.get_current_num_horses();
 }
 
 void user:: print_stables(){
-  stable.print_stable();
+    stable.print_stable();
 }
