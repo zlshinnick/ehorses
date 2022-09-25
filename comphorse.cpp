@@ -34,7 +34,8 @@ void comphorse::set_bot_race_t(int div) {
     
   } else {
     //if invalid entry entered characteristics will be set to:
-    cout << "Invalid Input";
+    cout << "Invalid Input" << endl;
+    
     race_time;
   }
   }

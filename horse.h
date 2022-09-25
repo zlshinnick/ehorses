@@ -1,5 +1,5 @@
-#ifndef HORSE_H
-#define HORSE_H
+#pragma once
+
 #include <string>
 using namespace std;
 
@@ -32,4 +32,3 @@ class horse {
     void print_horse();
 
 };
-#endif
