@@ -26,6 +26,9 @@ void Racetrack::get_winner(comphorse vec) {
         if (racetrack_times[i] == fastest_time) {
 
             fastest_horse.push_back(racetrack_names[i]);
+
+            racetrack_times.erase(racetrack_times.begin() + i);
+            racetrack_names.erase(racetrack_names.begin() + i);
         }
     }
 
