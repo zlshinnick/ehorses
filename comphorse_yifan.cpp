@@ -68,7 +68,7 @@ vector<double> comphorse::set_bot_race_times (int div) {
 
 void comphorse::get_bot_info() {
 
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 7; i++) {
 
         cout << bot_names[i] << ": " << bot_race_times[i] << endl;
     }

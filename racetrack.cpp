@@ -1,36 +1,57 @@
 #include <iostream>
 #include "racetrack.h"
+#include <algorithm>
+#include <vector>
 
 Racetrack::Racetrack() {}
 
-Racetrack::~Racetrack() {}
+void Racetrack::get_winner(comphorse vec) {
 
-comphorse* Racetrack::generate_track (int div){ // adds enemy horses to the track
-    comphorse* ptr = &horses[0];
+    bool first = true;
 
-    for (int i = 0; i < 8; i++) {
-        horses.push_back(comphorse(div));
+    for (int i = 0; i < 7; i++) {
+
+        racetrack_times.push_back(vec.bot_race_times[i]);
+        racetrack_names.push_back(vec.bot_names[i]);
+
+
+        fastest_time = *min_element(racetrack_times.begin(), racetrack_times.end());
+
     }
 
-    return ptr;
-}
+    /* PUSHBACK USER STATS HERE */
 
-string Racetrack::get_winner () {
-    fastest_comp = horses[0].race_time;
-    winner = horses[0].name;
+    for (int i = 0; i < racetrack_times.size(); i++) {
 
-    for (int i = 0; i < horses.size(); i++) {
-        if (horses[i].race_time < fastest_comp) {
-            fastest_comp = horses[i].race_time;
-            winner = horses[i].name;
+        if (racetrack_times[i] == fastest_time) {
+
+            fastest_horse.push_back(racetrack_names[i]);
         }
     }
 
-    if (fastest_comp < horse::race_time) {
-        winner = horse::name;
+    if (fastest_horse.size() == 1) {
 
-        cout << "You Won!" << endl;
+        cout << fastest_horse[0] << " is the winner with a time of " << fastest_time << " seconds!" << endl;
+
     } else {
-        cout << "You Lost" << endl;
+
+        cout << "There is a tie between ";
+        
+        for (int i = 0; i < fastest_horse.size(); i++) {
+
+            if (first == true) {
+
+                cout << fastest_horse[i];
+                first = false;
+
+            } else {
+
+                cout << " and " << fastest_horse[i];
+
+            }
+
+        } 
+        
+        cout << " with a time of " << fastest_time << " seconds!" << endl;
     }
 }

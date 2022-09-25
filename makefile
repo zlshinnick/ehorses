@@ -3,5 +3,5 @@ all:
 	./run 
 
 run_yifan:
-	g++ horse.cpp comphorse_yifan.cpp yifansDriver.cpp -o run_yifan_exec
+	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp yifansDriver.cpp -o run_yifan_exec
 	./run_yifan_exec

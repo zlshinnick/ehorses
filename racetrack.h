@@ -1,16 +1,19 @@
 #include <iostream>
-#include "comphorse.h"
+#include "comphorse_yifan.h"
 #include <vector>
 #include <ctime>
+#include <string>
 
-class Racetrack : public horse {
+class Racetrack : public comphorse {
     public:
-    int div = division;
-    double fastest_comp;
-    string winner;
-    
-    vector<comphorse> horses;
-    comphorse* generate_track (int div);
-    string get_winner();
-};
+    Racetrack();
+    double fastest_time;
+    vector<string> fastest_horse;
 
+    string winner;
+
+    vector<double> racetrack_times;
+    vector<string> racetrack_names;
+    
+    void get_winner(comphorse vec);
+};
