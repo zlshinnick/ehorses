@@ -14,7 +14,8 @@ class comphorse : public horse {
     comphorse();
     void get_bot_info();
     void get_bot_times();
-
+    int rand_num;
+    
     vector<string> bot_names;
     vector<string> set_bot_names(int div);
     vector<double> bot_race_times;

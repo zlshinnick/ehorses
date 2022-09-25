@@ -81,37 +81,412 @@ vector<string> comphorse::set_bot_names(int div) {
 
         bot_names = {};
 
-        bot_names.push_back("Send 'Em");
-        bot_names.push_back("Aidan's Choice");
-        bot_names.push_back("Field Of Battle");
-        bot_names.push_back("Just Dennis");
-        bot_names.push_back("Ampitup Black");
-        bot_names.push_back("Royal Accolade");
-        bot_names.push_back("God's Moment");
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Send 'Em");
+                break;
+
+            case 1:
+                bot_names.push_back("Aidan's Choice");
+                break;
+
+            case 2:
+                bot_names.push_back("The Big Cheese");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Field Of Battle");
+                break;
+
+            case 1:
+                bot_names.push_back("Just Dennis");
+                break;
+
+            case 2:
+                bot_names.push_back("Ampitup Black");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Royal Accolade");
+                break;
+
+            case 1:
+                bot_names.push_back("God's Moment");
+                break;
+
+            case 2:
+                bot_names.push_back("Parions");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Starchienne");
+                break;
+
+            case 1:
+                bot_names.push_back("Missile Storm");
+                break;
+
+            case 2:
+                bot_names.push_back("Crooked Carrot");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Charcoal Chaos");
+                break;
+
+            case 1:
+                bot_names.push_back("Queen's Gift");
+                break;
+
+            case 2:
+                bot_names.push_back("Musqueam");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Hooah Havanna");
+                break;
+
+            case 1:
+                bot_names.push_back("Compak");
+                break;
+
+            case 2:
+                bot_names.push_back("Citino");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Malkar Pindari");
+                break;
+
+            case 1:
+                bot_names.push_back("Yarralea");
+                break;
+
+            case 2:
+                bot_names.push_back("Rockabye Bonny");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
 
     } else if (div == 2) {
         
         bot_names = {};
 
-        bot_names.push_back("Parions");
-        bot_names.push_back("Starchienne");
-        bot_names.push_back("Missile Storm");
-        bot_names.push_back("Crooked Carrot");
-        bot_names.push_back("Charcoal Chaos");
-        bot_names.push_back("Queen's Gift");
-        bot_names.push_back("Musqueam");
-        
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Zenzero Bay");
+                break;
+
+            case 1:
+                bot_names.push_back("To The Lookout");
+                break;
+
+            case 2:
+                bot_names.push_back("Eye See Double");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Boltnmach");
+                break;
+
+            case 1:
+                bot_names.push_back("Cinocal Jamane");
+                break;
+
+            case 2:
+                bot_names.push_back("Starofremembrance");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Smile Lyle");
+                break;
+
+            case 1:
+                bot_names.push_back("Midnight In Memphis Nz");
+                break;
+
+            case 2:
+                bot_names.push_back("Brian Who");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("My Celebrity");
+                break;
+
+            case 1:
+                bot_names.push_back("Kermadec");
+                break;
+
+            case 2:
+                bot_names.push_back("Ultimate Me Nz");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Juniper");
+                break;
+
+            case 1:
+                bot_names.push_back("Kilara Bugle");
+                break;
+
+            case 2:
+                bot_names.push_back("Happy Tally");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Swift Lethal");
+                break;
+
+            case 1:
+                bot_names.push_back("Russanda Bondi");
+                break;
+
+            case 2:
+                bot_names.push_back("Donegal Jerry");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Toffee Trippett");
+                break;
+
+            case 1:
+                bot_names.push_back("Hilldun Jet");
+                break;
+
+            case 2:
+                bot_names.push_back("Knockglass Penny");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
     } else if (div == 3) {
         
         bot_names = {};
 
-        bot_names.push_back("Hooah Havanna");
-        bot_names.push_back("Compak");
-        bot_names.push_back("Citino");
-        bot_names.push_back("Malkar Pindari");
-        bot_names.push_back("Yarralea");
-        bot_names.push_back("Rockabye Bonny");
-        bot_names.push_back("Zenzero Bay");
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Jazzy Mr");
+                break;
+
+            case 1:
+                bot_names.push_back("Mo Slater");
+                break;
+
+            case 2:
+                bot_names.push_back("Two Hands George");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Buster Bash");
+                break;
+
+            case 1:
+                bot_names.push_back("Floyd");
+                break;
+
+            case 2:
+                bot_names.push_back("Eeyore Wayz");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Savage One");
+                break;
+
+            case 1:
+                bot_names.push_back("Friaresque");
+                break;
+
+            case 2:
+                bot_names.push_back("Ration Aly");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Benji's");
+                break;
+
+            case 1:
+                bot_names.push_back("Advanced");
+                break;
+
+            case 2:
+                bot_names.push_back("Alsephina");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Constant Dreaming");
+                break;
+
+            case 1:
+                bot_names.push_back("The Great One");
+                break;
+
+            case 2:
+                bot_names.push_back("Daumier");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Best Of Bordeaux");
+                break;
+
+            case 1:
+                bot_names.push_back("Jacquinot");
+                break;
+
+            case 2:
+                bot_names.push_back("Sejardan");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
+
+        rand_num = rand() % 3;
+        switch (rand_num) {
+            case 0:
+                bot_names.push_back("Political Debate");
+                break;
+
+            case 1:
+                bot_names.push_back("Promitto");
+                break;
+
+            case 2:
+                bot_names.push_back("Golden Mile");
+                break;
+
+            default:
+                cout << "Error" << endl;
+                break;
+        }
 
     } else {
 
