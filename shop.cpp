@@ -12,16 +12,9 @@ void shop::initialize(item item1, item item2, item item3){
 
 }
 
-/*item shop::get_item(string name){
-    for(int i =0; i< num_items; i++){
-        if(name == items[i].get_name()){
-            return items[i];
-        }
-    }
-}*/
-
 void shop::print_store(){
-    cout<<"**WELCOME TO THE SHOP**"<<endl<<endl;
+    cout<<"** Welcome To The Shop **";
+
     for (int i =0; i<num_items;i++){
         cout<<"Item: "<<items[i].get_name()<<endl;
         cout<<"Price: "<<items[i].get_price()<<endl;
@@ -34,9 +27,11 @@ item shop::get_item(){
     int choice_item;
     cout<<"0: Carrot"<<endl;
     cout<<"1: Sugar Cubes"<<endl;
-    cout<<"3: Saddle"<<endl<<endl;
-    cout<<"Choice: ";
+    cout<<"3: Saddle"<<endl;
+    cout<<"9: None"<<endl<<endl;
+    cout<<"Item To Purchase: ";
     cin>>choice_item;
+
     return items[choice_item];
 
 }

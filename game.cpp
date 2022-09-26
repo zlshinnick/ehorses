@@ -66,22 +66,33 @@ void game::travel_menu() {
         case 3:
              break;
         case 4:
-            shop.print_store();
-            //make inventory so get_item can be added to it
-         default:
+            shop_menu();
+             default:
             break;
         case 9:
              main_menu();
   }
 }
 
+void game::shop_menu(){
+    shop.print_store();
+    item new_item = shop.get_item();
+    if(new_item.get_name()!=""){
+
+    user.purchase_item(new_item);
+}
+}
+
+
 void game::main_menu() {
+    cout<<"\n";
     cout << "************ MAIN MENU ******" << endl;
     cout << "0: Travel" << endl;
-    cout << "1: Level Up" << endl;
-    cout << "2: User Stats" << endl;
-    cout << "3: Save Game" << endl;
-    cout << "4: Load Game" << endl;
+    cout << "1: Inventory" << endl;
+    cout << "2: Level Up" << endl;
+    cout << "3: User Stats" << endl;
+    cout << "4: Save Game" << endl;
+    cout << "5: Load Game" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
     cout << "Choice:";
@@ -91,8 +102,21 @@ void game::main_menu() {
     switch (choice) {
         case 0:
             travel_menu();
+
+        case 1:
+            user.print_inventory();
+
+            cout << endl;
+            cout << "9: Return to Main Menu" << endl;
+            cout<<endl;
+            
+            cout << "Choice:";
+            cin >> choice;
+            if (choice == 9) {
+                main_menu();
+            }
             break;
-        case 2:
+        case 3:
             user.print_user_stats();
             cout << "9: Return to Main Menu" << endl;
 
@@ -104,10 +128,10 @@ void game::main_menu() {
             }
 
             break;
-        case 3:
+        case 4:
             save_game();
             break;
-        case 4:
+        case 5:
             break;
         case 9:
             playing = false;

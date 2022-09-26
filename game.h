@@ -28,6 +28,7 @@ class game{
         void initialize_game();
         void save_game();
         void load_game();
+        void shop_menu();
 
         //accecssors
         int get_playing();

@@ -76,3 +76,19 @@ int user::get_num_horses(){
 void user:: print_stables(){
     stable.print_stable();
 }
+
+void user::purchase_item(item item){
+    int price = item.get_price();
+
+    if (bank_account>=price){
+        inventory.add_item(item);
+        bank_account-=item.get_price();
+        cout<<"Remaining Bank Account is $"<<bank_account<<endl<<endl;
+    }
+}
+
+void user::print_inventory(){
+    if(inventory.get_num_items()!=0){
+    inventory.print_inventory();
+    }
+}

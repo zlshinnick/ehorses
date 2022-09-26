@@ -2,6 +2,7 @@
 #define USER_H
 #include "horse.h"
 #include "stable.h"
+#include "inventory.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -16,6 +17,7 @@ class user{
         int exp_next_level;
         int level;
 
+        inventory inventory;
         stable stable;
 
     public:
@@ -42,6 +44,10 @@ class user{
         void add_horse_to_stable(horse new_horse);
         int get_num_horses();
         void print_stables();
+
+        //inventory functions
+        void purchase_item(item item);
+        void print_inventory();
 
 };
 #endif

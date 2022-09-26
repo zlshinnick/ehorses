@@ -34,9 +34,6 @@ void stable::print_stable(){
         cout<<"*Horse "<<i+1<<"*"<<endl;
         array[i].print_horse();
     }
-    
-
-
 }
 
 int stable::get_current_num_horses(){
