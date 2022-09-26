@@ -13,7 +13,7 @@ class shop{
     public:
         shop();
         void initialize(item item1, item item2, item item3);
-        item get_item(string name);
+        item get_item();
         void print_store();
 
 };

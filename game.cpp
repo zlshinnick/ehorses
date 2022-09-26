@@ -67,6 +67,7 @@ void game::travel_menu() {
              break;
         case 4:
             shop.print_store();
+            //make inventory so get_item can be added to it
          default:
             break;
         case 9:

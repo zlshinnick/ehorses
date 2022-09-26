@@ -12,8 +12,8 @@
 using namespace std;
 
 comphorse::comphorse () {
-    bot_race_times = {};
-    bot_names = {};
+    //bot_race_times = {};
+    //bot_names = {""};
 }
 
 vector<double> comphorse::set_bot_race_times (int div) {
@@ -60,7 +60,7 @@ vector<double> comphorse::set_bot_race_times (int div) {
 
         cout << "Invalid Input" << endl;
 
-        bot_race_times = {};
+       // bot_race_times = {};
     }
 
     return bot_race_times;
@@ -79,7 +79,7 @@ vector<string> comphorse::set_bot_names(int div) {
 
     if (div == 1) {
 
-        bot_names = {};
+       // bot_names = {};
 
         rand_num = rand() % 3;
         switch (rand_num) {
@@ -216,7 +216,7 @@ vector<string> comphorse::set_bot_names(int div) {
 
     } else if (div == 2) {
         
-        bot_names = {};
+        //bot_names = {};
 
         rand_num = rand() % 3;
         switch (rand_num) {
@@ -353,7 +353,7 @@ vector<string> comphorse::set_bot_names(int div) {
 
     } else if (div == 3) {
         
-        bot_names = {};
+       // bot_names = {""};
 
         rand_num = rand() % 3;
         switch (rand_num) {
@@ -491,7 +491,7 @@ vector<string> comphorse::set_bot_names(int div) {
     } else {
 
         cout << "Invalid Input" << endl;
-        bot_names = {};
+       // bot_names = {""};
 
     }
 

@@ -18,36 +18,30 @@ class user{
 
         stable stable;
 
-
-
-
     public:
-    //constructors
-    user();
-    //functions
-    void initialize(string user_name);
-    void level_up();
-    string get_as_string();
+        //constructors
+        user();
 
-    void initialize_stable();
-    void print_user_stats();
-    //accessprs
-    string get_name();
-    double get_bank_account();
-    double get_prize_money();
-    int get_wins();
-    int get_exp();
-    int get_exp_next_level();
-    int get_level();
-
-    //stable funcitons
-    void add_horse_to_stable(horse new_horse);
-    int get_num_horses();
-    void print_stables();
-
-
-
+        //functions
+        void initialize(string user_name);
+        void level_up();
+        string get_as_string();
+        void initialize_stable();
+        void print_user_stats();
     
-    //modifiers
+        //accessors
+        string get_name();
+        double get_bank_account();
+        double get_prize_money();
+        int get_wins();
+        int get_exp();
+        int get_exp_next_level();
+        int get_level();
+
+        //stable funcitons
+        void add_horse_to_stable(horse new_horse);
+        int get_num_horses();
+        void print_stables();
+
 };
 #endif
