@@ -37,11 +37,19 @@ void userhorse::increment_wins() {this->num_wins++;}
 //sets random race time in max_speed to min_speed interval (call before each race)
 void userhorse::set_rand_race_time() {
   
-  double random; 
-  int min = this->min_speed * 100;
-  int max = this->max_speed * 100;
+  //getting min and max from horse
+  double dmin = this->min_speed;
+  double dmax = this->max_speed;
 
-  double random = min + (rand() % max);
+  //converting to int to generate random num  
+  int min = dmin * 10;
+  int max = dmax * 10;
+  int range = max - min;
 
+  //generate random num
+  double random =min + (rand() % range);
+  random = random / 10; //convert back to one decimal place
+
+  //calling function to set_race_t
   set_race_t(random);
 }
