@@ -13,7 +13,7 @@ void comphorse::set_bot_race_t(int div) {
 
     //creates random number between 0.0 and 3.0
     double rand_n = (rand()%300)/10;
-    rand_n /= 10;  //creates random number between 0.0 and 3.0
+    rand_n /= 10;  
 
   if (div > 0 && div < 4) {    
     
