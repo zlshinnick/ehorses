@@ -14,6 +14,8 @@ void userhorse::set_userhorse(string _name, double max, double min) {
   this->points = 0;
 }
 
+
+
 //get and set functions
 void userhorse::set_max(double max){ this->max_speed = max;}
 double userhorse::get_max() { return max_speed;}
@@ -28,6 +30,8 @@ void userhorse::set_points(int p) { this->points = p;}
 int userhorse::get_points() {return points;}
 
 int userhorse::get_wins() {return num_wins;}
+
+
 
 //increments number of wins (call when race is won)
 void userhorse::increment_wins() {this->num_wins++;}
@@ -50,4 +54,13 @@ void userhorse::set_rand_race_time() {
 
   //calling function to set_race_t
   set_race_t(random);
+}
+
+
+
+//for when user horse levels up
+void userhorse::level_up() {
+  this->max_speed = this->max_speed + 1;
+  this->min_speed = this->min_speed + 1;
+  this->level = this->level + 1;
 }

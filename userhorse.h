@@ -22,10 +22,15 @@ class userhorse : public horse {
     int get_points();
     int get_wins();
 
+
+    
     void increment_wins();
+    void level_up();
 
     //sets random race time in max_speed to min_speed interval (call before each race)
     void set_rand_race_time();
+
+    
 
 };
 #endif
