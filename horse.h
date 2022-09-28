@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 using namespace std;
 
@@ -30,5 +29,7 @@ class horse {
 
     //prints all of horses attributes(mainly for testing) 
     void print_horse();
+
+    virtual void set_rand_race_time() = 0;
 
 };

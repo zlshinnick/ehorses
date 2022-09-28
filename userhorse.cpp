@@ -57,7 +57,6 @@ void userhorse::set_rand_race_time() {
 }
 
 
-
 //for when user horse levels up
 void userhorse::level_up() {
   this->max_speed = this->max_speed + 1;
