@@ -9,6 +9,7 @@ class bred_horse : public horse, public userhorse {
 
   public:
 
+    
     //fathers stats
     string f_name;
     string f_max_speed;
@@ -18,6 +19,8 @@ class bred_horse : public horse, public userhorse {
     string m_name;
     string m_max_speed;
     string m_min_speed;
+
+    void set_bred_horse(string _name, userhorse h1, userhorse h2);
 
 };
 
