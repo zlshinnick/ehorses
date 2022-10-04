@@ -7,6 +7,8 @@
         "iostream": "cpp",
         "complex": "cpp",
         "string": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp"
     }
 }
