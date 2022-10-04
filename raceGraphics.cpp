@@ -15,6 +15,8 @@
     sf::RectangleShape horse7;
     sf::RectangleShape horse8;
 
+    horse8.setFillColor(sf::Color::Green);
+
  
     sf::Vector2f rectanglePosition7(0, 0);
     sf::Vector2f rectanglePosition6(0, 55);
