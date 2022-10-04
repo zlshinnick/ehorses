@@ -43,14 +43,14 @@
     horse8.setPosition(rectanglePosition8);
     horse8.setSize(sf::Vector2f(100, 50));
  
-    float xVelocity1 = 1;
-    float xVelocity2 = 3;
+    float xVelocity1 = 8;
+    float xVelocity2 = 6;
     float xVelocity3 = 5; 
     float xVelocity4 = 7; 
     float xVelocity5 = 9; 
     float xVelocity6 = 11; 
     float xVelocity7 = 13; 
-    float xVelocity8 = 15; 
+    float xVelocity8 = 12; 
 
  
     while (window.isOpen())
