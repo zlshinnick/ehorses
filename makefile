@@ -9,3 +9,8 @@ run_yifan:
 run_zach:
 	g++ main.cpp user.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp inventory.cpp -o run_zachs
 	./run_zachs
+
+run_race:
+	g++ -c raceGraphics.cpp -I"C:\Program Files\SFML-2.5.1\include"
+	g++ raceGraphics.o -o raceGraphics -L"C:\Program Files\SFML-2.5.1\lib" -lsfml-graphics -lsfml-window -lsfml-system
+	./raceGraphics
