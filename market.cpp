@@ -20,7 +20,7 @@ void market::print_market(){
         cout<<"Horse: "<<storehorses[i].get_name()<<endl;
         cout<<"Top Speed: "<<storehorses[i].get_max()<<endl;
         cout<<"Level: "<<storehorses[i].get_level()<<endl;
-        cout<<"Price: "<<i*100<<endl; //need to make a better algorithim for price of horse
+        cout<<"Price: "<<storehorses[i].get_price()<<endl; //need to make a better algorithim for price of horse
 
         
         cout<<endl;
