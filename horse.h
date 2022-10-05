@@ -13,13 +13,12 @@ class horse {
   	double max_speed;    //userhorse
     double min_speed;    //userhorse
     int level;           //userhorse
-    int points;          //userhorse
+    int points;          //userhorse    //probably will delete points
     int num_wins;        //userhorse
     string generation;   //userhorse
 
     //contructors
     horse();
-	  horse(string _name);
 
     //set and get for name and race_time attributes
     void set_name(string n);

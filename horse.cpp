@@ -8,12 +8,6 @@ using namespace std;
       name = "THIS IS AN ERROR";
     }
 
-  //normal constructor (use this if creating horse)
-	horse::horse(string _name) {
-      name = _name; 
-      race_time = 15;
-    }
-
   //get and set each attribute
     void horse::set_name(string n) { this->name = n;}
     string horse::get_name() { return name;}

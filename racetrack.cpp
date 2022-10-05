@@ -7,6 +7,11 @@ Racetrack::Racetrack() {}
 
 void Racetrack::get_winner(comphorse vec, userhorse name) {
 
+    //calling function for user to select the horse they want to race
+    userhorse users_racer = get_users_horse();
+    //calling function to randomise race_time attribute
+    users_racer.set_rand_race_time();  
+
     bool first = true;
 
     for (int i = 0; i < 7; i++) {
@@ -19,8 +24,8 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
 
     }
 
-    racetrack_times.push_back(USERHORSE RANDOM SPEED)\
-    racetrack_names.push_back(USERHORSE NAME)
+    racetrack_times.push_back(users_racer.get_race_t());
+    racetrack_names.push_back(users_racer.get_name());
 
     for (int i = 0; i < racetrack_times.size(); i++) {
 
