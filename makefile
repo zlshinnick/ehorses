@@ -7,7 +7,7 @@ run_yifan:
 	./run_yifan_exec
 
 run_zach:
-	g++ main.cpp user.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp market.cpp inventory.cpp -o run_zachs
+	g++ main.cpp user.cpp userhorse.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp market.cpp inventory.cpp -o run_zachs
 	./run_zachs
 
 run_race:
