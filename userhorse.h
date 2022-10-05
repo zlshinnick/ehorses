@@ -30,7 +30,5 @@ class userhorse : public horse {
     void set_rand_race_time();
     
 
-    
-
 };
 #endif
