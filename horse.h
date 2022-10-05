@@ -16,6 +16,7 @@ class horse {
     int points;          //userhorse    //probably will delete points
     int num_wins;        //userhorse
     string generation;   //userhorse
+    int price;           //userhorse
 
     //contructors
     horse();

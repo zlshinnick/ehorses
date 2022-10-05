@@ -18,11 +18,14 @@ class userhorse : public horse {
     void set_min(double min);
     void set_level(int l);
     void set_points(int p);
+    void set_price(int _price);
     double get_max();
     double get_min();
     int get_level();
     int get_points();
     int get_wins();
+    int get_price();
+
 
     //in game functions
     void increment_wins();
