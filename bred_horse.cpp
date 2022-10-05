@@ -16,10 +16,11 @@ bred_horse::bred_horse() {
   this-> generation = "";
 }
 
-void bred_horse::set_bred_horse(string _name, double max, double min) {
+void bred_horse::set_bred_horse(string _name, double max, double min, string _generation) {
   this->name = _name;
   this->max_speed = max;
   this->min_speed = min;
+  this->generation = _generation;
 }
 
 void bred_horse::set_parents(string d_name, double d_max, double d_min, string m_name, double m_max, double m_min) {
