@@ -40,6 +40,9 @@ int userhorse::get_level() { return level;}
 void userhorse::set_points(int p) { this->points = p;}
 int userhorse::get_points() {return points;}
 
+void userhorse::set_price(int _price) { this->price = _price;}
+int userhorse::get_price() { return price;}
+
 int userhorse::get_wins() {return num_wins;}
 
 
