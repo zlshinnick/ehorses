@@ -14,7 +14,7 @@ void market::initialize(userhorse horse1, userhorse horse2, userhorse horse3,use
 
 
 void market::print_market(){
-    cout<<"** Welcome To The Market **";
+    cout<<"** Welcome To The Market **"<<endl<<endl;
 
     for (int i =0; i<storehorses.size();i++){
         cout<<"Horse: "<<storehorses[i].get_name()<<endl;
