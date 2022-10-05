@@ -65,7 +65,7 @@ string user::get_as_string(){
     + to_string(level) + " ";
 }
 
-void user::add_horse_to_stable(horse new_horse){
+void user::add_horse_to_stable(userhorse new_horse){
     stable.add_horse(new_horse);
 }
 

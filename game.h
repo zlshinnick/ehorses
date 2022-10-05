@@ -5,6 +5,7 @@
 #include "shop.h"
 #include "item.h"
 #include <fstream>
+#include "market.h"
 
 class game{
     private:
@@ -13,6 +14,7 @@ class game{
     //know when game has started
         bool playing;
 
+        market market;
         user user; 
         shop shop;
         string file_name;

@@ -22,7 +22,7 @@ void game::initialize_game() {
     string horse_name;
     cout << "Enter name for Horse: ";
     cin >> horse_name; 
-    horse h1 = userhorse();
+    userhorse h1 = userhorse();
     h1.set_name(horse_name);
     user.add_horse_to_stable(h1);
     cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
@@ -31,8 +31,27 @@ void game::initialize_game() {
     item Carrot = item("Carrot",100,0.5,1); //carrot makes slowest time faster
     item Sugar = item("Sugar",100,0.5,1);   //sugar makes faster time faster
     item Saddle = item("Saddle",1000,0.5,10); //saddle increases both by 0.5
-
     shop.initialize(Carrot,Sugar,Saddle);
+
+
+    //creating market
+    userhorse m1 = userhorse();
+    userhorse m2 = userhorse();
+    userhorse m3 = userhorse();
+    userhorse m4 = userhorse();
+    userhorse m5 = userhorse();
+
+    m1.set_userhorse("John",15.0,12.0);
+    m2.set_userhorse("Steve",14.75,12.0);
+    m3.set_userhorse("Bob",14.5,11.75);
+    m4.set_userhorse("Craig",14.25,11.5);
+    m5.set_userhorse("Bullet",14,11);
+
+
+    user.add_horse_to_stable(m5);
+    market.initialize(m1,m2,m3,m4,m5);
+
+    
 }
 
 
@@ -64,6 +83,7 @@ void game::travel_menu() {
         case 2:
              break;
         case 3:
+                market.print_market();
              break;
         case 4:
             shop_menu();

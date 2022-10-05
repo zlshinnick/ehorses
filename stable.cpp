@@ -11,10 +11,10 @@ stable::stable(){
 void stable::initialize(){
     max = 10;
     num_of_horses = 0;
-    array = new horse[max];
+    array = new userhorse[max];
 }
 
-bool stable::add_horse(horse h){
+bool stable::add_horse(userhorse h){
 
     if(num_of_horses<max){
         array[num_of_horses]=h;
@@ -24,7 +24,7 @@ bool stable::add_horse(horse h){
     return false;
 }
 
-horse* stable::get_horses(){
+userhorse* stable::get_horses(){
     return array;
 }
 

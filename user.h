@@ -41,7 +41,7 @@ class user{
         int get_level();
 
         //stable funcitons
-        void add_horse_to_stable(horse new_horse);
+        void add_horse_to_stable(userhorse new_horse);
         int get_num_horses();
         void print_stables();
 

@@ -9,7 +9,7 @@
 class stable{
     private:
         int num_of_horses;
-        horse* array;
+        userhorse* array;
         int max;
 
     public:
@@ -18,9 +18,9 @@ class stable{
 
         int get_current_num_horses();
 
-        horse* get_horses();
+        userhorse* get_horses();
 
-        bool add_horse(horse h);
+        bool add_horse(userhorse h);
 
         void print_stable();
         void initialize();
