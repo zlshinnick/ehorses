@@ -8,6 +8,8 @@ class userhorse : public horse {
 
   public:
 
+    userhorse();
+
     //setting userhorse variables (esstenitally a constructor)
     void set_userhorse(string _name, double max, double min);
   
@@ -22,7 +24,7 @@ class userhorse : public horse {
     int get_points();
     int get_wins();
 
-
+    //in game functions
     void increment_wins();
     void level_up();
 

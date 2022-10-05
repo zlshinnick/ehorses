@@ -497,3 +497,7 @@ vector<string> comphorse::set_bot_names(int div) {
 
     return bot_names;
 }
+
+void comphorse::set_rand_race_time() {
+    int a = 0;
+}

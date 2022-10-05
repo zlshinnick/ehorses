@@ -23,5 +23,8 @@ class comphorse : public horse {
     vector<double> set_bot_race_times(int div);
 
     vector<comphorse> bot_times_and_names (int div);
+
+    //virtual function in horse which needs definition
+    void set_rand_race_time();
 };
 

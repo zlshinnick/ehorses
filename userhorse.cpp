@@ -5,6 +5,10 @@
 #include "userhorse.h"
 using namespace std;
 
+userhorse::userhorse() {
+  
+}
+
 //setting userhorse variables (esstenitally a constructor)
 void userhorse::set_userhorse(string _name, double max, double min) {
   this->name=_name;
@@ -13,8 +17,6 @@ void userhorse::set_userhorse(string _name, double max, double min) {
   this->level = 0;
   this->points = 0;
 }
-
-
 
 //get and set functions
 void userhorse::set_max(double max){ this->max_speed = max;}
@@ -30,7 +32,6 @@ void userhorse::set_points(int p) { this->points = p;}
 int userhorse::get_points() {return points;}
 
 int userhorse::get_wins() {return num_wins;}
-
 
 
 //increments number of wins (call when race is won)
@@ -55,7 +56,6 @@ void userhorse::set_rand_race_time() {
   //calling function to set_race_t
   set_race_t(random);
 }
-
 
 //for when user horse levels up
 void userhorse::level_up() {
