@@ -1,10 +1,11 @@
 #include <iostream>
 #include "comphorse_yifan.h"
 #include <vector>
+#include "userhorse.h"
 #include <ctime>
 #include <string>
 
-class Racetrack : public comphorse {
+class Racetrack : public comphorse, public userhorse {
     public:
     Racetrack();
     double fastest_time;
@@ -15,5 +16,5 @@ class Racetrack : public comphorse {
     vector<double> racetrack_times;
     vector<string> racetrack_names;
     
-    void get_winner(comphorse vec);
+    void get_winner(comphorse vec, userhorse name);
 };

@@ -5,7 +5,7 @@
 
 Racetrack::Racetrack() {}
 
-void Racetrack::get_winner(comphorse vec) {
+void Racetrack::get_winner(comphorse vec, userhorse name) {
 
     bool first = true;
 
@@ -19,7 +19,8 @@ void Racetrack::get_winner(comphorse vec) {
 
     }
 
-    /* PUSHBACK USER STATS HERE */
+    racetrack_times.push_back(USERHORSE RANDOM SPEED)\
+    racetrack_names.push_back(USERHORSE NAME)
 
     for (int i = 0; i < racetrack_times.size(); i++) {
 
