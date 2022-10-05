@@ -5,7 +5,7 @@
 #include "userhorse.h"
 using namespace std;
 
-class bred_horse : public horse, public userhorse {
+class bred_horse : public userhorse {
 
   public:
 
@@ -14,17 +14,16 @@ class bred_horse : public horse, public userhorse {
     
     //fathers stats
     string dad_name;
-    string dad_max_speed;
-    string dad_min_speed;
+    double dad_max_speed;
+    double dad_min_speed;
 
     //mothers stats
     string mum_name;
-    string mum_max_speed;
-    string mum_min_speed;
+    double mum_max_speed;
+    double mum_min_speed;
 
-    void set_parents(string dad_name, string dad_max, string dad_min);
-
-    
+    void set_bred_horse(string _name, double max, double min);
+    void set_parents(string dad_name, double dad_max, double dad_min, string mum_name, double mum_max, double mum_min);
 
 };
 
