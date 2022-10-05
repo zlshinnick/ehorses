@@ -9,18 +9,22 @@ class bred_horse : public horse, public userhorse {
 
   public:
 
+    //default constructor
+    bred_horse();
     
     //fathers stats
-    string f_name;
-    string f_max_speed;
-    string f_min_speed;
+    string dad_name;
+    string dad_max_speed;
+    string dad_min_speed;
 
     //mothers stats
-    string m_name;
-    string m_max_speed;
-    string m_min_speed;
+    string mum_name;
+    string mum_max_speed;
+    string mum_min_speed;
 
-    void set_bred_horse(string _name, userhorse h1, userhorse h2);
+    void set_parents(string dad_name, string dad_max, string dad_min);
+
+    
 
 };
 

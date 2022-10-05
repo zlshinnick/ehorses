@@ -6,8 +6,6 @@ using namespace std;
   //default constructor (not to be used)
 	horse::horse() {
       name = "THIS IS AN ERROR";
-      race_time = 15;
-      level =1;
     }
 
   //normal constructor (use this if creating horse)

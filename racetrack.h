@@ -16,4 +16,5 @@ class Racetrack : public comphorse {
     vector<string> racetrack_names;
     
     void get_winner(comphorse vec);
+    
 };

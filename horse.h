@@ -15,6 +15,7 @@ class horse {
     int level;           //userhorse
     int points;          //userhorse
     int num_wins;        //userhorse
+    string generation;   //userhorse
 
     //contructors
     horse();
