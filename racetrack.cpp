@@ -5,6 +5,10 @@
 
 Racetrack::Racetrack() {}
 
+//for zach
+userhorse Racetrack::get_users_horse() {}
+
+
 void Racetrack::get_winner(comphorse vec, userhorse name) {
 
     //calling function for user to select the horse they want to race

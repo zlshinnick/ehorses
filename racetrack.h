@@ -17,7 +17,6 @@ class Racetrack : public comphorse, public userhorse {
     vector<string> racetrack_names;
 
     userhorse get_users_horse();  //for zach
-
     
     void get_winner(comphorse vec, userhorse name);
 };
