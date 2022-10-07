@@ -52,6 +52,7 @@ void game::initialize_game() {
 
     m5.set_userhorse("Bullet",14,11);
     m5.set_price(1500);
+    
     market.initialize(m1,m2,m3,m4,m5);
 
     

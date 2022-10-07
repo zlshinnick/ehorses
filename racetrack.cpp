@@ -5,8 +5,19 @@
 
 Racetrack::Racetrack() {}
 
-//for zach
-userhorse Racetrack::get_users_horse() {}
+userhorse Racetrack::get_users_horse(stable user_stable) {
+    cout<<"Select Horse To Race"<<endl<<endl;
+    user_stable.print_stable();
+
+    int user_horse_choice;
+    cout<<"Select Horse: ";
+    cin >>user_horse_choice;
+
+    userhorse* stable_accessor = user_stable.get_horses();
+    return stable_accessor[user_horse_choice-1];
+}
+    
+
 
 
 void Racetrack::get_winner(comphorse vec, userhorse name) {
