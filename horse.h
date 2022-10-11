@@ -17,6 +17,7 @@ class horse {
     int num_wins;        //userhorse
     string generation;   //userhorse
     int price;           //userhorse
+    string gender;       //userhorse
 
     //contructors
     horse();

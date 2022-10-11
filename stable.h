@@ -11,6 +11,8 @@ class stable{
         int num_of_horses;
         userhorse* array;
         int max;
+        userhorse mum;
+        userhorse dad;
 
     public:
         stable();
@@ -24,6 +26,10 @@ class stable{
 
         void print_stable();
         void initialize();
+
+        void set_dad();
+        void set_mum();
+        bool add_bred_horse();
 
 };
 #endif
