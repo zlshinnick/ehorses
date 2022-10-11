@@ -65,8 +65,9 @@ bool stable::add_bred_horse(string _name) {
     bool add_horse(b1);
 
     return true;
+  
   } else {
+    //if not same generation
     return false;
   }
-
 }
