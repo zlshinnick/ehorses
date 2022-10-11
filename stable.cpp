@@ -62,7 +62,12 @@ bool stable::add_bred_horse(string _name) {
     b1.set_parents(p1.get_name(), p1.get_max(), p1.get_max(), p2.get_name(), p2.get_max(), p2.get_max());
 
     //adding horse to stable
-    bool add_horse(b1);
+    if(num_of_horses<max){
+        array[num_of_horses]=b1;
+        num_of_horses++;
+        return true;
+    }
+    return false;
 
     return true;
   
