@@ -16,7 +16,7 @@ void shop::initialize(item item1, item item2, item item3){
 void shop::print_store(){
     cout<<"\n** Welcome To The Shop **";
 
-       this_thread::sleep_for(chrono::seconds(2));    
+    this_thread::sleep_for(chrono::seconds(2));    
 
     for (int i =0; i<num_items;i++){
         cout<<"\nItem: "<<items[i].get_name()<<endl;
