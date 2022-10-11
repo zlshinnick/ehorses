@@ -31,6 +31,7 @@ class game{
         void save_game();
         void load_game();
         void shop_menu();
+        void market_menu();
 
         //accecssors
         int get_playing();

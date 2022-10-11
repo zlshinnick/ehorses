@@ -49,5 +49,8 @@ class user{
         void purchase_item(item item);
         void print_inventory();
 
+        //market functions
+        void purchase_horse(userhorse horse);
+
 };
 #endif

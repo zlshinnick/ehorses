@@ -1,5 +1,6 @@
 #include "shop.h"
-
+#include <chrono>
+#include <thread>
 shop::shop(){
     num_items=3;
 
@@ -13,12 +14,15 @@ void shop::initialize(item item1, item item2, item item3){
 }
 
 void shop::print_store(){
-    cout<<"** Welcome To The Shop **";
+    cout<<"\n** Welcome To The Shop **";
+
+       this_thread::sleep_for(chrono::seconds(2));    
 
     for (int i =0; i<num_items;i++){
-        cout<<"Item: "<<items[i].get_name()<<endl;
+        cout<<"\nItem: "<<items[i].get_name()<<endl;
         cout<<"Price: "<<items[i].get_price()<<endl;
         cout<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
     }
 }
 
@@ -31,6 +35,13 @@ item shop::get_item(){
     cout<<"9: None"<<endl<<endl;
     cout<<"Item To Purchase: ";
     cin>>choice_item;
+
+    while(choice_item != 0 && choice_item != 1 && choice_item != 2 && choice_item != 3&&choice_item != 4 && choice_item != 9){
+        cout<<"\nInvalid Input!"<<endl<<endl;
+        this_thread::sleep_for(chrono::seconds(2));
+        cout<<"Item To Purchase: ";
+        cin>>choice_item;
+    }
 
     return items[choice_item];
 

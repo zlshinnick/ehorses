@@ -12,7 +12,7 @@ user::user() {
 
 void user::initialize(string user_name){
     name = user_name;
-    bank_account = 100;
+    bank_account = 1000;
     user_wins = 0;
     exp = 0;
     level = 1;
@@ -84,11 +84,25 @@ void user::purchase_item(item item){
         inventory.add_item(item);
         bank_account-=item.get_price();
         cout<<"Remaining Bank Account is $"<<bank_account<<endl<<endl;
+    } else {
+        cout<<"Not Enough Funds For Purchase of "<<item.get_name()<<endl;
     }
 }
 
 void user::print_inventory(){
     if(inventory.get_num_items()!=0){
     inventory.print_inventory();
+    }
+}
+
+void user::purchase_horse(userhorse horse){
+    int price = horse.get_price();
+
+        if (bank_account>=price){
+        stable.add_horse(horse);
+        bank_account-=horse.get_price();
+        cout<<"Remaining Bank Account is $"<<bank_account<<endl<<endl;
+    }else {
+        cout<<"Not Enough Funds For Purchase of "<<horse.get_name()<<endl;
     }
 }

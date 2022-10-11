@@ -23,7 +23,7 @@ void game::initialize_game() {
     cout << "Enter name for Horse: ";
     cin >> horse_name; 
     userhorse h1 = userhorse();
-    h1.set_name(horse_name);
+    h1.set_userhorse(horse_name,10.5,13.5);
     user.add_horse_to_stable(h1);
     cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
 
@@ -87,7 +87,7 @@ void game::travel_menu() {
         case 2:
              break;
         case 3:
-                market.print_market();
+            market_menu();
              break;
         case 4:
             shop_menu();
@@ -104,6 +104,16 @@ void game::shop_menu(){
     if(new_item.get_name()!=""){
 
     user.purchase_item(new_item);
+}
+}
+
+void game::market_menu(){
+    market.print_market();
+    userhorse new_horse = market.get_horse();
+  
+    if(new_horse.get_name()!=""){
+
+    user.purchase_horse(new_horse);
 }
 }
 
