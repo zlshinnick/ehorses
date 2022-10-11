@@ -44,6 +44,7 @@ class user{
         void add_horse_to_stable(userhorse new_horse);
         int get_num_horses();
         void print_stables();
+        void breeding();
 
         //inventory functions
         void purchase_item(item item);
@@ -51,6 +52,8 @@ class user{
 
         //market functions
         void purchase_horse(userhorse horse);
+
+
 
 };
 #endif

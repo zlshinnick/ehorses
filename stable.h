@@ -12,6 +12,8 @@ class stable{
         int num_of_horses;
         userhorse* array;
         int max;
+
+        //breeding attributes
         userhorse p1;
         userhorse p2;
 
@@ -28,8 +30,11 @@ class stable{
         void print_stable();
         void initialize();
 
-        void set_parent1();
-        void set_parent2();
+        //breeding functions 
+        void set_parents();
+      
+        void breed();
+
         bool add_bred_horse(string _name);
 
 };

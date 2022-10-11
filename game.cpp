@@ -67,6 +67,7 @@ void game::travel_menu() {
     cout << "2: Racetrack" << endl;
     cout << "3: Market" << endl;
     cout << "4: General Store" << endl;
+    cout << "5: Breeding Ground"<<endl;
     cout << "9: Return to Main Menu" << endl;
 
     cout << endl;
@@ -92,6 +93,9 @@ void game::travel_menu() {
         case 4:
             shop_menu();
              default:
+            break;
+        case 5: 
+            breed_menu();
             break;
         case 9:
              main_menu();
@@ -185,3 +189,7 @@ void game::save_game() {
 }
 
 void game::load_game() {}
+
+void game::breed_menu(){
+    user.breeding();
+}

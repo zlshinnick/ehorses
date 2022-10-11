@@ -106,3 +106,8 @@ void user::purchase_horse(userhorse horse){
         cout<<"Not Enough Funds For Purchase of "<<horse.get_name()<<endl;
     }
 }
+
+void user::breeding(){
+    stable.breed();
+}
+
