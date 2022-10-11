@@ -17,7 +17,7 @@ userhorse::userhorse() {
 }
 
 //setting userhorse variables (esstenitally a constructor)
-void userhorse::set_userhorse(string _name, double max, double min, string _gender) {
+void userhorse::set_userhorse(string _name, double max, double min) { //, string _gender) {
   this->name=_name;
   this->max_speed = max;
   this->min_speed = min;
@@ -25,7 +25,7 @@ void userhorse::set_userhorse(string _name, double max, double min, string _gend
   this->points = 0;
   this->num_wins = 0;
   this->generation = "Genesis";
-  this->gender=_gender;
+  //this->gender=_gender;
 }
 
 //get and set functions
@@ -46,7 +46,7 @@ int userhorse::get_price() { return price;}
 
 int userhorse::get_wins() {return num_wins;}
 
-string userhorse:: get_gender() {return gender;}
+//string userhorse:: get_gender() {return gender;}
 
 
 //increments number of wins (call when race is won)
