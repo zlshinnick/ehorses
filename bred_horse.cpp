@@ -13,10 +13,10 @@ bred_horse::bred_horse() {
   this->level = 1;
   this->points = 0;
   this->num_wins = 0;
-  this-> generation = "";
+  this-> generation = 0;
 }
 
-void bred_horse::set_bred_horse(string _name, double max, double min, string _generation) {
+void bred_horse::set_bred_horse(string _name, double max, double min, int _generation) {
   this->name = _name;
   this->max_speed = max;
   this->min_speed = min;

@@ -4,7 +4,7 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\Program Files\\SFML-2.5.1\\include"
+                "C:\\SFML-2.5.1\\include"
             ],
             "defines": [],
             "macFrameworkPath": [
