@@ -30,7 +30,7 @@ class stable{
 
         void set_parent1();
         void set_parent2();
-        bool create_bred_horse(string _name);
+        bool add_bred_horse(string _name);
 
 };
 #endif

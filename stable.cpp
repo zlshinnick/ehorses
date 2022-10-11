@@ -40,7 +40,7 @@ int stable::get_current_num_horses(){
     return num_of_horses;
 }
 
-bool stable::create_bred_horse(string _name) {
+bool stable::add_bred_horse(string _name) {
   //getting parents times
   double p1max = p1.get_max();  
   double p1min = p1.get_min();
@@ -62,7 +62,7 @@ bool stable::create_bred_horse(string _name) {
     b1.set_parents(p1.get_name(), p1.get_max(), p1.get_max(), p2.get_name(), p2.get_max(), p2.get_max());
 
     //adding horse to stable
-    add_horse(b1);
+    bool add_horse(b1);
 
     return true;
   } else {
