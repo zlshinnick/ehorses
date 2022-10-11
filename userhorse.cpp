@@ -13,7 +13,7 @@ userhorse::userhorse() {
   this->level = 1;
   this->points = 0;
   this->num_wins = 0;
-  this-> generation = "";
+  this->generation = 1;
 }
 
 //setting userhorse variables (esstenitally a constructor)
@@ -24,7 +24,7 @@ void userhorse::set_userhorse(string _name, double max, double min) { //, string
   this->level = 1;
   this->points = 0;
   this->num_wins = 0;
-  this->generation = "Genesis";
+  this->generation = 1;
   //this->gender=_gender;
 }
 
@@ -45,6 +45,8 @@ void userhorse::set_price(int _price) { this->price = _price;}
 int userhorse::get_price() { return price;}
 
 int userhorse::get_wins() {return num_wins;}
+
+int userhorse::get_generation() {return generation;}
 
 //string userhorse:: get_gender() {return gender;}
 

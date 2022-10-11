@@ -25,6 +25,7 @@ class userhorse : public horse {
     int get_points();
     int get_wins();
     int get_price();
+    int get_generation();
     //string get_gender();
 
     //in game functions

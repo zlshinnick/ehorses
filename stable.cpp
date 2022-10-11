@@ -39,3 +39,34 @@ void stable::print_stable(){
 int stable::get_current_num_horses(){
     return num_of_horses;
 }
+
+bool stable::create_bred_horse(string _name) {
+  //getting parents times
+  double p1max = p1.get_max();  
+  double p1min = p1.get_min();
+  double p2max = p2.get_max();
+  double p2min = p2.get_min();
+
+  double bred_max = p1max + p2max; bred_max = bred_max/2;
+  double bred_min = p1min + p2min; bred_min = bred_min/2;
+
+  //checking if parents are same gen
+  if (p1.get_generation() == p2.get_generation()) {
+    
+    //setting gen
+    int gen = p1.get_generation() + 1;
+
+    //constructing horse and setting its variables
+    bred_horse b1 = bred_horse();
+    b1.set_bred_horse(_name, bred_max, bred_min, gen);
+    b1.set_parents(p1.get_name(), p1.get_max(), p1.get_max(), p2.get_name(), p2.get_max(), p2.get_max());
+
+    //adding horse to stable
+    add_horse(b1);
+
+    return true;
+  } else {
+    return false;
+  }
+
+}

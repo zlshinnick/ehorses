@@ -22,7 +22,7 @@ class bred_horse : public userhorse {
     double mum_max_speed;
     double mum_min_speed;
 
-    void set_bred_horse(string _name, double max, double min, string _generation);
+    void set_bred_horse(string _name, double max, double min, int _generation);
     void set_parents(string dad_name, double dad_max, double dad_min, string mum_name, double mum_max, double mum_min);
 
 };

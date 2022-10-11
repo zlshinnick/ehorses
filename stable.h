@@ -2,6 +2,7 @@
 #define STABLE_H
 #include "horse.h"
 #include "userhorse.h"
+#include "bred_horse.h"
 #include <algorithm>
 #include <vector>
 #include <iostream>
@@ -11,8 +12,8 @@ class stable{
         int num_of_horses;
         userhorse* array;
         int max;
-        userhorse mum;
-        userhorse dad;
+        userhorse p1;
+        userhorse p2;
 
     public:
         stable();
@@ -27,9 +28,9 @@ class stable{
         void print_stable();
         void initialize();
 
-        void set_dad();
-        void set_mum();
-        bool add_bred_horse();
+        void set_parent1();
+        void set_parent2();
+        bool create_bred_horse(string _name);
 
 };
 #endif
