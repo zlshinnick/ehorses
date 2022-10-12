@@ -9,14 +9,21 @@
     sf::Texture horse;
     horse.loadFromFile("horse2.png");
 
-    sf::Sprite horse1(horse);
-    sf::Sprite horse2(horse);
-    sf::Sprite horse3(horse);
-    sf::Sprite horse4(horse);
-    sf::Sprite horse5(horse);
-    sf::Sprite horse6(horse);
-    sf::Sprite horse7(horse);
-    sf::Sprite horse8(horse);
+    sf::Texture horseSheet;
+    horseSheet.loadFromFile("croppedSheet.png");
+
+    sf::IntRect rectSourceSprite(0, 0, 225, 150);
+
+    sf::Sprite horse1(horseSheet, rectSourceSprite);
+    sf::Sprite horse2(horseSheet, rectSourceSprite);
+    sf::Sprite horse3(horseSheet, rectSourceSprite);
+    sf::Sprite horse4(horseSheet, rectSourceSprite);
+    sf::Sprite horse5(horseSheet, rectSourceSprite);
+    sf::Sprite horse6(horseSheet, rectSourceSprite);
+    sf::Sprite horse7(horseSheet, rectSourceSprite);
+    sf::Sprite horse8(horseSheet, rectSourceSprite);
+
+    sf::Clock clock;
 
     horse1.setColor(sf::Color(0, 255, 0, 255));
  
@@ -31,21 +38,21 @@
 
  
     horse1.setPosition(0, 330);
-    horse1.setScale(0.08, 0.08);
+    horse1.setScale(0.5, 0.5);
     horse2.setPosition(Position2);
-    horse2.setScale(0.08, 0.08);
+    horse2.setScale(0.5, 0.5);
     horse3.setPosition(Position3);
-    horse3.setScale(0.08, 0.08);
+    horse3.setScale(0.5, 0.5);
     horse4.setPosition(Position4);
-    horse4.setScale(0.08, 0.08);
+    horse4.setScale(0.5, 0.5);
     horse5.setPosition(Position5);
-    horse5.setScale(0.08, 0.08);
+    horse5.setScale(0.5, 0.5);
     horse6.setPosition(Position6);
-    horse6.setScale(0.08, 0.08);
+    horse6.setScale(0.5, 0.5);
     horse7.setPosition(Position7);
-    horse7.setScale(0.08, 0.08);
+    horse7.setScale(0.5, 0.5);
     horse8.setPosition(Position8);
-    horse8.setScale(0.08, 0.08);
+    horse8.setScale(0.5, 0.5);
  
     float xVelocity1 = 4.5;
     float xVelocity2 = 6;
@@ -65,6 +72,22 @@
             if (event.type == sf::Event::Closed) window.close();
  
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
+        }
+
+        if(clock.getElapsedTime().asSeconds() > 0.1f) {
+            if (rectSourceSprite.left >= 1350)
+                rectSourceSprite.left = 0;
+            else
+                rectSourceSprite.left += 225;
+            horse1.setTextureRect(rectSourceSprite);
+            horse2.setTextureRect(rectSourceSprite);
+            horse3.setTextureRect(rectSourceSprite);
+            horse4.setTextureRect(rectSourceSprite);
+            horse5.setTextureRect(rectSourceSprite);
+            horse6.setTextureRect(rectSourceSprite);
+            horse7.setTextureRect(rectSourceSprite);
+            horse8.setTextureRect(rectSourceSprite);
+            clock.restart();
         }
         //"physics"
  
