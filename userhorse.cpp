@@ -82,7 +82,16 @@ void userhorse::set_rand_race_time() {
 
 //for when user horse levels up
 void userhorse::level_up() {
-  this->max_speed = this->max_speed - 1;
-  this->min_speed = this->min_speed - 1;
-  this->level = this->level + 1;
+  if (level < 3) {
+    this->max_speed = max_speed - 1;
+    this->min_speed = min_speed - 1;
+    this->level = level + 1;
+    return;
+  } else {
+    return;
+  }
+}
+
+void userhorse::add_boost(double t) {
+    this->race_time = race_time - t;
 }

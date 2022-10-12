@@ -33,6 +33,7 @@ class userhorse : public horse {
     //in game functions
     void increment_wins();
     void level_up();
+    void add_boost(double t);
 
     //sets random race time in max_speed to min_speed interval (call before each race)
     void set_rand_race_time();

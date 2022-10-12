@@ -17,7 +17,7 @@ using namespace std;
 
     void horse::print_horse() {
       cout << "Name: " << name << endl;
-      cout << "Max Speed: " << max_speed << endl;
+      cout << "Top Speed: " << max_speed << endl;
       cout << "Level: " << level << endl;
       cout << "Points: " << points << endl;
       cout << "Number of Wins: " << num_wins << endl;
