@@ -15,7 +15,8 @@ class shop{
         void initialize(item item1, item item2, item item3);
         item get_item();
         void print_store();
-
+        void ascii_shop();
+        
 };
 
 #endif 

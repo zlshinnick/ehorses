@@ -29,13 +29,17 @@ class stable{
 
         void print_stable();
         void initialize();
-
+        void stable_menu();
+        void change_name_menu();
         //breeding functions 
         void set_parents();
       
         void breed();
 
         bool add_bred_horse(string _name);
+
+        void breeding_ground_ascii();
+
 
 };
 #endif

@@ -1,5 +1,7 @@
 #include "user.h"
 #include <math.h>
+#include <chrono>
+#include <thread>
 
 user::user() {
     name = "";
@@ -83,7 +85,8 @@ void user::purchase_item(item item){
     if (bank_account>=price){
         inventory.add_item(item);
         bank_account-=item.get_price();
-        cout<<"Remaining Bank Account is $"<<bank_account<<endl<<endl;
+        cout<<"\nRemaining Bank Account is $"<<bank_account<<endl<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
     } else {
         cout<<"Not Enough Funds For Purchase of "<<item.get_name()<<endl;
     }
@@ -101,7 +104,15 @@ void user::purchase_horse(userhorse horse){
         if (bank_account>=price){
         stable.add_horse(horse);
         bank_account-=horse.get_price();
-        cout<<"Remaining Bank Account is $"<<bank_account<<endl<<endl;
+        cout<<"\nA "<<horse.get_name()<<" Horse Has Been Succesfully Purchased"<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\nRemaining Bank Account is $"<<bank_account<<endl<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<horse.get_name()<<" Is Now In Your Stables"<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\nTravel To Your Stables To Name Your New Horse";
+        this_thread::sleep_for(chrono::seconds(1));
+
     }else {
         cout<<"Not Enough Funds For Purchase of "<<horse.get_name()<<endl;
     }
@@ -109,5 +120,9 @@ void user::purchase_horse(userhorse horse){
 
 void user::breeding(){
     stable.breed();
+}
+
+void user::call_stable_menu(){
+    stable.stable_menu();
 }
 

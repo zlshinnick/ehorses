@@ -1,6 +1,8 @@
 #include "game.h"
-
+#include <chrono>
+#include <thread>
 #include <iostream>
+
 using namespace std;
 
 game::game() {
@@ -13,19 +15,23 @@ int game::get_playing() { return playing; }
 
 void game::initialize_game() {
     //setting up user
+     welcome();
      string name;
-     cout << "Enter name for user: ";
+     cout << "Enter Name For User: ";
      cin >> name;
      user.initialize(name);
 
     //setting up stables with first horse
     string horse_name;
-    cout << "Enter name for Horse: ";
+    cout << "Enter Name For Your First Horse: ";
     cin >> horse_name; 
     userhorse h1 = userhorse();
     h1.set_userhorse(horse_name,10.5,13.5);
     user.add_horse_to_stable(h1);
+    this_thread::sleep_for(chrono::seconds(2));
     cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
+    this_thread::sleep_for(chrono::seconds(2));
+    system("Clear");
 
     //creating shop
     item Carrot = item("Carrot",100,0.5,1); //carrot makes slowest time faster
@@ -41,16 +47,15 @@ void game::initialize_game() {
     userhorse m4 = userhorse();
     userhorse m5 = userhorse();
     
-    m1.set_userhorse("John",15.0,12.0);
+    m1.set_userhorse("Rookie",12.0,15.0);
     m1.set_price(100);
-    m2.set_userhorse("Steve",14.75,12.0);
+    m2.set_userhorse("Intermediate",12.0,14.74);
     m2.set_price(300);
-    m3.set_userhorse("Bob",14.5,11.75);
+    m3.set_userhorse("Superstar",11.75,14.5);
     m3.set_price(600);
-    m4.set_userhorse("Craig",14.25,11.5);
+    m4.set_userhorse("Ledgendary",11.5,14.25);
     m4.set_price(1000);
-
-    m5.set_userhorse("Bullet",14,11);
+    m5.set_userhorse("Bullet",11,14);
     m5.set_price(1500);
     
     market.initialize(m1,m2,m3,m4,m5);
@@ -59,9 +64,8 @@ void game::initialize_game() {
 }
 
 
-
 void game::travel_menu() {
-    cout << endl;
+    system("Clear");
     cout << "Where Would You Like to Travel?" << endl;
     cout << "1: Stables" << endl;
     cout << "2: Racetrack" << endl;
@@ -77,14 +81,7 @@ void game::travel_menu() {
 
   switch (choice) {
         case 1:
-            user.print_stables();
-            cout << "9: Return to Main Menu" << endl;
-            cout << endl;
-            cout << "Choice:";
-            cin >> choice;
-            if (choice==9){
-                main_menu();
-            }
+            user.call_stable_menu();
         case 2:
              break;
         case 3:
@@ -123,7 +120,7 @@ void game::market_menu(){
 
 
 void game::main_menu() {
-    cout<<"\n";
+    system("Clear");
     cout << "************ MAIN MENU ******" << endl;
     cout << "0: Travel" << endl;
     cout << "1: Inventory" << endl;
@@ -192,4 +189,39 @@ void game::load_game() {}
 
 void game::breed_menu(){
     user.breeding();
+}
+
+void game::welcome(){
+    
+    system("Clear");
+    cout<< "/$$      /$$           /$$"   <<endl;
+    cout<< "| $$  /$ | $$          | $$" <<endl;
+    cout<< "| $$ /$$$| $$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ "<<endl;
+    cout<< "| $$/$$ $$ $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$" <<endl;
+    cout<< "| $$$$_  $$$$| $$$$$$$$| $$| $$      | $$  | $$| $$ | $$ | $$| $$$$$$$$"<<endl;
+    cout<< "| $$$/ |  $$$| $$_____/| $$| $$      | $$  | $$| $$ | $$ | $$| $$_____/" <<endl;
+    cout<< "| $$/   |  $$|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$" <<endl;
+    cout<< "|__/     |_/ |_______/|__/ |_______/ |______/ |__/ |__/ |__/ |_______/" <<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+
+    cout<< "                          /$$$$$$$$   "<<endl;
+    cout<< "                         |__  $$__/    "<<endl;
+    cout<<"                          | $$  /$$$$$$ "<<endl;
+    cout<<"                          | $$ /$$__  $$"<<endl;
+    cout<<"                          | $$| $$  | $$"<<endl;
+    cout<<"                          | $$| $$  | $$"<<endl;
+    cout<<"                          | $$|  $$$$$$/"<<endl;
+    cout<<"                          |__/|______/ "<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+
+    cout<<"/$$$$$$$$       /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<<endl;
+    cout<<"| $$_____/      | $$  | $$ /$$__  $$| $$__  $$ /$$__  $$| $$_____/ /$$__  $$| $$"<<endl;
+    cout<<"| $$            | $$  | $$| $$  | $$| $$  | $$| $$  |__/| $$      | $$  |__/| $$"<<endl;
+    cout<<"| $$$$$         | $$$$$$$$| $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$   |  $$$$$$ | $$"<<endl;
+    cout<<"| $$__/         | $$__  $$| $$  | $$| $$__  $$ |____  $$| $$__/   |____  $$|__/"<< endl;
+    cout<<"| $$            | $$  | $$| $$  | $$| $$  | $$ /$$  | $$| $$       /$$  | $$    "<<endl;
+    cout<<"| $$$$$$$$      | $$  | $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$$|  $$$$$$/ /$$"<<endl;
+    cout<<"|________/      |__/  |__/ |______/ |__/  |__/ |______/ |________/ |______/ |__/"<<endl;
+    this_thread::sleep_for(chrono::seconds(2));
+    system("Clear");
 }

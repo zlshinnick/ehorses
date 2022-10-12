@@ -45,6 +45,7 @@ class user{
         int get_num_horses();
         void print_stables();
         void breeding();
+        void call_stable_menu();
 
         //inventory functions
         void purchase_item(item item);
