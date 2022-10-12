@@ -1,7 +1,6 @@
-#ifndef USERHORSE_H
-#define USERHORSE_H
 #include <string>
 #include "horse.h"
+#pragma once
 using namespace std;
 
 class userhorse : public horse {
@@ -26,15 +25,18 @@ class userhorse : public horse {
     int get_wins();
     int get_price();
     int get_generation();
+    void output_name();
+    void output_min();
+    void output_max();
     //string get_gender();
 
     //in game functions
     void increment_wins();
     void level_up();
+    void add_boost(double t);
 
     //sets random race time in max_speed to min_speed interval (call before each race)
     void set_rand_race_time();
     
 
 };
-#endif

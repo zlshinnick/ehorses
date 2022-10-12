@@ -1,5 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "comphorse_yifan.h"
+#include "userhorse.h"
+#include "racetrack.h"
+#include "user.h"
+#include "horse.h"
 
  int main ()
 {
@@ -70,7 +74,7 @@
     horse8.setPosition(Position8);
     horse8.setScale(0.5, 0.5);
  
-    float xVelocity1 = 4.5;
+    float xVelocity1 = racetrack_times[0];
     float xVelocity2 = 6;
     float xVelocity3 = 5; 
     float xVelocity4 = 7; 

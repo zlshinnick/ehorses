@@ -5,6 +5,7 @@
 #include <ctime>
 #include <string>
 #include "stable.h"
+#pragma once
 
 class Racetrack : public comphorse, public userhorse {
     public:
@@ -17,7 +18,7 @@ class Racetrack : public comphorse, public userhorse {
     vector<double> racetrack_times;
     vector<string> racetrack_names;
 
-    userhorse get_users_horse(stable user_stable);  //for zach
+    // userhorse get_users_horse(stable user_stable);  //for zach
     
     void get_winner(comphorse vec, userhorse name);
 };
