@@ -82,7 +82,8 @@ bool stable::add_bred_horse(string _name) {
 
 void stable::set_parents(){
     print_stable();
-
+    p1 = userhorse();
+    p2 = userhorse();
     int index_first = 0;
     cout<<"\n\n";
     cout<<"Select Parent 1 For Breeding: "<<endl<<endl;
@@ -114,7 +115,7 @@ void stable::set_parents(){
         tracker++;
     }
 
-    cout<<"Enter Choice: ";
+    cout<<"\n\nEnter Choice: ";
     cin>>index_second;
 
         while(index_second>num_of_horses||index_second<0){
@@ -130,17 +131,23 @@ void stable::set_parents(){
 }
 
 void stable::breed(){
+    system("Clear");
+    breeding_ground_ascii();
     if(num_of_horses<2){
         cout<<"You Can Not Breed, You Need At Least 2 Horses";
+        this_thread::sleep_for(chrono::seconds(1));
         return;
     }
 
 
     int choice =1 ;
     cout<<"Do You Want To Breed Horses"<<endl<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
     cout<<"1. Yes"<<endl;
-    cout<<"2. No"<<endl<<endl;
-    cout<<"Choice: ";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"2. No";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n\nChoice: ";
 
     cin>>choice;
 
@@ -158,7 +165,7 @@ void stable::breed(){
 
     if(baby == true){
         this_thread::sleep_for(chrono::seconds(1));
-        cout<<p1.get_name()<<"And "<<p2.get_name()<<"Are Fucking Please Wait"<<endl<<endl;
+        cout<<p1.get_name()<<" And "<<p2.get_name()<<" Are Breeding Please Wait"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(3));
         cout<<p1.get_name()<<" Has Given Birth"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
@@ -171,4 +178,62 @@ void stable::breed(){
     if(baby == false){
         cout<<" Baby Not Born, Parents Cant Be Same Generation!";
     }
+}
+
+void stable::stable_menu() {
+    system("Clear");
+    cout<<"  /$$$$$$   /$$               /$$       /$$                    "<<endl;
+    cout<<" /$$__  $$ | $$              | $$      | $$                     "<<endl;
+    cout<<"| $$  |__//$$$$$$    /$$$$$$ | $$$$$$$ | $$  /$$$$$$   /$$$$$$$"<<endl;
+    cout<<"|  $$$$$$|_  $$_/   |____  $$| $$__  $$| $$ /$$__  $$ /$$_____/"<<endl;
+    cout<<"|____  $$ | $$      /$$$$$$$| $$  | $$| $$| $$$$$$$$|  $$$$$$  "<<endl;
+    cout<<" /$$ | $$ | $$ /$$ /$$__  $$| $$  | $$| $$| $$_____/ |____  $$"<<endl;
+    cout<<"|  $$$$$$/ |  $$$$/|  $$$$$$$| $$$$$$$/| $$|  $$$$$$$ /$$$$$$$/"<<endl;
+    cout<<" |______/   |___/   |_______/|_______/ |__/ |_______/|_______/ "<<endl;
+
+    this_thread::sleep_for(chrono::seconds(2));
+
+    int choice;
+
+    cout<<"** \nWhat Would You Like To Do? **\n"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"1. View Your Horses "<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"2. Change The Name of A Horse"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"3. Feed a Horse"<<endl<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"9. Return To Main Menu";
+    this_thread::sleep_for(chrono::seconds(1));
+
+    cout<<"\n\nChoice: ";
+    cin>>choice;
+    this_thread::sleep_for(chrono::seconds(1));
+
+    switch (choice)
+    {
+    case 1:
+        print_stable();
+        break;
+    
+    default:
+        break;
+    }
+
+}
+
+void stable::breeding_ground_ascii(){
+    cout<<" /$$$$$$$                                      /$$ /$$                            /$$$$$$                                                /$$"<<endl;
+    cout<<"| $$__  $$                                    | $$|__/                           /$$__  $$                                              | $$"<<endl;
+    cout<<"| $$  | $$  /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$$ /$$ /$$$$$$$   /$$$$$$       | $$  |__/  /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$$"<<endl;
+    cout<<"| $$$$$$$  /$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$| $$| $$__  $$ /$$__  $$      | $$ /$$$$ /$$__  $$ /$$__  $$| $$  | $$| $$__  $$ /$$__  $$"<<endl;
+    cout<<"| $$__  $$| $$  |__/| $$$$$$$$| $$$$$$$$| $$  | $$| $$| $$  | $$| $$  | $$      | $$|_  $$| $$  |__/| $$  | $$| $$  | $$| $$  | $$| $$  | $$"<<endl;
+    cout<<"| $$  | $$| $$      | $$_____/| $$_____/| $$  | $$| $$| $$  | $$| $$  | $$      | $$  | $$| $$      | $$  | $$| $$  | $$| $$  | $$| $$  | $$"<<endl;
+    cout<<"| $$$$$$$/| $$      |  $$$$$$$|  $$$$$$$|  $$$$$$$| $$| $$  | $$|  $$$$$$$      |  $$$$$$/| $$      |  $$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$"<<endl;
+    cout<<"|_______/ |__/       |_______/ |_______/ |_______/|__/|__/  |__/ |____  $$       |______/ |__/       |______/  |______/ |__/  |__/ |_______/"<<endl;
+    cout<<"                                                                 /$$  | $$                                                                  "<<endl;
+    cout<<"                                                                |  $$$$$$/                                                                  "<<endl;
+    cout<<"                                                                 |______/                                                                   "<<endl<<endl<<endl;
+
+    this_thread::sleep_for(chrono::seconds(1));
 }

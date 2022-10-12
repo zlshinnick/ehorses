@@ -111,3 +111,7 @@ void user::breeding(){
     stable.breed();
 }
 
+void user::call_stable_menu(){
+    stable.stable_menu();
+}
+

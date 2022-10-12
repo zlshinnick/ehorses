@@ -33,6 +33,7 @@ class game{
         void shop_menu();
         void market_menu();
         void breed_menu();
+        void welcome();
 
         //accecssors
         int get_playing();
