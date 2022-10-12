@@ -5,45 +5,47 @@
 {
     sf::RenderWindow window(sf::VideoMode(1800, 440), "My Program");
     window.setFramerateLimit(60);
- 
-    sf::RectangleShape horse1;
-    sf::RectangleShape horse2;
-    sf::RectangleShape horse3;
-    sf::RectangleShape horse4;
-    sf::RectangleShape horse5;
-    sf::RectangleShape horse6;
-    sf::RectangleShape horse7;
-    sf::RectangleShape horse8;
 
-    horse8.setFillColor(sf::Color::Green);
+    sf::Texture horse;
+    horse.loadFromFile("horse2.png");
+
+    sf::Sprite horse1(horse);
+    sf::Sprite horse2(horse);
+    sf::Sprite horse3(horse);
+    sf::Sprite horse4(horse);
+    sf::Sprite horse5(horse);
+    sf::Sprite horse6(horse);
+    sf::Sprite horse7(horse);
+    sf::Sprite horse8(horse);
+
+    horse1.setColor(sf::Color(0, 255, 0, 255));
+ 
+    sf::Vector2f Position7(0, 0);
+    sf::Vector2f Position6(0, 55);
+    sf::Vector2f Position3(0, 110);
+    sf::Vector2f Position8(0, 165);
+    sf::Vector2f Position5(0, 220);
+    sf::Vector2f Position2(0, 275);
+    sf::Vector2f Position1(0, 330);
+    sf::Vector2f Position4(0, 385);
 
  
-    sf::Vector2f rectanglePosition7(0, 0);
-    sf::Vector2f rectanglePosition6(0, 55);
-    sf::Vector2f rectanglePosition3(0, 110);
-    sf::Vector2f rectanglePosition8(0, 165);
-    sf::Vector2f rectanglePosition5(0, 220);
-    sf::Vector2f rectanglePosition2(0, 275);
-    sf::Vector2f rectanglePosition1(0, 330);
-    sf::Vector2f rectanglePosition4(0, 385);
-
- 
-    horse1.setPosition(rectanglePosition1);
-    horse1.setSize(sf::Vector2f(100, 50));
-    horse2.setPosition(rectanglePosition2);
-    horse2.setSize(sf::Vector2f(100, 50));
-    horse3.setPosition(rectanglePosition3);
-    horse3.setSize(sf::Vector2f(100, 50));
-    horse4.setPosition(rectanglePosition4);
-    horse4.setSize(sf::Vector2f(100, 50));
-    horse5.setPosition(rectanglePosition5);
-    horse5.setSize(sf::Vector2f(100, 50));
-    horse6.setPosition(rectanglePosition6);
-    horse6.setSize(sf::Vector2f(100, 50));
-    horse7.setPosition(rectanglePosition7);
-    horse7.setSize(sf::Vector2f(100, 50));
-    horse8.setPosition(rectanglePosition8);
-    horse8.setSize(sf::Vector2f(100, 50));
+    horse1.setPosition(0, 330);
+    horse1.setScale(0.08, 0.08);
+    horse2.setPosition(Position2);
+    horse2.setScale(0.08, 0.08);
+    horse3.setPosition(Position3);
+    horse3.setScale(0.08, 0.08);
+    horse4.setPosition(Position4);
+    horse4.setScale(0.08, 0.08);
+    horse5.setPosition(Position5);
+    horse5.setScale(0.08, 0.08);
+    horse6.setPosition(Position6);
+    horse6.setScale(0.08, 0.08);
+    horse7.setPosition(Position7);
+    horse7.setScale(0.08, 0.08);
+    horse8.setPosition(Position8);
+    horse8.setScale(0.08, 0.08);
  
     float xVelocity1 = 4.5;
     float xVelocity2 = 6;
@@ -66,29 +68,29 @@
         }
         //"physics"
  
-        rectanglePosition1.x += xVelocity1;
-        horse1.setPosition(rectanglePosition1);
+        Position1.x += xVelocity1;
+        horse1.setPosition(Position1);
 
-        rectanglePosition2.x += xVelocity2;
-        horse2.setPosition(rectanglePosition2);
+        Position2.x += xVelocity2;
+        horse2.setPosition(Position2);
 
-        rectanglePosition3.x += xVelocity3;
-        horse3.setPosition(rectanglePosition3);
+        Position3.x += xVelocity3;
+        horse3.setPosition(Position3);
 
-        rectanglePosition4.x += xVelocity4;
-        horse4.setPosition(rectanglePosition4);
+        Position4.x += xVelocity4;
+        horse4.setPosition(Position4);
 
-        rectanglePosition5.x += xVelocity5;
-        horse5.setPosition(rectanglePosition5);
+        Position5.x += xVelocity5;
+        horse5.setPosition(Position5);
 
-        rectanglePosition6.x += xVelocity6;
-        horse6.setPosition(rectanglePosition6);
+        Position6.x += xVelocity6;
+        horse6.setPosition(Position6);
 
-        rectanglePosition7.x += xVelocity7;
-        horse7.setPosition(rectanglePosition7);
+        Position7.x += xVelocity7;
+        horse7.setPosition(Position7);
 
-        rectanglePosition8.x += xVelocity8;
-        horse8.setPosition(rectanglePosition8);
+        Position8.x += xVelocity8;
+        horse8.setPosition(Position8);
  
         //render
         window.clear();
