@@ -48,6 +48,12 @@ int userhorse::get_wins() {return num_wins;}
 
 int userhorse::get_generation() {return generation;}
 
+void userhorse::output_name() {cout << name << endl;}
+
+void userhorse::output_max() {cout << max_speed << endl;}
+
+void userhorse::output_min() {cout << min_speed << endl;}
+
 //string userhorse:: get_gender() {return gender;}
 
 

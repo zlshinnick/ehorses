@@ -5,6 +5,7 @@
 #include <ctime>
 #include <string>
 #include "stable.h"
+#pragma once
 
 class Racetrack : public comphorse, public userhorse {
     public:

@@ -1,5 +1,8 @@
 #include <iostream>
 #include "racetrack.h"
+#include "userhorse.h"
+#include "user.h"
+#include "horse.h"
 #include <algorithm>
 #include <vector>
 
@@ -32,13 +35,13 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
         racetrack_times.push_back(vec.bot_race_times[i]);
         racetrack_names.push_back(vec.bot_names[i]);
 
-
-        fastest_time = *max_element(racetrack_times.begin(), racetrack_times.end()); // might put this outside of loop
-
     }
 
-    racetrack_times.push_back(users_racer.get_race_t());
-    racetrack_names.push_back(users_racer.get_name());
+    racetrack_times.push_back(name.get_race_t());
+    racetrack_names.push_back(name.get_name());
+
+    fastest_time = *max_element(racetrack_times.begin(), racetrack_times.end()); // might put this outside of loop
+
 
     for (int i = 0; i < racetrack_times.size(); i++) {
 
@@ -53,7 +56,7 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
 
     if (fastest_horse.size() == 1) {
 
-        cout << fastest_horse[0] << " is the winner with a time of " << fastest_time << " seconds!" << endl;
+        cout << fastest_horse[0] << " is the winner with a speed of " << fastest_time << " km/h!" << endl;
 
     } else {
 
@@ -74,6 +77,6 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
 
         } 
         
-        cout << " with a time of " << fastest_time << " seconds!" << endl;
+        cout << " with a speed of " << fastest_time << " km/h!" << endl;
     }
 }
