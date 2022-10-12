@@ -90,7 +90,7 @@
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
         }
 
-        if(clock.getElapsedTime().asSeconds() > 0.1f) {
+        if(clock.getElapsedTime().asSeconds() > 0.07f) {
             if (rectSourceSprite.left >= 1350)
                 rectSourceSprite.left = 0;
             else
