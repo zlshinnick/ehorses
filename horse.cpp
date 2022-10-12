@@ -19,7 +19,7 @@ using namespace std;
       cout << "Name: " << name << endl;
       cout << "Top Speed: " << max_speed << endl;
       cout << "Level: " << level << endl;
-      cout << "Points: " << points << endl;
+      //cout << "Points: " << points << endl;
       cout << "Number of Wins: " << num_wins << endl;
       cout << "Generation: Gen " << generation <<endl<<endl;
     }
