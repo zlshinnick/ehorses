@@ -12,6 +12,14 @@
     sf::Texture horseSheet;
     horseSheet.loadFromFile("croppedSheet.png");
 
+    sf::Texture background;
+    background.loadFromFile("grass2.png");
+    background.setRepeated(true);
+
+    sf::IntRect backgroundRect(0, 0, 1800, 440);
+
+    sf::Sprite backgrounds(background, backgroundRect);
+
     sf::IntRect rectSourceSprite(0, 0, 225, 150);
 
     sf::Sprite horse1(horseSheet, rectSourceSprite);
@@ -25,7 +33,15 @@
 
     sf::Clock clock;
 
-    horse1.setColor(sf::Color(0, 255, 0, 255));
+    horse1.setColor(sf::Color(255, 0, 0, 255));
+
+    horse2.setColor(sf::Color(0, 0, 0, 255));
+    horse3.setColor(sf::Color(0, 0, 0, 255));
+    horse4.setColor(sf::Color(0, 0, 0, 255));
+    horse5.setColor(sf::Color(0, 0, 0, 255));
+    horse6.setColor(sf::Color(0, 0, 0, 255));
+    horse7.setColor(sf::Color(0, 0, 0, 255));
+    horse8.setColor(sf::Color(0, 0, 0, 255));
  
     sf::Vector2f Position7(0, 0);
     sf::Vector2f Position6(0, 55);
@@ -117,6 +133,8 @@
  
         //render
         window.clear();
+                window.draw(backgrounds);
+
         window.draw(horse1);
         window.draw(horse2);
         window.draw(horse3);
