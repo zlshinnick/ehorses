@@ -46,7 +46,7 @@ userhorse market::get_horse(){
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"9: None"<<endl<<endl;
     this_thread::sleep_for(chrono::seconds(2));
-    cout<<"Item To Purchase: ";
+    cout<<"Horse To Purchase: ";
     cin>>choice_horse;
     this_thread::sleep_for(chrono::seconds(1));
     return storehorses[choice_horse];

@@ -30,7 +30,7 @@ class stable{
         void print_stable();
         void initialize();
         void stable_menu();
-
+        void change_name_menu();
         //breeding functions 
         void set_parents();
       
