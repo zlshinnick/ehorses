@@ -34,7 +34,8 @@ class game{
         void market_menu();
         void breed_menu();
         void welcome();
-
+        void inventory_menu();
+        void user_stats_menu();
         //accecssors
         int get_playing();
         //modifys

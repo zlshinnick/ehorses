@@ -93,6 +93,7 @@ void user::purchase_item(item item){
 }
 
 void user::print_inventory(){
+   //cout<<"Being Called";
     if(inventory.get_num_items()!=0){
     inventory.print_inventory();
     }
@@ -120,9 +121,11 @@ void user::purchase_horse(userhorse horse){
 
 void user::breeding(){
     stable.breed();
+    return;
 }
 
 void user::call_stable_menu(){
     stable.stable_menu();
+    return;
 }
 
