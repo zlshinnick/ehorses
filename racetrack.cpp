@@ -5,28 +5,26 @@
 
 Racetrack::Racetrack() {}
 
-userhorse Racetrack::get_users_horse(stable user_stable) {
-    cout<<"Select Horse To Race"<<endl<<endl;
-    user_stable.print_stable();
+// userhorse Racetrack::get_users_horse(stable user_stable) {
+//     cout<<"Select Horse To Race"<<endl<<endl;
+//     user_stable.print_stable();
 
-    int user_horse_choice;
-    cout<<"Select Horse: ";
-    cin >>user_horse_choice;
+//     int user_horse_choice;
+//     cout<<"Select Horse: ";
+//     cin >>user_horse_choice;
 
-    userhorse* stable_accessor = user_stable.get_horses();
-    return stable_accessor[user_horse_choice-1];
-}
-    
-
-
+//     userhorse* stable_accessor = user_stable.get_horses();
+//     return stable_accessor[user_horse_choice-1];
+// }
 
 void Racetrack::get_winner(comphorse vec, userhorse name) {
 
     //calling function for user to select the horse they want to race
-    userhorse users_racer = get_users_horse();
+    // userhorse users_racer = get_users_horse();
     //calling function to randomise race_time attribute
-    users_racer.set_rand_race_time();  
+    // users_racer.set_rand_race_time();  
 
+    name.set_rand_race_time();
     bool first = true;
 
     for (int i = 0; i < 7; i++) {
@@ -35,7 +33,7 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
         racetrack_names.push_back(vec.bot_names[i]);
 
 
-        fastest_time = *min_element(racetrack_times.begin(), racetrack_times.end());
+        fastest_time = *max_element(racetrack_times.begin(), racetrack_times.end()); // might put this outside of loop
 
     }
 
