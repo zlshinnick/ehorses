@@ -1,5 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "comphorse_yifan.h"
+#include "userhorse.h"
+#include "racetrack.h"
+#include "user.h"
+#include "horse.h"
 
  int main ()
 {
