@@ -1,9 +1,8 @@
-#ifndef USER_H
-#define USER_H
 #include "horse.h"
 #include "stable.h"
 #include "inventory.h"
 #include <iostream>
+#pragma once
 #include <string>
 using namespace std;
 
@@ -55,9 +54,10 @@ class user{
         void purchase_horse(userhorse horse);
 
         // racing win function
-        void user_won();
+        void user_wonD1();
+        void user_wonD2();
+        void user_wonD3();
 
 
 
 };
-#endif

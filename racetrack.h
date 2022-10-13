@@ -7,7 +7,7 @@
 #include "stable.h"
 #pragma once
 
-class Racetrack : public comphorse, public userhorse {
+class Racetrack : public comphorse, public userhorse, public user {
     public:
     Racetrack();
     double fastest_time;
@@ -20,5 +20,5 @@ class Racetrack : public comphorse, public userhorse {
 
     // userhorse get_users_horse(stable user_stable);  //for zach
     
-    void get_winner(comphorse vec, userhorse name);
+    void get_winner(comphorse vec, userhorse name, user user);
 };

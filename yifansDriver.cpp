@@ -15,6 +15,7 @@ int main () {
     srand(time(NULL));
     comphorse c1;
     userhorse u1;
+    user a1;
 
     u1.set_min(20);
     u1.set_max(22);
@@ -31,7 +32,7 @@ u1.output_max();
 
     Racetrack r1;
 
-    r1.get_winner(c1, u1);
+    r1.get_winner(c1, u1, user);
 
     u1.output_wins();
 }

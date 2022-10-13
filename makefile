@@ -3,7 +3,7 @@ run_will:
 	./run 
 
 run_yifan:
-	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp userhorse.cpp yifansDriver.cpp -o runy
+	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp userhorse.cpp user.cpp yifansDriver.cpp -o runy
 	./runy
 
 run_zach:

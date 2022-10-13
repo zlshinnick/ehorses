@@ -100,3 +100,15 @@ void userhorse::level_up() {
 void userhorse::add_boost(double t) {
     this->race_time = race_time - t;
 }
+
+void userhorse::win_D1() {
+  this->num_wins += 1;
+}
+
+void userhorse::win_D2() {
+  this->num_wins += 1;
+}
+
+void userhorse::win_D3() {
+  this->num_wins += 1;
+}

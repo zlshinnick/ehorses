@@ -146,7 +146,7 @@ void user::user_wonD2() {
     exp+=1000;
 }
 
-void suer::user_wonD3() {
+void user::user_wonD3() {
     bank_account += 1500;
     user_wins++;
     prize_money += 1500;

@@ -42,5 +42,7 @@ class userhorse : public horse {
     //sets random race time in max_speed to min_speed interval (call before each race)
     void set_rand_race_time();
     
-
+    void win_D1();
+    void win_D2();
+    void win_D3();
 };
