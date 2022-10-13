@@ -132,9 +132,23 @@ void user::call_stable_menu(){
     return;
 }
 
-void user::user_won(){
+void user::user_wonD1(){
     bank_account += 500;
     user_wins++;
     prize_money += 500;
     exp+=500;
+}
+
+void user::user_wonD2() {
+    bank_account += 1000;
+    user_wins++;
+    prize_money += 1000;
+    exp+=1000;
+}
+
+void suer::user_wonD3() {
+    bank_account += 1500;
+    user_wins++;
+    prize_money += 1500;
+    exp+=1500;
 }

@@ -80,10 +80,16 @@ void Racetrack::get_winner(comphorse vec, userhorse name, user user) {
         cout << " with a speed of " << fastest_time << " km/h!" << endl;
     }
 
-     cout << name.get_race_t() << endl;
-
     if (fastest_time == name.get_race_t()) {
-        cout << "True" << endl;
-        user.user_won();
+
+        if ((vec.bot_race_times[0] >= 8) && (vec.bot_race_times[0] <= 11)) { // win d1
+            user.user_wonD1();
+        } else if ((vec.bot_race_time[0] >= 12) && (vec.bot_race_times[0] <= 15)) { // win d2
+            user.user_wonD2();
+        } else if ((vec.bot_race_time[0] >= 16) && (vec.bot_race_times[0] <= 19)) { // win d3
+            user.user_wonD3();
+        } else {
+            cout << "error" << endl;
+        }
     }
 }
