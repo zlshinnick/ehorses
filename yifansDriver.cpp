@@ -32,5 +32,7 @@ u1.output_max();
     Racetrack r1;
 
     r1.get_winner(c1, u1);
+
+    u1.output_wins();
 }
 

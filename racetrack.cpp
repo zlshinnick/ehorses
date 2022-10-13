@@ -27,7 +27,7 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
     //calling function to randomise race_time attribute
     // users_racer.set_rand_race_time();  
 
-    user_time = name.set_rand_race_time();
+    name.set_rand_race_time();
     bool first = true;
 
     for (int i = 0; i < 7; i++) {
@@ -80,7 +80,7 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
         cout << " with a speed of " << fastest_time << " km/h!" << endl;
     }
 
-    if (fastest_time == user_time) {
-        name.increment_wins();
+    if (fastest_time == name.get_race_t()) {
+        name.num_wins_test += 1;
     }
 }

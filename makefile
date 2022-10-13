@@ -3,8 +3,8 @@ run_will:
 	./run 
 
 run_yifan:
-	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp userhorse.cpp yifansDriver.cpp -o runYifan
-	./runYifan
+	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp userhorse.cpp yifansDriver.cpp -o runy
+	./runy
 
 run_zach:
 	g++ main.cpp user.cpp userhorse.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp market.cpp inventory.cpp bred_horse.cpp -o run_zachs

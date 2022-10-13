@@ -14,6 +14,7 @@ userhorse::userhorse() {
   this->points = 0;
   this->num_wins = 0;
   this->generation = 1;
+  int num_wins_test = 0;
 }
 
 //setting userhorse variables (esstenitally a constructor)
@@ -54,11 +55,15 @@ void userhorse::output_max() {cout << max_speed << endl;}
 
 void userhorse::output_min() {cout << min_speed << endl;}
 
+void userhorse::output_wins() {cout << num_wins_test << endl;}
+
 //string userhorse:: get_gender() {return gender;}
 
 
 //increments number of wins (call when race is won)
 void userhorse::increment_wins() {this->num_wins++;}
+
+int userhorse::increment_wins_test() {return num_wins_test++;}
 
 //sets random race time in max_speed to min_speed interval (call before each race)
 void userhorse::set_rand_race_time() {
