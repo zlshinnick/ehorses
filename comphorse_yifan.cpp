@@ -70,8 +70,9 @@ void comphorse::get_bot_info() {
 
     for (int i = 0; i < 7; i++) {
 
-        cout << bot_names[i] << ": " << bot_race_times[i] << endl;
+        cout << bot_names[i] << ": " << bot_race_times[i] << " km/h" << endl;
     }
+
 
 }
 

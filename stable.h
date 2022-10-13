@@ -31,6 +31,8 @@ class stable{
         void initialize();
         void stable_menu();
         void change_name_menu();
+
+        userhorse* get_horse_for_race();
         //breeding functions 
         void set_parents();
       

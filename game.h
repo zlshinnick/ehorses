@@ -6,6 +6,7 @@
 #include "item.h"
 #include <fstream>
 #include "market.h"
+#include "racetrack.h"
 
 class game{
     private:
@@ -18,6 +19,7 @@ class game{
         user user; 
         shop shop;
         string file_name;
+        Racetrack racetrack;
 
     public:
         game();
@@ -36,6 +38,8 @@ class game{
         void welcome();
         void inventory_menu();
         void user_stats_menu();
+        
+        void racetrack_menu();
         //accecssors
         int get_playing();
         //modifys

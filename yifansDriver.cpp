@@ -26,9 +26,9 @@ int main () {
 
     c1.get_bot_info();
 
-u1.output_name();
-u1.output_min();
-u1.output_max();
+    u1.output_name();
+    u1.output_min();
+    u1.output_max();
 
     Racetrack r1;
 

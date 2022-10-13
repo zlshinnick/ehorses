@@ -282,3 +282,33 @@ void stable::change_name_menu(){
     }
     return;
 }
+
+userhorse* stable::get_horse_for_race(){
+    print_stable();
+
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"Which Horse Would You Like To Select?\n\n";
+
+    this_thread::sleep_for(chrono::seconds(1));
+
+    for(int i = 0; i<num_of_horses;i++){
+        cout<<i<<": "<<array[i].get_name()<<endl;
+    }
+
+    int index;
+    
+    cout << "Enter Choice: ";
+    cin >> index;
+
+    while(index>=num_of_horses||index<0){
+        cout << "Invalid Input" << endl << endl;
+        this_thread::sleep_for(chrono::seconds(2));
+        cout<<"Enter Choice: ";
+        cin>>index;
+
+    }
+
+    userhorse* horse_for_race;
+
+    return horse_for_race;
+}

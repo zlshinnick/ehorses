@@ -57,7 +57,8 @@ class user{
         void user_wonD1();
         void user_wonD2();
         void user_wonD3();
+    
 
 
-
+        userhorse* get_horse_for_race();
 };

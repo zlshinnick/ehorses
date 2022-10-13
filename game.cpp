@@ -84,6 +84,7 @@ void game::travel_menu() {
             user.call_stable_menu();
             break;
         case 2:
+            racetrack_menu();
              break;
         case 3:
             market_menu();
@@ -183,6 +184,7 @@ void game::main_menu() {
             break;
         case 1:
             inventory_menu();
+        case 2:
             break;
         case 3:
             user_stats_menu();
@@ -299,4 +301,38 @@ void game::user_stats_menu(){
         cout<<"\n\nPress 9 to Return To Main Menu: ";
         cin>>leave_stats;
     }
+}
+
+void game::racetrack_menu(){
+    cout<<"** Welcome To The Racetrack **\n\n";
+
+    //get division to pass into functions
+    int division;
+
+bool input = false;
+
+while (input == false) {
+    cout << "Choose Your Race Division: " << endl;
+    cin >> division;
+    if (division != 1 && division != 2 && division != 3) {
+            cout << "Invalid\n\n";
+    } else {
+
+        input = true;
+    }
+}
+    userhorse* ptr = user.get_horse_for_race();
+    cout<<ptr->get_name()<<"HELLLLLOOOOOOOO";
+
+    srand(time(NULL));
+    comphorse c1;
+    c1.set_bot_names(division);
+    c1.set_bot_race_times(division);
+    
+    racetrack.get_winner(c1, ptr, user);
+
+    this_thread::sleep_for(chrono::seconds(10));
+    
+    
+    return;
 }

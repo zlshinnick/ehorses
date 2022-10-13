@@ -5,9 +5,10 @@
 #include <ctime>
 #include <string>
 #include "stable.h"
+#include "user.h"
 #pragma once
 
-class Racetrack : public comphorse, public userhorse, public user {
+class Racetrack {
     public:
     Racetrack();
     double fastest_time;
@@ -18,7 +19,8 @@ class Racetrack : public comphorse, public userhorse, public user {
     vector<double> racetrack_times;
     vector<string> racetrack_names;
 
-    // userhorse get_users_horse(stable user_stable);  //for zach
     
-    void get_winner(comphorse vec, userhorse name, user user);
+    void get_winner(comphorse vec, userhorse* name, user user);
+
+    void clear_racetrack();
 };

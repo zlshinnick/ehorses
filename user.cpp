@@ -152,3 +152,7 @@ void user::user_wonD3() {
     prize_money += 1500;
     exp+=1500;
 }
+
+userhorse* user::get_horse_for_race(){
+    return stable.get_horse_for_race();
+}
