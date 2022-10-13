@@ -83,8 +83,6 @@ void Racetrack::get_winner(comphorse vec, userhorse name, user user) {
      cout << name.get_race_t() << endl;
 
     if (fastest_time == name.get_race_t()) {
-        name.num_wins_test += 1;
-
         cout << "True" << endl;
         user.user_won();
     }
