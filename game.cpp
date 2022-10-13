@@ -49,7 +49,7 @@ void game::initialize_game() {
     
     m1.set_userhorse("Rookie",12.0,15.0);
     m1.set_price(100);
-    m2.set_userhorse("Intermediate",12.0,14.74);
+    m2.set_userhorse("Intermediate",12.0,14.75);
     m2.set_price(300);
     m3.set_userhorse("Superstar",11.75,14.5);
     m3.set_price(600);
@@ -82,6 +82,7 @@ void game::travel_menu() {
   switch (choice) {
         case 1:
             user.call_stable_menu();
+            break;
         case 2:
              break;
         case 3:
@@ -89,37 +90,68 @@ void game::travel_menu() {
              break;
         case 4:
             shop_menu();
-             default:
             break;
         case 5: 
             breed_menu();
             break;
         case 9:
-             main_menu();
+            return;
   }
+
 }
 
 void game::shop_menu(){
+    int return_shop;
     shop.print_store();
     item new_item = shop.get_item();
     if(new_item.get_name()!=""){
 
     user.purchase_item(new_item);
 }
+    cout<<"Press 9 to Return To Main Menu: ";
+    cin>>return_shop;
+
+    if(return_shop==9){
+        return;
+    }
+
+    while(return_shop!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>return_shop;
+    }
 }
 
 void game::market_menu(){
+    
+    int return_market;
     market.print_market();
     userhorse new_horse = market.get_horse();
   
     if(new_horse.get_name()!=""){
-
     user.purchase_horse(new_horse);
+
 }
+    cout<<"Press 9 to Return To Main Menu: ";
+    cin>>return_market;
+
+    if(return_market==9){
+        return;
+    }
+
+    while(return_market!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>return_market;
+    }
 }
 
 
 void game::main_menu() {
+    bool playing = true;
+    while (playing == true){
     system("Clear");
     cout << "************ MAIN MENU ******" << endl;
     cout << "0: Travel" << endl;
@@ -132,36 +164,28 @@ void game::main_menu() {
     cout << endl;
     cout << "Choice:";
 
-    cin >> choice;
+    int user_choice;
+    cin >> user_choice;
 
-    switch (choice) {
+    while(user_choice<0 &&user_choice>9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout << "Choice:";
+
+        int user_choice;
+        cin >> user_choice;
+
+    }
+
+    switch (user_choice) {
         case 0:
             travel_menu();
-
+            break;
         case 1:
-            user.print_inventory();
-
-            cout << endl;
-            cout << "9: Return to Main Menu" << endl;
-            cout<<endl;
-            
-            cout << "Choice:";
-            cin >> choice;
-            if (choice == 9) {
-                main_menu();
-            }
+            inventory_menu();
             break;
         case 3:
-            user.print_user_stats();
-            cout << "9: Return to Main Menu" << endl;
-
-            cout << endl;
-            cout << "Choice:";
-            cin >> choice;
-            if (choice == 9) {
-                main_menu();
-            }
-
+            user_stats_menu();
             break;
         case 4:
             save_game();
@@ -171,9 +195,8 @@ void game::main_menu() {
         case 9:
             playing = false;
             break;
-        default:
-            break;
     }
+}
 }
 
 void game::save_game() {
@@ -188,7 +211,21 @@ void game::save_game() {
 void game::load_game() {}
 
 void game::breed_menu(){
+    int return_breed;
     user.breeding();
+
+    cout<<"\n\nPress 9--- to Return To Main Menu: ";
+    cin>>return_breed;
+    if(return_breed==9){
+        return;
+    }
+
+    while(return_breed!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>return_breed;
+    }
 }
 
 void game::welcome(){
@@ -224,4 +261,42 @@ void game::welcome(){
     cout<<"|________/      |__/  |__/ |______/ |__/  |__/ |______/ |________/ |______/ |__/"<<endl;
     this_thread::sleep_for(chrono::seconds(2));
     system("Clear");
+}
+
+void game::inventory_menu(){
+    user.print_inventory();
+    int leave;
+
+    cout<<"\n\nPress 9 to Return To Main Menu: ";
+    cin>>leave;
+    if(leave==9){
+        return;
+    }
+
+    while(leave!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>leave;
+    }
+}
+
+void game::user_stats_menu(){
+    
+    int leave_stats;
+    
+    user.print_user_stats();
+
+    cout<<"\n\nPress 9 to Return To Main Menu: ";
+    cin>>leave_stats;
+    if(leave_stats==9){
+        return;
+    }
+
+    while(leave_stats!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>leave_stats;
+    }
 }

@@ -48,6 +48,12 @@ int userhorse::get_wins() {return num_wins;}
 
 int userhorse::get_generation() {return generation;}
 
+void userhorse::output_name() {cout << name << endl;}
+
+void userhorse::output_max() {cout << max_speed << endl;}
+
+void userhorse::output_min() {cout << min_speed << endl;}
+
 //string userhorse:: get_gender() {return gender;}
 
 
@@ -76,7 +82,16 @@ void userhorse::set_rand_race_time() {
 
 //for when user horse levels up
 void userhorse::level_up() {
-  this->max_speed = this->max_speed - 1;
-  this->min_speed = this->min_speed - 1;
-  this->level = this->level + 1;
+  if (level < 3) {
+    this->max_speed = max_speed - 1;
+    this->min_speed = min_speed - 1;
+    this->level = level + 1;
+    return;
+  } else {
+    return;
+  }
+}
+
+void userhorse::add_boost(double t) {
+    this->race_time = race_time - t;
 }

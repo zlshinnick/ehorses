@@ -213,13 +213,18 @@ void stable::stable_menu() {
     {
     case 1:
         print_stable();
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"Press 9 to Return To Main Menu: ";
+        cin>>choice;
         break;
     case 2:
         change_name_menu();
+    case 9:
+        return;
     default:
         break;
     }
-
+return;
 }
 
 void stable::breeding_ground_ascii(){

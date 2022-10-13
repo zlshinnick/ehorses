@@ -16,8 +16,8 @@ int main () {
     comphorse c1;
     userhorse u1;
 
-    u1.set_min(10);
-    u1.set_max(11);
+    u1.set_min(20);
+    u1.set_max(22);
     u1.set_name("yifan");
 
     c1.set_bot_names(3);
@@ -25,8 +25,12 @@ int main () {
 
     c1.get_bot_info();
 
+u1.output_name();
+u1.output_min();
+u1.output_max();
+
     Racetrack r1;
 
-    r1.get_winner(c1);
+    r1.get_winner(c1, u1);
 }
 
