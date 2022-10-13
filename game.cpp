@@ -26,7 +26,7 @@ void game::initialize_game() {
     cout << "Enter Name For Your First Horse: ";
     cin >> horse_name; 
     userhorse h1 = userhorse();
-    h1.set_userhorse(horse_name,30.5,30.5);
+    h1.set_userhorse(horse_name,50.5,51.7);
     user.add_horse_to_stable(h1);
     this_thread::sleep_for(chrono::seconds(2));
     cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
@@ -314,25 +314,21 @@ bool input = false;
 while (input == false) {
     cout << "Choose Your Race Division: " << endl;
     cin >> division;
+
     if (division != 1 && division != 2 && division != 3) {
             cout << "Invalid\n\n";
     } else {
-
         input = true;
     }
 }
     userhorse* ptr = user.get_horse_for_race();
-    
 
     srand(time(NULL));
     comphorse c1;
     c1.set_bot_names(division);
     c1.set_bot_race_times(division);
-    
     racetrack.get_winner(c1, ptr, user);
+    this_thread::sleep_for(chrono::seconds(5));
 
-    this_thread::sleep_for(chrono::seconds(10));
-    
-    
     return;
 }

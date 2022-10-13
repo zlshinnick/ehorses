@@ -48,16 +48,13 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, user user) {
         if (racetrack_times[i] == fastest_time) {
 
             fastest_horse.push_back(racetrack_names[i]);
-            racetrack_times.erase(racetrack_times.begin() + i);
-            racetrack_names.erase(racetrack_names.begin() + i);
+
 
         }
     }
-    
-   /* for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < racetrack_times.size(); i++) {
         cout << racetrack_names[i] << ": " << racetrack_times[i] << "km/h" << endl;
-    }*/
-
+    }
     if (fastest_horse.size() == 1) {
 
         cout << fastest_horse[0] << " is the winner with a speed of " << fastest_time << " km/h!" << endl;
@@ -99,5 +96,12 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, user user) {
             cout << "error" << endl;
         }
     }
+    clear_racetrack();
+
 }
 
+void Racetrack::clear_racetrack(){
+    fastest_horse.clear();
+    racetrack_times.clear();
+    racetrack_names.clear();
+}

@@ -22,4 +22,5 @@ class Racetrack {
     
     void get_winner(comphorse vec, userhorse* name, user user);
 
+    void clear_racetrack();
 };

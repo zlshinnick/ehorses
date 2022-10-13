@@ -287,8 +287,8 @@ userhorse* stable::get_horse_for_race(){
     print_stable();
 
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"Which Horse Would You Like To Select?\n\n";
-
+    cout<<"Which Horse Would You Like To Select?";
+    
     this_thread::sleep_for(chrono::seconds(1));
 
     for(int i = 0; i<num_of_horses;i++){
@@ -308,7 +308,7 @@ userhorse* stable::get_horse_for_race(){
 
     }
 
-    userhorse* horse_for_race;
-
+    userhorse* horse_for_race =&array[index];
+    
     return horse_for_race;
 }
