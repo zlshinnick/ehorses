@@ -27,7 +27,7 @@ vector<double> comphorse::set_bot_race_times (int div) {
             double rand_n = (rand()%300)/10;
             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 8;
+            this -> race_time = rand_n + 8; // speeds between 8 and 11  
 
             bot_race_times.push_back(race_time);
         }
@@ -39,7 +39,7 @@ vector<double> comphorse::set_bot_race_times (int div) {
             double rand_n = (rand()%300)/10;
             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 10;
+            this -> race_time = rand_n + 12; // speeds between 12 and 15
 
             bot_race_times.push_back(race_time);
         }
@@ -51,7 +51,7 @@ vector<double> comphorse::set_bot_race_times (int div) {
             double rand_n = (rand()%300)/10;
             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 12;
+            this -> race_time = rand_n + 16; // speeds between 16 and 19
 
             bot_race_times.push_back(race_time);
         }
