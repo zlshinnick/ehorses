@@ -11,6 +11,7 @@ class Racetrack : public comphorse, public userhorse {
     Racetrack();
     double fastest_time;
     vector<string> fastest_horse;
+    double user_time;
 
     string winner;
 
