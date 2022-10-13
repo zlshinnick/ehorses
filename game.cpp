@@ -26,7 +26,7 @@ void game::initialize_game() {
     cout << "Enter Name For Your First Horse: ";
     cin >> horse_name; 
     userhorse h1 = userhorse();
-    h1.set_userhorse(horse_name,10.5,13.5);
+    h1.set_userhorse(horse_name,30.5,30.5);
     user.add_horse_to_stable(h1);
     this_thread::sleep_for(chrono::seconds(2));
     cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
@@ -322,7 +322,7 @@ while (input == false) {
     }
 }
     userhorse* ptr = user.get_horse_for_race();
-    cout<<ptr->get_name()<<"HELLLLLOOOOOOOO";
+    
 
     srand(time(NULL));
     comphorse c1;
