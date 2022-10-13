@@ -43,7 +43,8 @@ void user::print_user_stats(){
     cout << "* Bank Account: "<<get_bank_account()<<endl;
     cout << "* Level: "<<get_level()<<endl;
     cout << "* Horses In Stable: "<<stable.get_current_num_horses()<<endl;
-    cout <<"****************************"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout <<"\n****************************\n"<<endl;
     cout << "* Exp: "<<get_exp()<<endl;
     cout << "* Exp For Next Level: "<<get_exp_next_level()<<endl;    
     cout << "* Total Wins: "<<get_wins()<<endl;
@@ -111,7 +112,7 @@ void user::purchase_horse(userhorse horse){
         this_thread::sleep_for(chrono::seconds(1));
         cout<<horse.get_name()<<" Is Now In Your Stables"<<endl;
         this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\nTravel To Your Stables To Name Your New Horse";
+        cout<<"\nTravel To Your Stables To Name Your New Horse\n\n";
         this_thread::sleep_for(chrono::seconds(1));
 
     }else {
@@ -125,7 +126,15 @@ void user::breeding(){
 }
 
 void user::call_stable_menu(){
+    cout<<"hello"<<endl;
     stable.stable_menu();
+    
     return;
 }
 
+void user::user_won(){
+    bank_account += 500;
+    user_wins++;
+    prize_money += 500;
+    exp+=500;
+}

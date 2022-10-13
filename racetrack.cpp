@@ -20,7 +20,7 @@ Racetrack::Racetrack() {}
 //     return stable_accessor[user_horse_choice-1];
 // }
 
-void Racetrack::get_winner(comphorse vec, userhorse name) {
+void Racetrack::get_winner(comphorse vec, userhorse name, user user) {
 
     //calling function for user to select the horse they want to race
     // userhorse users_racer = get_users_horse();
@@ -86,5 +86,6 @@ void Racetrack::get_winner(comphorse vec, userhorse name) {
         name.num_wins_test += 1;
 
         cout << "True" << endl;
+        user.user_won();
     }
 }

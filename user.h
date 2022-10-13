@@ -54,6 +54,9 @@ class user{
         //market functions
         void purchase_horse(userhorse horse);
 
+        // racing win function
+        void user_won();
+
 
 
 };
