@@ -93,7 +93,7 @@ void stable::set_parents(){
     cout<<"Enter Choice: ";
     cin>>index_first;
 
-    while(index_first>num_of_horses||index_first<0){
+    while(index_first>=num_of_horses||index_first<0){
         cout<<"Invalid Input"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
         cout<<"Enter Choice: ";
@@ -107,17 +107,18 @@ void stable::set_parents(){
 
     cout<<"Select Parent 2 For Breeding"<<endl<<endl;
 
-    for(int i = 0; i<num_of_horses;i++){
-        int tracker =0;
-        while (tracker!=index_first)
-        cout<<i<<array[i].get_name()<<endl;
-        tracker++;
+
+    for(int i =0;i<num_of_horses;i++){
+        if(i!=index_first){
+            cout<<i<<array[i].get_name()<<endl;
+        }
     }
+
 
     cout<<"\n\nEnter Choice: ";
     cin>>index_second;
 
-        while(index_second>num_of_horses||index_second<0){
+    while(index_second>=num_of_horses||index_second<0||index_first==index_second){ 
         cout<<"Invalid Input"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
         cout<<"Enter Choice: ";
@@ -194,7 +195,7 @@ void stable::stable_menu() {
 
     int choice;
 
-    cout<<"** \nWhat Would You Like To Do? **\n"<<endl;
+    cout<<"\n** What Would You Like To Do? **\n"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"1. View Your Horses "<<endl;
     this_thread::sleep_for(chrono::seconds(1));
@@ -214,11 +215,14 @@ void stable::stable_menu() {
     case 1:
         print_stable();
         this_thread::sleep_for(chrono::seconds(1));
-        cout<<"Press 9 to Return To Main Menu: ";
+        cout<<"\nPress 9 to Return To Main Menu: ";
         cin>>choice;
         break;
     case 2:
         change_name_menu();
+        cout<<"\nPress 9 to Return To Main Menu: ";
+        cin>>choice;
+        break;
     case 9:
         return;
     default:
@@ -259,22 +263,22 @@ void stable::change_name_menu(){
 
     while(choice!=9){
 
-    if(choice>=0&&choice<num_of_horses){
-        string name;
-        cout<<"What Would You Like To Change The Horses Name To: ";
-        cin>>name;
-        array[choice].set_name(name);
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nThe Horses Name is Now"<<array[choice].get_name();
-        this_thread::sleep_for(chrono::seconds(2));
+        if(choice>=0&&choice<num_of_horses){
+            string name;
+            cout<<"What Would You Like To Change The Horses Name To: ";
+            cin>>name;
+            array[choice].set_name(name);
+            this_thread::sleep_for(chrono::seconds(1));
+            cout<<"\n\nThe Horses Name is Now"<<array[choice].get_name();
+            this_thread::sleep_for(chrono::seconds(2));
 
-        break;
-    }else{
-        cout<<"** Invalid Input **";
-        this_thread::sleep_for(chrono::seconds(2));
-        cout<<"\n\nSelect Horse:";
-        cin>>choice;
+            return;
+        }else{
+            cout<<"** Invalid Input **";
+            this_thread::sleep_for(chrono::seconds(2));
+            cout<<"\n\nSelect Horse:";
+            cin>>choice;
+        }
     }
-}
-return;
+    return;
 }

@@ -167,7 +167,7 @@ void game::main_menu() {
     int user_choice;
     cin >> user_choice;
 
-    while(user_choice<0 &&user_choice>9){
+    while(user_choice<0 && user_choice>9){
         cout<<"Invalid Input!";
         this_thread::sleep_for(chrono::seconds(1));
         cout << "Choice:";

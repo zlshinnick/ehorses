@@ -21,7 +21,7 @@ void inventory::print_inventory(){
         cout<<"Inventory Is Empty"<<endl;
         return;
     }else{
-    cout<<"this is an error";
+        
     cout<<"**Inventory** \n \n";
     for(int i =0; i<num_of_items;i++){
         cout<<"Name: "<<user_inventory[i].get_name()<<endl<<endl;
