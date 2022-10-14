@@ -3,7 +3,7 @@
 #include <chrono>
 #include <thread>
 
-user::user() {
+User::User() {
     name = "";
     bank_account = 0;
     user_wins = 0;
@@ -12,7 +12,7 @@ user::user() {
     prize_money=0.0;
 }
 
-void user::initialize(string user_name){
+void User::initialize(string user_name){
     name = user_name;
     bank_account = 1000;
     user_wins = 0;
@@ -27,16 +27,16 @@ void user::initialize(string user_name){
     prize_money=0.0;
 }
 
-string user::get_name() { return name; }
-double user::get_bank_account() { return bank_account; }
-double user::get_prize_money() { return prize_money; }
-int user::get_wins() { return user_wins; }
-int user::get_exp() { return exp;}
-int user::get_exp_next_level(){return exp_next_level;}
-int user::get_level(){return level;}
+string User::get_name() { return name; }
+double User::get_bank_account() { return bank_account; }
+double User::get_prize_money() { return prize_money; }
+int User::get_wins() { return user_wins; }
+int User::get_exp() { return exp;}
+int User::get_exp_next_level(){return exp_next_level;}
+int User::get_level(){return level;}
 
 
-void user::print_user_stats(){
+void User::print_user_stats(){
     cout<< endl;
     cout << "*** Player Details ***"<<endl;
     cout << "* Name: "<<name<<endl;
@@ -51,15 +51,18 @@ void user::print_user_stats(){
     cout << "* Prize Money: "<<get_prize_money()<<endl;
 }
 
-void user::level_up() {
+void User::level_up() {
     if(exp >= exp_next_level){
         level++;
         exp = exp-exp_next_level;
-        exp_next_level =pow(level,2)*10;
+        exp_next_level =static_cast <int> 
+                         ((50 * pow(level, 3)) - 
+                         (150 * pow(level, 2)) + 
+                         (400 * level)) / 3;
     }
 }
 
-string user::get_as_string(){
+string User::get_as_string(){
   return name + " "
     + to_string(bank_account) + " "
     + to_string(user_wins) + " "
@@ -68,19 +71,19 @@ string user::get_as_string(){
     + to_string(level) + " ";
 }
 
-void user::add_horse_to_stable(userhorse new_horse){
+void User::add_horse_to_stable(userhorse new_horse){
     stable.add_horse(new_horse);
 }
 
-int user::get_num_horses(){
+int User::get_num_horses(){
     return stable.get_current_num_horses();
 }
 
-void user:: print_stables(){
+void User:: print_stables(){
     stable.print_stable();
 }
 
-void user::purchase_item(item item){
+void User::purchase_item(item item){
     int price = item.get_price();
 
     if (bank_account>=price){
@@ -93,14 +96,14 @@ void user::purchase_item(item item){
     }
 }
 
-void user::print_inventory(){
+void User::print_inventory(){
    //cout<<"Being Called";
     if(inventory.get_num_items()!=0){
     inventory.print_inventory();
     }
 }
 
-void user::purchase_horse(userhorse horse){
+void User::purchase_horse(userhorse horse){
     int price = horse.get_price();
 
         if (bank_account>=price){
@@ -120,39 +123,108 @@ void user::purchase_horse(userhorse horse){
     }
 }
 
-void user::breeding(){
+void User::breeding(){
     stable.breed();
     return;
 }
 
-void user::call_stable_menu(){
+void User::call_stable_menu(){
     cout<<"hello"<<endl;
     stable.stable_menu();
     
     return;
 }
 
-void user::user_wonD1(){
+void User::user_wonD1(){
     bank_account += 500;
     user_wins++;
     prize_money += 500;
-    exp+=500;
+    exp+=100;
 }
 
-void user::user_wonD2() {
+void User::user_wonD2() {
     bank_account += 1000;
     user_wins++;
     prize_money += 1000;
-    exp+=1000;
+    exp+=250;
 }
 
-void user::user_wonD3() {
+void User::user_wonD3() {
     bank_account += 1500;
     user_wins++;
     prize_money += 1500;
-    exp+=1500;
+    exp+=500;
 }
 
-userhorse* user::get_horse_for_race(){
+userhorse* User::get_horse_for_race(){
     return stable.get_horse_for_race();
+}
+
+
+void User::level_up_menu(){
+    system("Clear");
+    cout<<"** Level Up Menu **";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\n\nCurrent level: " << level;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\nCurrent EXP: " << exp;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\nRequired EXP to reach level " << level+1 << ": " << exp_next_level;
+    this_thread::sleep_for(chrono::seconds(1));
+
+    int level_choice;
+    cout<<"\n\nDo You Want To Level Up?";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n1. Yes"<<endl;
+    cout<<"2. No"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\nChoice: ";
+    cin>>level_choice;
+
+    while(level_choice!=1 && level_choice!=2  ){
+        cout<<"Invalid YESSSIRRRR Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nChoice: ";
+        cin>>level_choice;
+    }
+
+    switch (level_choice)
+    {
+    case 1:
+        if(exp>=exp_next_level){
+            level_up();
+            cout<<"\nLevel Up Succesful";
+            this_thread::sleep_for(chrono::seconds(1));
+            
+            } else {
+                cout<<"\nNot Enough EXP To Level Up!";
+               
+                this_thread::sleep_for(chrono::seconds(1));
+            }
+            
+            break;
+        
+        break;
+    
+    case 2:
+        return;
+    }
+
+    int return_from;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\nPress 9 to Return To Main Menu: ";
+    cin>>return_from;
+
+    if(return_from==9){
+        return;
+    }
+
+    while(return_from!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\nPress 9 to Return To Main Menu: ";
+        cin>>return_from;
+    }
+
+    return;
 }

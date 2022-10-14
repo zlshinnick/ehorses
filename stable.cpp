@@ -266,7 +266,8 @@ void stable::change_name_menu(){
         if(choice>=0&&choice<num_of_horses){
             string name;
             cout<<"What Would You Like To Change The Horses Name To: ";
-            cin>>name;
+            cin.ignore();
+            getline (cin,name);
             array[choice].set_name(name);
             this_thread::sleep_for(chrono::seconds(1));
             cout<<"\n\nThe Horses Name is Now"<<array[choice].get_name();
@@ -287,7 +288,7 @@ userhorse* stable::get_horse_for_race(){
     print_stable();
 
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"Which Horse Would You Like To Select?";
+    cout<<"Which Horse Would You Like To Select\n\n";
     
     this_thread::sleep_for(chrono::seconds(1));
 
@@ -296,8 +297,9 @@ userhorse* stable::get_horse_for_race(){
     }
 
     int index;
-    
-    cout << "Enter Choice: ";
+
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\nEnter Choice: ";
     cin >> index;
 
     while(index>=num_of_horses||index<0){

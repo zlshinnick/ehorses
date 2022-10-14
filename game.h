@@ -16,7 +16,7 @@ class game{
         bool playing;
 
         market market;
-        user user; 
+        User user; 
         shop shop;
         string file_name;
         Racetrack racetrack;
@@ -38,6 +38,7 @@ class game{
         void welcome();
         void inventory_menu();
         void user_stats_menu();
+        void get_level_up_menu();
         
         void racetrack_menu();
         //accecssors

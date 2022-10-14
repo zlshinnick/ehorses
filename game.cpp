@@ -6,7 +6,7 @@
 using namespace std;
 
 game::game() {
-    choice = 0;
+    //choice = 0;
     playing = true;
     file_name = "gamesave.txt";
 }
@@ -24,7 +24,9 @@ void game::initialize_game() {
     //setting up stables with first horse
     string horse_name;
     cout << "Enter Name For Your First Horse: ";
-    cin >> horse_name; 
+    cin.ignore();
+    getline (cin,horse_name);
+
     userhorse h1 = userhorse();
     h1.set_userhorse(horse_name,50.5,51.7);
     user.add_horse_to_stable(h1);
@@ -74,12 +76,23 @@ void game::travel_menu() {
     cout << "5: Breeding Ground"<<endl;
     cout << "9: Return to Main Menu" << endl;
 
-    cout << endl;
-    cout << "Choice:";
+    int user_choice_travel;
+    bool input = false;
 
-   cin >> choice;
+    while (input == false) {
+        cout <<"Choice:" ;
+        cin >> user_choice_travel;
 
-  switch (choice) {
+        if (user_choice_travel != 1 && user_choice_travel != 2 && user_choice_travel != 3 && user_choice_travel != 4 && user_choice_travel != 5 && user_choice_travel != 6 && user_choice_travel != 9) {
+            cout << "Invalid!\n\n";
+            this_thread::sleep_for(chrono::seconds(1));
+            
+        } else {
+            input = true;
+        }
+}
+
+    switch (user_choice_travel) {
         case 1:
             user.call_stable_menu();
             break;
@@ -155,44 +168,49 @@ void game::main_menu() {
     while (playing == true){
     system("Clear");
     cout << "************ MAIN MENU ******" << endl;
-    cout << "0: Travel" << endl;
-    cout << "1: Inventory" << endl;
-    cout << "2: Level Up" << endl;
-    cout << "3: User Stats" << endl;
-    cout << "4: Save Game" << endl;
-    cout << "5: Load Game" << endl;
+    cout << "1: Travel" << endl;
+    cout << "2: Inventory" << endl;
+    cout << "3: Level Up" << endl;
+    cout << "4: User Stats" << endl;
+    cout << "5: Save Game" << endl;
+    cout << "6: Load Game" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
-    cout << "Choice:";
+    
 
     int user_choice;
-    cin >> user_choice;
 
-    while(user_choice<0 && user_choice>9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout << "Choice:";
+    bool input = false;
 
-        int user_choice;
+    while (input == false) {
+        cout <<"Choice:" ;
         cin >> user_choice;
 
-    }
-
+        if (user_choice != 1 && user_choice != 2 && user_choice != 3 && user_choice != 4 && user_choice != 5 && user_choice != 6 && user_choice != 9) {
+            cout << "Invalid!\n\n";
+            this_thread::sleep_for(chrono::seconds(3));
+            break;
+        } else {
+            input = true;
+        }
+}
     switch (user_choice) {
-        case 0:
+        case 1:
             travel_menu();
             break;
-        case 1:
-            inventory_menu();
         case 2:
+            inventory_menu();
             break;
         case 3:
-            user_stats_menu();
+            get_level_up_menu();
             break;
         case 4:
-            save_game();
+            user_stats_menu();
             break;
         case 5:
+            save_game();
+            break;
+        case 6:
             break;
         case 9:
             playing = false;
@@ -304,6 +322,8 @@ void game::user_stats_menu(){
 }
 
 void game::racetrack_menu(){
+    system("Clear");
+    
     cout<<"** Welcome To The Racetrack **\n\n";
 
     //get division to pass into functions
@@ -312,7 +332,30 @@ void game::racetrack_menu(){
 bool input = false;
 
 while (input == false) {
-    cout << "Choose Your Race Division: " << endl;
+    cout<<"\n** Choose The Division You Wish To Race In **";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<< "\n\n* Divison 1: Easy \n Division 2: Medium \n Division 3: Hard";
+
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n\n* Divison 1 *";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\nPrize Money = 500 for win";
+    cout<<"\nExp = 100 for win";
+    
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n\n* Divison 2 *";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\nPrize Money = 1000 for win";
+    cout<<"\nExp = 250 for win";
+
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n\n* Divison 3 *";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\nPrize Money = 1500 for win";
+    cout<<"\nExp = 500 for win";
+
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\n\nChoose Your Race Division: " << endl;
     cin >> division;
 
     if (division != 1 && division != 2 && division != 3) {
@@ -327,8 +370,15 @@ while (input == false) {
     comphorse c1;
     c1.set_bot_names(division);
     c1.set_bot_race_times(division);
-    racetrack.get_winner(c1, ptr, user);
+
+    User* user_ptr = &user;
+
+    racetrack.get_winner(c1, ptr, user_ptr);
     this_thread::sleep_for(chrono::seconds(5));
 
     return;
+}
+
+void game:: get_level_up_menu() {
+    user.level_up_menu();
 }

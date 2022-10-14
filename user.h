@@ -6,7 +6,7 @@
 #include <string>
 using namespace std;
 
-class user{
+class User{
     private:
         string name;
         double bank_account;
@@ -21,7 +21,7 @@ class user{
 
     public:
         //constructors
-        user();
+        User();
 
         //functions
         void initialize(string user_name);
@@ -29,6 +29,7 @@ class user{
         string get_as_string();
         void initialize_stable();
         void print_user_stats();
+        void level_up_menu();
     
         //accessors
         string get_name();

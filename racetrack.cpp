@@ -20,7 +20,7 @@ Racetrack::Racetrack() {}
 //     return stable_accessor[user_horse_choice-1];
 // }
 
-void Racetrack::get_winner(comphorse vec, userhorse* name, user user) {
+void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
 
     //calling function for user to select the horse they want to race
     // userhorse users_racer = get_users_horse();
@@ -84,13 +84,13 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, user user) {
     if (fastest_time == name->get_race_t()) {
 
         if ((vec.bot_race_times[0] >= 8) && (vec.bot_race_times[0] <= 11)) { // win d1
-            user.user_wonD1();
+            user->user_wonD1();
             name->win_D1();
         } else if ((vec.bot_race_times[0] >= 12) && (vec.bot_race_times[0] <= 15)) { // win d2
-            user.user_wonD2();
+            user->user_wonD2();
             name->win_D2();
         } else if ((vec.bot_race_times[0] >= 16) && (vec.bot_race_times[0] <= 19)) { // win d3
-            user.user_wonD3();
+            user->user_wonD3();
             name->win_D3();
         } else {
             cout << "error" << endl;
