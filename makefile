@@ -7,7 +7,7 @@ run_yifan:
 	./runy
 
 run_zach:
-	g++ main.cpp user.cpp userhorse.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp market.cpp inventory.cpp bred_horse.cpp racetrack.cpp comphorse_yifan.cpp -o run_zachs
+	g++ main.cpp user.cpp userhorse.cpp game.cpp horse.cpp stable.h stable.cpp shop.h shop.cpp item.cpp market.h market.cpp inventory.h inventory.cpp bred_horse.cpp racetrack.cpp comphorse_yifan.cpp -o run_zachs
 	./run_zachs
 
 run_race:

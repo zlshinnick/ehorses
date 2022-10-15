@@ -6,6 +6,7 @@
 #include "stable.h"
 #include <iostream>
 #include <cmath>
+#include "raceGraphics.h"
 #include <ctime>
 
 using namespace std;
@@ -15,7 +16,7 @@ int main () {
     srand(time(NULL));
     comphorse c1;
     userhorse u1;
-    user a1;
+    graphics g1;
 
     u1.set_min(20);
     u1.set_max(22);
@@ -32,7 +33,7 @@ int main () {
 
     Racetrack r1;
 
-    r1.get_winner(c1, u1, user);
+    r1.get_winner(c1, u1);
 
     u1.output_wins();
 }

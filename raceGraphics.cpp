@@ -4,9 +4,9 @@
 #include "racetrack.h"
 #include "user.h"
 #include "horse.h"
+#include "raceGraphics.h"
 
- int main ()
-{
+void graphics::draw_horses (Racetrack track) {
     sf::RenderWindow window(sf::VideoMode(1800, 440), "My Program");
     window.setFramerateLimit(60);
 
@@ -74,14 +74,14 @@
     horse8.setPosition(Position8);
     horse8.setScale(0.5, 0.5);
  
-    float xVelocity1 = racetrack_times[0];
-    float xVelocity2 = 6;
-    float xVelocity3 = 5; 
-    float xVelocity4 = 7; 
-    float xVelocity5 = 5.5; 
-    float xVelocity6 = 6.6; 
-    float xVelocity7 = 5.3; 
-    float xVelocity8 = 7.2; 
+    float xVelocity1 = track.racetrack_times[0];
+    float xVelocity2 = track.racetrack_times[1];
+    float xVelocity3 = track.racetrack_times[2]; 
+    float xVelocity4 = track.racetrack_times[3]; 
+    float xVelocity5 = track.racetrack_times[4]; 
+    float xVelocity6 = track.racetrack_times[5]; 
+    float xVelocity7 = track.racetrack_times[6]; 
+    float xVelocity8 = track.racetrack_times[7]; 
 
  
     while (window.isOpen())
