@@ -153,5 +153,5 @@ void graphics::draw_horses (Racetrack track) {
  
   
  
-    return 0;
+    return;
 }
