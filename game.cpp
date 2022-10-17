@@ -374,12 +374,11 @@ while (input == false) {
     cin>>boost_choice;
     // add while to check if valid inout
 
+    double boost_amount;
     if(boost_choice == 1){
         item boost = user.boost_menu();
+        boost_amount = boost.get_boost();
     }
-
-
-
 
     srand(time(NULL));
     comphorse c1;
@@ -388,7 +387,7 @@ while (input == false) {
 
     User* user_ptr = &user;
 
-    racetrack.get_winner(c1, ptr, user_ptr);
+    racetrack.get_winner(c1, ptr, user_ptr, boost_amount);
     this_thread::sleep_for(chrono::seconds(5));
 
     return;
