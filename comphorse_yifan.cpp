@@ -62,8 +62,6 @@ void comphorse::set_bot_race_times (int div) {
 
        // bot_race_times = {};
     }
-
-    return bot_race_times;
 }
 
 void comphorse::get_bot_info() {
@@ -496,7 +494,6 @@ void comphorse::set_bot_names(int div) {
 
     }
 
-    return bot_names;
 }
 
 void comphorse::set_rand_race_time() {
