@@ -27,8 +27,13 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user, double bo
     //calling function to randomise race_time attribute
     // users_racer.set_rand_race_time();  
 
+<<<<<<< HEAD
     //name->set_rand_race_time();
     //name->name-boost;
+=======
+    name->name-boost;
+    
+>>>>>>> 799cfce680712632f1a38901147fe58b407851dc
     bool first = true;
 
     for (int i = 0; i < 7; i++) {

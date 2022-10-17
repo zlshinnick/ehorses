@@ -381,6 +381,7 @@ while (input == false) {
 
     srand(time(NULL));
     comphorse c1;
+
     c1.set_div(division);
     c1.set_bot_names(division);
     
