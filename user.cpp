@@ -178,56 +178,65 @@ void User::level_up_menu(){
     cout<<"\n1. Yes"<<endl;
     cout<<"2. No"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\nChoice: ";
-    cin>>level_choice;
+    
+    bool input = false;
 
-    while(level_choice!=1 && level_choice!=2  ){
-        cout<<"Invalid YESSSIRRRR Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nChoice: ";
-        cin>>level_choice;
-    }
+   
+    while (input == false) {
+        cout<<"\nChoice: ";
+        if(!(cin >> level_choice)){
+            cin.clear();
+            cin.ignore();
+        }
+    
+        if(level_choice!=1 && level_choice!=2){
+            cout<<"Invalid Input!";
+            this_thread::sleep_for(chrono::seconds(1));
+         }
 
     switch (level_choice)
     {
-    case 1:
-        if(exp>=exp_next_level){
-            level_up();
-            cout<<"\nLevel Up Succesful";
-            this_thread::sleep_for(chrono::seconds(1));
-            
-            } else {
-                cout<<"\nNot Enough EXP To Level Up!";
-               
+        case 1:
+            if(exp>=exp_next_level){
+                level_up();
+                cout<<"\nLevel Up Succesful";
                 this_thread::sleep_for(chrono::seconds(1));
-            }
-            
-            break;
-        
-        break;
-    
-    case 2:
-        return;
-    }
+                    
+                } else {
+                    cout<<"\nNot Enough EXP To Level Up!"; 
+                    this_thread::sleep_for(chrono::seconds(1));
+                }
+                
+                break;
+        case 2:
+            return;
+        }
 
-    int return_from;
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\nPress 9 to Return To Main Menu: ";
-    cin>>return_from;
+    int leave;
 
-    if(return_from==9){
-        return;
-    }
+     bool input2 = false;
 
-    while(return_from!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>return_from;
-    }
+    while (input2 == false) {
+        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> leave)){
+            cin.clear();
+            cin.ignore();
+        }
+
+        if(leave==9){
+            return;
+        } else {
+            cout<<"Invalid Input!";
+            this_thread::sleep_for(chrono::seconds(1));
+        }
+
+     }
+}
 
     return;
 }
+
 
 item User::boost_menu(){
     item boost = inventory.select_boost();

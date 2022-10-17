@@ -81,7 +81,10 @@ void game::travel_menu() {
 
     while (input == false) {
         cout <<"Choice:" ;
-        cin >> user_choice_travel;
+        if(!(cin >> user_choice_travel)){
+            cin.clear();
+            cin.ignore();
+        }
 
         if (user_choice_travel != 1 && user_choice_travel != 2 && user_choice_travel != 3 && user_choice_travel != 4 && user_choice_travel != 5 && user_choice_travel != 6 && user_choice_travel != 9) {
             cout << "Invalid!\n\n";
@@ -184,7 +187,10 @@ void game::main_menu() {
 
     while (input == false) {
         cout <<"Choice:" ;
-        cin >> user_choice;
+            if(!(cin >> user_choice)){
+            cin.clear();
+            cin.ignore();
+        }
 
         if (user_choice != 1 && user_choice != 2 && user_choice != 3 && user_choice != 4 && user_choice != 5 && user_choice != 6 && user_choice != 9) {
             cout << "Invalid!\n\n";
@@ -220,32 +226,42 @@ void game::main_menu() {
 }
 
 void game::save_game() {
-    ofstream outFile(file_name);
+    ofstream outFile(file_name,ios::app);
 
     if (outFile.is_open()) {
-        outFile << user.get_as_string();
+        outFile << user.get_as_string()<<endl;
+        
     }
     outFile.close();
 }
 
-void game::load_game() {}
+void game::load_game() {
+    ifstream outFile(file_name,ios::in);
+    if(outFile.is_open())   {
+    }
+}
 
 void game::breed_menu(){
     int return_breed;
     user.breeding();
+    bool input = false;
 
-    cout<<"\n\nPress 9--- to Return To Main Menu: ";
-    cin>>return_breed;
-    if(return_breed==9){
-        return;
-    }
+    while (input == false) {
+        cout <<"\n\nPress 9 to Return To Main Menu: " ;
 
-    while(return_breed!=9){
+        if(!(cin >> return_breed)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_breed==9){
+            return;
+         }
+
+    if(return_breed!=9){
         cout<<"Invalid Input!";
         this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>return_breed;
     }
+}
 }
 
 void game::welcome(){
@@ -287,18 +303,24 @@ void game::inventory_menu(){
     user.print_inventory();
     int leave;
 
-    cout<<"\n\nPress 9 to Return To Main Menu: ";
-    cin>>leave;
-    if(leave==9){
-        return;
-    }
+     bool input = false;
 
-    while(leave!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>leave;
-    }
+    while (input == false) {
+        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> leave)){
+            cin.clear();
+            cin.ignore();
+        }
+
+        if(leave==9){
+            return;
+        } else {
+            cout<<"Invalid Input!";
+            this_thread::sleep_for(chrono::seconds(1));
+        }
+
+     }
 }
 
 void game::user_stats_menu(){
@@ -307,17 +329,21 @@ void game::user_stats_menu(){
     
     user.print_user_stats();
 
-    cout<<"\n\nPress 9 to Return To Main Menu: ";
-    cin>>leave_stats;
-    if(leave_stats==9){
-        return;
-    }
+    bool input = false;
 
-    while(leave_stats!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>leave_stats;
+    while (input == false) {
+        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> leave_stats)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(leave_stats==9){
+        return;
+     }else {
+            cout<<"Invalid Input!";
+            this_thread::sleep_for(chrono::seconds(1));
+        }
     }
 }
 
@@ -330,7 +356,7 @@ void game::racetrack_menu(){
     int division;
 bool input = false;
 
-while (input == false) {
+
     cout<<"\n** Choose The Division You Wish To Race In **";
     this_thread::sleep_for(chrono::seconds(1));
     cout<< "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
@@ -354,9 +380,13 @@ while (input == false) {
     cout<<"\nExp = 500 for win";
 
     this_thread::sleep_for(chrono::seconds(1));
+while (input == false) {
     cout << "\n\nChoose Your Race Division: " << endl;
-    cin >> division;
-
+        if(!(cin >> division)){
+            cin.clear();
+            cin.ignore();
+        }
+    
     if (division != 1 && division != 2 && division != 3) {
             cout << "Invalid\n\n";
     } else {
