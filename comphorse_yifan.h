@@ -17,10 +17,10 @@ class comphorse : public horse {
     int rand_num;
     
     vector<string> bot_names;
-    vector<string> set_bot_names(int div);
+    void set_bot_names(int div);
     vector<double> bot_race_times;
     //calling this function will assign random time in an interval based on the division parameter
-    vector<double> set_bot_race_times(int div);
+    void set_bot_race_times(int div);
 
     vector<comphorse> bot_times_and_names (int div);
 

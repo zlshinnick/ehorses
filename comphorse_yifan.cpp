@@ -16,7 +16,7 @@ comphorse::comphorse () {
     //bot_names = {""};
 }
 
-vector<double> comphorse::set_bot_race_times (int div) {
+void comphorse::set_bot_race_times (int div) {
 
     //assigning a time based on level
     if (div == 1) {
@@ -76,7 +76,7 @@ void comphorse::get_bot_info() {
 
 }
 
-vector<string> comphorse::set_bot_names(int div) {
+void comphorse::set_bot_names(int div) {
 
     if (div == 1) {
 
