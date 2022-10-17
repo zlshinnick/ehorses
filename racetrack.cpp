@@ -28,6 +28,7 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user, double bo
     // users_racer.set_rand_race_time();  
 
     name->name-boost;
+    
     bool first = true;
 
     for (int i = 0; i < 7; i++) {

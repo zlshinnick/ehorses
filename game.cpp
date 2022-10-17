@@ -381,7 +381,10 @@ while (input == false) {
 
     srand(time(NULL));
     comphorse c1;
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2ae3cb3071fd4f8ac5decf06d6e9274cb329221d
     c1.set_div(division);
     c1.set_bot_names(division);
     c1.set_rand_race_time();
