@@ -49,15 +49,15 @@ void game::initialize_game() {
     userhorse m4 = userhorse();
     userhorse m5 = userhorse();
     
-    m1.set_userhorse("Turtle",17.75,20);
+    m1.set_userhorse("Turtle",7,8.5);
     m1.set_price(100);
-    m2.set_userhorse("Dog",16.0,18.5);
+    m2.set_userhorse("Dog",7.9,10.5);
     m2.set_price(250);
     m3.set_userhorse("Legend",11.2,15.5);
     m3.set_price(600);
-    m4.set_userhorse("Bullet",7.9,10.5);
+    m4.set_userhorse("Bullet",16.0,18.5);
     m4.set_price(1000);
-    m5.set_userhorse("God",7,8.5);
+    m5.set_userhorse("God",17.75,20);
     m5.set_price(3000);
     
     market.initialize(m1,m2,m3,m4,m5);
