@@ -37,8 +37,8 @@ void game::initialize_game() {
 
     //creating shop
     item Carrot = item("Carrot",100,0.5); //carrot makes slowest time faster
-    item Sugar = item("Sugar",100,0.5);   //sugar makes faster time faster
-    item Saddle = item("Apple",1000,1); //saddle increases both by 0.5
+    item Sugar = item("Sugar",250,1);   //sugar makes faster time faster
+    item Saddle = item("Apple",600,2); //saddle increases both by 0.5
     shop.initialize(Carrot,Sugar,Saddle);
 
 

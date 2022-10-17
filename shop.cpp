@@ -28,11 +28,11 @@ item shop::get_item(){
     cout<<"\n\nWhich Item Would You Like To Purchase?"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     int choice_item;
-    cout<<"0: Carrot"<<endl;
+    cout<<"0: Carrot(boost = 0.5 seconds)"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"1: Sugar Cubes"<<endl;
+    cout<<"1: Sugar (boost = 1 seconds)"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"3: Saddle"<<endl;
+    cout<<"3: Apple (boost = 2 seconds)"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"9: None";
     this_thread::sleep_for(chrono::seconds(1));
