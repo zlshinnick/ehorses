@@ -347,6 +347,7 @@ void game::user_stats_menu(){
     }
 }
 
+
 void game::racetrack_menu(){
     system("Clear");
     
@@ -354,7 +355,7 @@ void game::racetrack_menu(){
 
     //get division to pass into functions
     int division;
-bool input = false;
+    bool input = false;
 
 
     cout<<"\n** Choose The Division You Wish To Race In **";
@@ -429,6 +430,7 @@ while (input == false) {
 
     return;
 }
+
 
 void game:: get_level_up_menu() {
     user.level_up_menu();

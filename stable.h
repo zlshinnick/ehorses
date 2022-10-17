@@ -29,8 +29,9 @@ class stable{
 
         void print_stable();
         void initialize();
-        void stable_menu();
+        void stable_menu(double* bank);
         void change_name_menu();
+        void level_up_menu(double* bank);
 
         userhorse* get_horse_for_race();
         //breeding functions 
