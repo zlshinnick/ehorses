@@ -49,16 +49,16 @@ void game::initialize_game() {
     userhorse m4 = userhorse();
     userhorse m5 = userhorse();
     
-    m1.set_userhorse("Rookie",12.0,15.0);
+    m1.set_userhorse("Turtle",17.75,20);
     m1.set_price(100);
-    m2.set_userhorse("Intermediate",12.0,14.75);
-    m2.set_price(300);
-    m3.set_userhorse("Superstar",11.75,14.5);
+    m2.set_userhorse("Dog",16.0,18.5);
+    m2.set_price(250);
+    m3.set_userhorse("Legend",11.2,15.5);
     m3.set_price(600);
-    m4.set_userhorse("Ledgendary",11.5,14.25);
+    m4.set_userhorse("Bullet",7.9,10.5);
     m4.set_price(1000);
-    m5.set_userhorse("Bullet",11,14);
-    m5.set_price(1500);
+    m5.set_userhorse("God",7,8.5);
+    m5.set_price(3000);
     
     market.initialize(m1,m2,m3,m4,m5);
 
@@ -71,8 +71,8 @@ void game::travel_menu() {
     cout << "Where Would You Like to Travel?" << endl;
     cout << "1: Stables" << endl;
     cout << "2: Racetrack" << endl;
-    cout << "3: Market" << endl;
-    cout << "4: General Store" << endl;
+    cout << "3: Horse Market" << endl;
+    cout << "4: Boost Store" << endl;
     cout << "5: Breeding Ground"<<endl;
     cout << "9: Return to Main Menu" << endl;
 
