@@ -497,9 +497,14 @@ vector<string> comphorse::set_bot_names(int div) {
 
 }
 
+int comphorse::set_div(int div) {
+    divisionC = div;
+    return divisionC;
+}
+
 void comphorse::set_rand_race_time() {
         //assigning a time based on level
-    if (game.division == 1) {
+    if (divisionC == 1) {
       //bots in division 1 will have a random time between 8 and 11 seconds
     
         for (int i = 0; i < 8; i++) {
@@ -512,7 +517,7 @@ void comphorse::set_rand_race_time() {
             bot_race_times.push_back(race_time);
         }
 
-    } else if (game.division == 2) {
+    } else if (divisionC == 2) {
 
         for (int i = 0; i < 8; i++) {
             //creates random number between 0.0 and 3.0
@@ -524,7 +529,7 @@ void comphorse::set_rand_race_time() {
             bot_race_times.push_back(race_time);
         }
 
-    } else if (game.division == 3) {
+    } else if (divisionC == 3) {
 
         for (int i = 0; i < 8; i++) {
             //creates random number between 0.0 and 3.0
