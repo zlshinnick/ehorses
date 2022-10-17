@@ -228,3 +228,8 @@ void User::level_up_menu(){
 
     return;
 }
+
+item User::boost_menu(){
+    item boost = inventory.select_boost();
+    return boost;
+}

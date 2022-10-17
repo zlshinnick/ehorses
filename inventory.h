@@ -9,8 +9,10 @@ class inventory{
     public:
         inventory();
         void add_item(item item);
+        void remove_item(int index);
         void print_inventory();
         int get_num_items(){return num_of_items;}
+        item select_boost();
 
 };
 #endif

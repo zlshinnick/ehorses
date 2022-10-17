@@ -6,10 +6,9 @@
         boost =0;
     }
 
-    item::item(string name, int price, double boost, int length_of_boost){
+    item::item(string name, int price, double boost){
         this->name=name;
         this->price=price;
-        this->boost=boost;
     }
 
     string item::get_name(){
