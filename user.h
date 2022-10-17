@@ -50,6 +50,7 @@ class User{
         //inventory functions
         void purchase_item(item item);
         void print_inventory();
+        item boost_menu();
 
         //market functions
         void purchase_horse(userhorse horse);
