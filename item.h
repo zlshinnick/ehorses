@@ -9,11 +9,10 @@ class item{
         string name;
         int price;
         double boost;
-        int length_of_boost; //how many races the boost will last for
 
     public:
         item();
-        item(string name, int price, double boost,int length_of_boost);
+        item(string name, int price, double boost);
         string get_name();
         int get_price();
         double get_boost();

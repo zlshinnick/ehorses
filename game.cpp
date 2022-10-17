@@ -36,9 +36,9 @@ void game::initialize_game() {
     system("Clear");
 
     //creating shop
-    item Carrot = item("Carrot",100,0.5,1); //carrot makes slowest time faster
-    item Sugar = item("Sugar",100,0.5,1);   //sugar makes faster time faster
-    item Saddle = item("Saddle",1000,0.5,10); //saddle increases both by 0.5
+    item Carrot = item("Carrot",100,0.5); //carrot makes slowest time faster
+    item Sugar = item("Sugar",100,0.5);   //sugar makes faster time faster
+    item Saddle = item("Apple",1000,1); //saddle increases both by 0.5
     shop.initialize(Carrot,Sugar,Saddle);
 
 
@@ -261,8 +261,8 @@ void game::welcome(){
     cout<< "|__/     |_/ |_______/|__/ |_______/ |______/ |__/ |__/ |__/ |_______/" <<endl;
     this_thread::sleep_for(chrono::seconds(1));
 
-    cout<< "                          /$$$$$$$$   "<<endl;
-    cout<< "                         |__  $$__/    "<<endl;
+    cout<< "                       /$$$$$$$$   "<<endl;
+    cout<< "                      |__  $$__/    "<<endl;
     cout<<"                          | $$  /$$$$$$ "<<endl;
     cout<<"                          | $$ /$$__  $$"<<endl;
     cout<<"                          | $$| $$  | $$"<<endl;
@@ -271,7 +271,7 @@ void game::welcome(){
     cout<<"                          |__/|______/ "<<endl;
     this_thread::sleep_for(chrono::seconds(1));
 
-    cout<<"/$$$$$$$$       /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<<endl;
+    cout<<"/$$$$$$$$|      /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<<endl;
     cout<<"| $$_____/      | $$  | $$ /$$__  $$| $$__  $$ /$$__  $$| $$_____/ /$$__  $$| $$"<<endl;
     cout<<"| $$            | $$  | $$| $$  | $$| $$  | $$| $$  |__/| $$      | $$  |__/| $$"<<endl;
     cout<<"| $$$$$         | $$$$$$$$| $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$   |  $$$$$$ | $$"<<endl;
@@ -334,7 +334,7 @@ bool input = false;
 while (input == false) {
     cout<<"\n** Choose The Division You Wish To Race In **";
     this_thread::sleep_for(chrono::seconds(1));
-    cout<< "\n\n* Divison 1: Easy \n Division 2: Medium \n Division 3: Hard";
+    cout<< "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
 
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"\n\n* Divison 1 *";
@@ -365,6 +365,21 @@ while (input == false) {
     }
 }
     userhorse* ptr = user.get_horse_for_race();
+
+    cout<<"\n Do You Want To Add A Boost To Your Horse ";
+    int boost_choice;
+    cout<<"\n\n 1. Yes";
+    cout<<"\n 2. No";
+    cout<<"\n\n Choice: ";
+    cin>>boost_choice;
+    // add while to check if valid inout
+
+    if(boost_choice == 1){
+        item boost = user.boost_menu();
+    }
+
+
+
 
     srand(time(NULL));
     comphorse c1;
