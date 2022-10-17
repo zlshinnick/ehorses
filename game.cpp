@@ -383,7 +383,9 @@ while (input == false) {
     comphorse c1;
     c1.set_div(division);
     c1.set_bot_names(division);
-    c1.set_rand_race_time();
+    
+    ptr->set_rand_race_time();
+    ptr->add_boost(boost_amount);
 
     User* user_ptr = &user;
 
