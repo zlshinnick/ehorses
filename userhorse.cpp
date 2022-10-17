@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <chrono>
+#include <thread>
 #include "horse.h"
 #include "userhorse.h"
 using namespace std;
@@ -99,6 +101,9 @@ void userhorse::level_up() {
 
 void userhorse::add_boost(double t) {
     this->race_time = race_time - t;
+    cout<<"Boost of "<<t<<" Has Been Applied!\n"<<endl;
+    this_thread::sleep_for(chrono::seconds(2));
+
 }
 
 void userhorse::win_D1() {

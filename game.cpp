@@ -384,13 +384,15 @@ while (input == false) {
 
     c1.set_div(division);
     c1.set_bot_names(division);
-    
+    c1.set_rand_race_time();
     ptr->set_rand_race_time();
-    ptr->add_boost(boost_amount);
+    this_thread::sleep_for(chrono::seconds(2));
 
+    ptr->add_boost(boost_amount);
+  
     User* user_ptr = &user;
 
-    racetrack.get_winner(c1, ptr, user_ptr, boost_amount);
+    racetrack.get_winner(c1, ptr, user_ptr);
     this_thread::sleep_for(chrono::seconds(5));
 
     return;

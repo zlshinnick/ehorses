@@ -20,7 +20,7 @@ Racetrack::Racetrack() {}
 //     return stable_accessor[user_horse_choice-1];
 // }
 
-void Racetrack::get_winner(comphorse vec, userhorse* name, User* user, double boost) {
+void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
 
     //calling function for user to select the horse they want to race
     // userhorse users_racer = get_users_horse();

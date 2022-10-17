@@ -9,6 +9,7 @@
     item::item(string name, int price, double boost){
         this->name=name;
         this->price=price;
+        this->boost = boost;
     }
 
     string item::get_name(){

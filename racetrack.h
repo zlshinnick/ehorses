@@ -20,7 +20,7 @@ class Racetrack {
     vector<string> racetrack_names;
 
     
-    void get_winner(comphorse vec, userhorse* name, User* user, double boost);
+    void get_winner(comphorse vec, userhorse* name, User* user);
 
     void clear_racetrack();
 };
