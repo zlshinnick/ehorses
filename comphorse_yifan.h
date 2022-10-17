@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include "game.h"
 
 #include "horse.h"
 
@@ -7,7 +8,7 @@
 
 using namespace std;
 
-class comphorse : public horse {
+class comphorse : public horse, public game {
   
   public:
 
@@ -17,7 +18,7 @@ class comphorse : public horse {
     int rand_num;
     
     vector<string> bot_names;
-    void set_bot_names(int div);
+    vector<string> set_bot_names(int div);
     vector<double> bot_race_times;
     //calling this function will assign random time in an interval based on the division parameter
     void set_bot_race_times(int div);

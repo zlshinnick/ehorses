@@ -23,6 +23,7 @@ class game{
 
     public:
         game();
+        int division;
 
         //operators
 

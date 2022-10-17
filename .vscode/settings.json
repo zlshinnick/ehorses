@@ -13,7 +13,8 @@
         "thread": "cpp",
         "__threading_support": "cpp",
         "chrono": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "cstdlib": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

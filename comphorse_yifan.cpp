@@ -16,53 +16,53 @@ comphorse::comphorse () {
     //bot_names = {""};
 }
 
-void comphorse::set_bot_race_times (int div) {
+// void comphorse::set_bot_race_times (int div) {
 
-    //assigning a time based on level
-    if (div == 1) {
-      //bots in division 1 will have a random time between 8 and 11 seconds
+//     //assigning a time based on level
+//     if (div == 1) {
+//       //bots in division 1 will have a random time between 8 and 11 seconds
     
-        for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
-            double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
+//         for (int i = 0; i < 8; i++) {
+//             //creates random number between 0.0 and 3.0
+//             double rand_n = (rand()%300)/10;
+//             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 8; // speeds between 8 and 11  
+//             this -> race_time = rand_n + 8; // speeds between 8 and 11  
 
-            bot_race_times.push_back(race_time);
-        }
+//             bot_race_times.push_back(race_time);
+//         }
 
-    } else if (div == 2) {
+//     } else if (div == 2) {
 
-        for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
-            double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
+//         for (int i = 0; i < 8; i++) {
+//             //creates random number between 0.0 and 3.0
+//             double rand_n = (rand()%300)/10;
+//             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 12; // speeds between 12 and 15
+//             this -> race_time = rand_n + 12; // speeds between 12 and 15
 
-            bot_race_times.push_back(race_time);
-        }
+//             bot_race_times.push_back(race_time);
+//         }
 
-    } else if (div == 3) {
+//     } else if (div == 3) {
 
-        for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
-            double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
+//         for (int i = 0; i < 8; i++) {
+//             //creates random number between 0.0 and 3.0
+//             double rand_n = (rand()%300)/10;
+//             rand_n /= 10;  //creates random number between 0.0 and 3.0
 
-            this -> race_time = rand_n + 16; // speeds between 16 and 19
+//             this -> race_time = rand_n + 16; // speeds between 16 and 19
 
-            bot_race_times.push_back(race_time);
-        }
+//             bot_race_times.push_back(race_time);
+//         }
 
-    } else {
+//     } else {
 
-        cout << "Invalid Input" << endl;
+//         cout << "Invalid Input" << endl;
 
-       // bot_race_times = {};
-    }
-}
+//        // bot_race_times = {};
+//     }
+// }
 
 void comphorse::get_bot_info() {
 
@@ -74,7 +74,7 @@ void comphorse::get_bot_info() {
 
 }
 
-void comphorse::set_bot_names(int div) {
+vector<string> comphorse::set_bot_names(int div) {
 
     if (div == 1) {
 
@@ -491,11 +491,55 @@ void comphorse::set_bot_names(int div) {
 
         cout << "Invalid Input" << endl;
        // bot_names = {""};
-
     }
+
+    return bot_names;
 
 }
 
 void comphorse::set_rand_race_time() {
-    int a = 0;
+        //assigning a time based on level
+    if (game.division == 1) {
+      //bots in division 1 will have a random time between 8 and 11 seconds
+    
+        for (int i = 0; i < 8; i++) {
+            //creates random number between 0.0 and 3.0
+            double rand_n = (rand()%300)/10;
+            rand_n /= 10;  //creates random number between 0.0 and 3.0
+
+            this -> race_time = rand_n + 8; // speeds between 8 and 11  
+
+            bot_race_times.push_back(race_time);
+        }
+
+    } else if (game.division == 2) {
+
+        for (int i = 0; i < 8; i++) {
+            //creates random number between 0.0 and 3.0
+            double rand_n = (rand()%300)/10;
+            rand_n /= 10;  //creates random number between 0.0 and 3.0
+
+            this -> race_time = rand_n + 12; // speeds between 12 and 15
+
+            bot_race_times.push_back(race_time);
+        }
+
+    } else if (game.division == 3) {
+
+        for (int i = 0; i < 8; i++) {
+            //creates random number between 0.0 and 3.0
+            double rand_n = (rand()%300)/10;
+            rand_n /= 10;  //creates random number between 0.0 and 3.0
+
+            this -> race_time = rand_n + 16; // speeds between 16 and 19
+
+            bot_race_times.push_back(race_time);
+        }
+
+    } else {
+
+        cout << "Invalid Input" << endl;
+
+       // bot_race_times = {};
+    }
 }

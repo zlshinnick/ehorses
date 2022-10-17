@@ -327,7 +327,6 @@ void game::racetrack_menu(){
     cout<<"** Welcome To The Racetrack **\n\n";
 
     //get division to pass into functions
-    int division;
 
 bool input = false;
 
@@ -383,7 +382,7 @@ while (input == false) {
     srand(time(NULL));
     comphorse c1;
     c1.set_bot_names(division);
-    c1.set_bot_race_times(division);
+    c1.set_bot_race_times();
 
     User* user_ptr = &user;
 
