@@ -383,7 +383,7 @@ while (input == false) {
     srand(time(NULL));
     comphorse c1;
     c1.set_bot_names(division);
-    c1.set_bot_race_times();
+    c1.set_rand_race_time();
 
     User* user_ptr = &user;
 
