@@ -379,9 +379,10 @@ while (input == false) {
         boost_amount = boost.get_boost();
     }
 
-    c1.set_div(division);
     srand(time(NULL));
     comphorse c1;
+    
+    c1.set_div(division);
     c1.set_bot_names(division);
     c1.set_rand_race_time();
 
