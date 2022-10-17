@@ -319,21 +319,30 @@ userhorse* stable::get_horse_for_race(){
 }
 
 void stable::level_up_menu(double* bank){
+    system("Clear");
     cout<<"** Which Horse Would You Like To Upgrade ** ";
-
+    this_thread::sleep_for(chrono::seconds(1));
     for(int i = 0;i<num_of_horses;i++){
-        cout<<"\n"<<array[i].get_name()<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\n"<<array[i].get_name()<<endl;
         cout<<"Level: "<<array[i].get_level()<<endl;
         cout<<"Max Speed: "<<array[i].get_max()<<endl;;
+        
+
     }
+    cout<<"\n";
     for(int i = 0; i<num_of_horses;i++){
         cout<<i<<": "<<array[i].get_name()<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+
     }
 
     bool input = false;
     int horse_choice;
     while (input == false) {
-        cout <<"Choice:" ;
+        this_thread::sleep_for(chrono::seconds(1));
+
+        cout <<"\nChoice:" ;
         if(!(cin >> horse_choice)){
             cin.clear();
             cin.ignore();
@@ -351,16 +360,18 @@ void stable::level_up_menu(double* bank){
         int level_choice;
         switch(array[horse_choice].get_level()){
             case 1:
-                cout<<"\n"<< array[horse_choice].get_name()<< " Is Level 1\n";
+                cout<<"\n"<< array[horse_choice].get_name()<< " Is Level 1\n\n";
                 this_thread::sleep_for(chrono::seconds(1));
-                cout<<"To Upgrade To Level 2 is $500";
+                cout<<"To Upgrade To Level 2 is $500"<<endl;
                 this_thread::sleep_for(chrono::seconds(1));
-                cout<<"Would You Like To Upgrade? ";
+                cout<<"\nWould You Like To Upgrade? ";
                 this_thread::sleep_for(chrono::seconds(1));
 
                 
                 cout<<"\n\n 1. Yes";
                 cout<<"\n 2. No";
+                this_thread::sleep_for(chrono::seconds(1));
+
                 cout<<"\n\n Choice: ";
                 cin>>level_choice;
 
@@ -404,4 +415,26 @@ void stable::level_up_menu(double* bank){
         }
 
     }
+    
+     int return_level_up;
+     bool inputing = false;
+
+    while (inputing == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+        cout <<"\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> return_level_up)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_level_up==9){
+            return;
+         }
+
+    if(return_level_up!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+
 }

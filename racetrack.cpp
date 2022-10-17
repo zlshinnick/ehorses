@@ -5,6 +5,8 @@
 #include "horse.h"
 #include <algorithm>
 #include <vector>
+#include <chrono>
+#include <thread>
 
 Racetrack::Racetrack() {}
 
@@ -56,11 +58,11 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
     }
     if (fastest_horse.size() == 1) {
 
-        cout << fastest_horse[0] << " is the winner with a speed of " << fastest_time << " km/h!" << endl;
+        cout << fastest_horse[0] << "\nis the winner with a speed of " << fastest_time << " km/h!" << endl;
 
     } else {
 
-        cout << "There is a tie between ";
+        cout << "\nThere is a tie between ";
         
         for (int i = 0; i < fastest_horse.size(); i++) {
 
@@ -96,6 +98,27 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
         }
     }
     clear_racetrack();
+    int return_race;
+     bool inputing = false;
+
+    while (inputing == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+        cout <<"\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> return_race)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_race==9){
+            return;
+         }
+
+    if(return_race!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+
 
 }
 
