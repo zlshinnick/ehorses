@@ -26,22 +26,25 @@ void inventory::print_inventory(){
         cout<<"\n Visit General Store To Buy Boosts";
         return;
     }else{
-    
-
         bool empty;
         for(int i =0 ; i<num_of_items; i++){
-        if(user_inventory[i].get_name()!=""){
-            empty = false;
+            if(user_inventory[i].get_name()!=""){
+                empty = false;
             }
         }
         cout<<"**Inventory** \n \n";
     
+        int tracker = 0;
         if(empty ==false){
-        for(int i =0; i<num_of_items;i++){
-            cout<<i<<"."<<user_inventory[i].get_name()<<endl<<endl;
-        return;
-         }
-         }else{
+            for(int i =0; i<num_of_items;i++){
+
+                if(user_inventory[i].get_name()!=""){
+                    cout<<tracker<<"."<<user_inventory[i].get_name()<<endl<<endl;
+                    tracker++;
+                }
+            
+            }
+        } else {
             cout<<"\nInventory Is Empty!";
             cout<<"\nVisit General Store To Buy Boosts";
         }

@@ -99,7 +99,9 @@ void User::purchase_item(item item){
 void User::print_inventory(){
    //cout<<"Being Called";
     if(inventory.get_num_items()!=0){
-    inventory.print_inventory();
+        inventory.print_inventory();
+    }else{
+        cout<<"\nInventory is Empty!";
     }
 }
 

@@ -32,18 +32,23 @@ item shop::get_item(){
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"1: Sugar (boost = 1 seconds)"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"3: Apple (boost = 2 seconds)"<<endl;
+    cout<<"2: Apple (boost = 2 seconds)"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"9: None";
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"\n\nItem To Purchase: ";
     cin>>choice_item;
 
-    while(choice_item != 0 && choice_item != 1 && choice_item != 2 && choice_item != 3&&choice_item != 4 && choice_item != 9){
+    if(choice_item==9){
+        return item();
+    }
+
+    while(choice_item != 0 && choice_item != 1 && choice_item != 2 && choice_item != 9){
         cout<<"\nInvalid Input!"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
         cout<<"Item To Purchase: ";
         cin>>choice_item;
+        num_items++;
     }
 
     return items[choice_item];
