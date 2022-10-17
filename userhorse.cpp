@@ -101,8 +101,6 @@ void userhorse::level_up() {
 
 void userhorse::add_boost(double t) {
     this->race_time = race_time - t;
-    cout<<"Boost of "<<t<<" Has Been Applied!\n"<<endl;
-    this_thread::sleep_for(chrono::seconds(2));
 
 }
 

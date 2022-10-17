@@ -362,7 +362,7 @@ bool input = false;
     cout<< "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
 
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n* Divison 1 *";
+    cout<<"\n\n* Division 1 *";
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"\nPrize Money = 500 for win";
     cout<<"\nExp = 100 for win";
@@ -407,6 +407,8 @@ while (input == false) {
     if(boost_choice == 1){
         item boost = user.boost_menu();
         boost_amount = boost.get_boost();
+        cout<<"Boost of "<<boost_amount<<" Has Been Applied!\n"<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
     }
 
     srand(time(NULL));
