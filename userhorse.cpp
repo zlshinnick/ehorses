@@ -48,7 +48,7 @@ int userhorse::get_generation() {return generation;}
 void userhorse::output_name() {cout << name << endl;}
 void userhorse::output_max() {cout << max_speed << endl;}
 void userhorse::output_min() {cout << min_speed << endl;}
-void userhorse::output_wins() {cout << num_wins_test << endl;}
+void userhorse::output_wins() {cout << num_wins << endl;}
 
 //functions for in game features
 void userhorse::increment_wins() {this->num_wins++;}
@@ -58,7 +58,7 @@ void userhorse::level_up() {
     this->max_speed = max_speed + 1;
     this->min_speed = min_speed + 1;
     this->level = level + 1;
-    cout<<"Level Up Success! ";
+    cout << "Level Up Success! " << endl;;
     return;
   } else {
     cout<<"Horse Is Already Maximum Level! ";
