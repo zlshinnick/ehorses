@@ -159,7 +159,9 @@ void stable::breed(){
 
     string name;
     cout<<"Set Foal Name: ";
-    cin>>name;
+    cin.ignore();
+    cin.clear();
+    getline (cin,name);
 
     bool baby =  add_bred_horse(name);
 

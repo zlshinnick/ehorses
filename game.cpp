@@ -1,174 +1,175 @@
 #include "game.h"
+#include "functions.cpp"
 #include <chrono>
-#include <thread>
 #include <iostream>
+#include <thread>
+#include <string>
 
 using namespace std;
 
 game::game() {
-    //choice = 0;
-    playing = true;
-    file_name = "gamesave.txt";
+  // choice = 0;
+  playing = true;
+  file_name = "gamesave.txt";
 }
 
 int game::get_playing() { return playing; }
 
 void game::initialize_game() {
-    //setting up user
-     welcome();
-     string name;
-     cout << "Enter Name For User: ";
-     cin >> name;
-     user.initialize(name);
+  // setting up user
+  welcome();
+  string name;
+  cout << "Enter Name For User: ";
+  getline(cin, name);
+  user.initialize(name);
 
-    //setting up stables with first horse
-    string horse_name;
-    cout << "Enter Name For Your First Horse: ";
-    cin.ignore();
-    getline (cin,horse_name);
+  // setting up stables with first horse
+  string horse_name;
+  cout << "Enter Name For Your First Horse: ";
+  getline(cin, horse_name);
 
-    userhorse h1 = userhorse();
-    h1.set_userhorse(horse_name,50.5,51.7);
-    user.add_horse_to_stable(h1);
-    this_thread::sleep_for(chrono::seconds(2));
-    cout<<endl<<h1.get_name()<<" Has Been Added To Stables"<<endl;
-    this_thread::sleep_for(chrono::seconds(2));
-    system("Clear");
+  userhorse h1 = userhorse();
+  h1.set_userhorse(horse_name, 50.5, 51.7);
+  user.add_horse_to_stable(h1);
+  this_thread::sleep_for(chrono::seconds(2));
+  cout << endl << h1.get_name() << " Has Been Added To Stables" << endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  system("Clear");
 
-    //creating shop
-    item Carrot = item("Carrot",100,0.5); //carrot makes slowest time faster
-    item Sugar = item("Sugar",250,1);   //sugar makes faster time faster
-    item Saddle = item("Apple",600,2); //saddle increases both by 0.5
-    shop.initialize(Carrot,Sugar,Saddle);
+  // creating shop
+  item Carrot = item("Carrot", 100, 0.5);  // carrot makes slowest time faster
+  item Sugar = item("Sugar", 250, 1);      // sugar makes faster time faster
+  item Saddle = item("Apple", 600, 2);     // saddle increases both by 0.5
+  shop.initialize(Carrot, Sugar, Saddle);
 
+  // creating market
+  userhorse m1 = userhorse();
+  userhorse m2 = userhorse();
+  userhorse m3 = userhorse();
+  userhorse m4 = userhorse();
+  userhorse m5 = userhorse();
 
-    //creating market
-    userhorse m1 = userhorse();
-    userhorse m2 = userhorse();
-    userhorse m3 = userhorse();
-    userhorse m4 = userhorse();
-    userhorse m5 = userhorse();
-    
-    m1.set_userhorse("Turtle",7,8.5);
-    m1.set_price(100);
-    m2.set_userhorse("Dog",7.9,10.5);
-    m2.set_price(250);
-    m3.set_userhorse("Legend",11.2,15.5);
-    m3.set_price(600);
-    m4.set_userhorse("Bullet",16.0,18.5);
-    m4.set_price(1000);
-    m5.set_userhorse("God",17.75,20);
-    m5.set_price(3000);
-    
-    market.initialize(m1,m2,m3,m4,m5);
+  m1.set_userhorse("Turtle", 7, 8.5);
+  m1.set_price(100);
+  m2.set_userhorse("Dog", 7.9, 10.5);
+  m2.set_price(250);
+  m3.set_userhorse("Legend", 11.2, 15.5);
+  m3.set_price(600);
+  m4.set_userhorse("Bullet", 16.0, 18.5);
+  m4.set_price(1000);
+  m5.set_userhorse("God", 17.75, 20);
+  m5.set_price(3000);
 
-    
+  market.initialize(m1, m2, m3, m4, m5);
 }
-
 
 void game::travel_menu() {
-    system("Clear");
-    cout << "Where Would You Like to Travel?" << endl;
-    cout << "1: Stables" << endl;
-    cout << "2: Racetrack" << endl;
-    cout << "3: Horse Market" << endl;
-    cout << "4: Boost Store" << endl;
-    cout << "5: Breeding Ground"<<endl;
-    cout << "9: Return to Main Menu" << endl;
+  system("Clear");
+  cout << "Where Would You Like to Travel?" << endl;
+  cout << "1: Stables" << endl;
+  cout << "2: Racetrack" << endl;
+  cout << "3: Horse Market" << endl;
+  cout << "4: Boost Store" << endl;
+  cout << "5: Breeding Ground" << endl;
+  cout << "9: Return to Main Menu" << endl;
 
-    int user_choice_travel;
-    bool input = false;
+  int user_choice_travel;
+  string choice;
 
-    while (input == false) {
-        cout <<"\nChoice:" ;
-        if(!(cin >> user_choice_travel)){
-            cin.clear();
-            cin.ignore();
-        }
+  bool input = false;
 
-        if (user_choice_travel != 1 && user_choice_travel != 2 && user_choice_travel != 3 && user_choice_travel != 4 && user_choice_travel != 5 && user_choice_travel != 6 && user_choice_travel != 9) {
-            cout << "Invalid!\n\n";
-            this_thread::sleep_for(chrono::seconds(1));
-            
-        } else {
-            input = true;
-        }
-}
+  while (input == false) {
+        cout << "Choice:";
+        cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        user_choice_travel = stoi(choice);
+  
+    if (user_choice_travel != 1 && user_choice_travel != 2 &&
+        user_choice_travel != 3 && user_choice_travel != 4 &&
+        user_choice_travel != 5 && user_choice_travel != 6 &&
+        user_choice_travel != 9) {
+      cout << "Invalid!\n\n";
+      this_thread::sleep_for(chrono::seconds(1));
 
-    switch (user_choice_travel) {
-        case 1:
-            user.call_stable_menu();
-            break;
-        case 2:
-            racetrack_menu();
-             break;
-        case 3:
-            market_menu();
-             break;
-        case 4:
-            shop_menu();
-            break;
-        case 5: 
-            breed_menu();
-            break;
-        case 9:
-            return;
+    } else {
+      input = true;
+    }
   }
 
+  switch (user_choice_travel) {
+    case 1:
+      user.call_stable_menu();
+      break;
+    case 2:
+      racetrack_menu();
+      break;
+    case 3:
+      market_menu();
+      break;
+    case 4:
+      shop_menu();
+      break;
+    case 5:
+      breed_menu();
+      break;
+    case 9:
+      return;
+  }
 }
 
-void game::shop_menu(){
-    int return_shop;
-    shop.print_store();
-    item new_item = shop.get_item();
-    if(new_item.get_name()!=""){
-
+void game::shop_menu() {
+  int return_shop;
+  shop.print_store();
+  item new_item = shop.get_item();
+  if (new_item.get_name() != "") {
     user.purchase_item(new_item);
+  }
+  cout << "Press 9 to Return To Main Menu: ";
+  cin >> return_shop;
+
+  if (return_shop == 9) {
+    return;
+  }
+
+  while (return_shop != 9) {
+    cout << "Invalid Input!";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\n\nPress 9 to Return To Main Menu: ";
+    cin >> return_shop;
+  }
 }
-    cout<<"Press 9 to Return To Main Menu: ";
-    cin>>return_shop;
 
-    if(return_shop==9){
-        return;
-    }
+void game::market_menu() {
+  int return_market;
+  market.print_market();
+  userhorse new_horse = market.get_horse();
 
-    while(return_shop!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>return_shop;
-    }
-}
-
-void game::market_menu(){
-    
-    int return_market;
-    market.print_market();
-    userhorse new_horse = market.get_horse();
-  
-    if(new_horse.get_name()!=""){
+  if (new_horse.get_name() != "") {
     user.purchase_horse(new_horse);
+  }
+  cout << "Press 9 to Return To Main Menu: ";
+  cin >> return_market;
 
+  if (return_market == 9) {
+    return;
+  }
+
+  while (return_market != 9) {
+    cout << "Invalid Input!";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout << "\n\nPress 9 to Return To Main Menu: ";
+    cin >> return_market;
+  }
 }
-    cout<<"Press 9 to Return To Main Menu: ";
-    cin>>return_market;
 
-    if(return_market==9){
-        return;
-    }
-
-    while(return_market!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
-        cout<<"\n\nPress 9 to Return To Main Menu: ";
-        cin>>return_market;
-    }
-}
 
 
 void game::main_menu() {
-    bool playing = true;
-    while (playing == true){
+  bool playing = true;
+  while (playing == true) {
     system("Clear");
     cout << "************ MAIN MENU ******" << endl;
     cout << "1: Travel" << endl;
@@ -179,341 +180,353 @@ void game::main_menu() {
     cout << "6: Hooves Of Fame" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
-    
 
     int user_choice;
+    string choice;
 
     bool input = false;
 
     while (input == false) {
-        cout <<"Choice:" ;
-            if(!(cin >> user_choice)){
-            cin.clear();
-            cin.ignore();
-        }
+      cout << "Choice:";
+      cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        user_choice = stoi(choice);
 
-        if (user_choice != 1 && user_choice != 2 && user_choice != 3 && user_choice != 4 && user_choice != 5 && user_choice != 6 && user_choice != 9) {
-            cout << "Invalid!\n\n";
-            this_thread::sleep_for(chrono::seconds(3));
-            break;
-        } else {
-            input = true;
-        }
-}
-    switch (user_choice) {
-        case 1:
-            travel_menu();
-            break;
-        case 2:
-            inventory_menu();
-            break;
-        case 3:
-            get_level_up_menu();
-            break;
-        case 4:
-            user_stats_menu();
-            break;
-        case 5:
-            save_game();
-            break;
-        case 6:
-        hof_menu();
-            break;
-        case 9:
-            playing = false;
-            break;
+      if (user_choice != 1 && user_choice != 2 && user_choice != 3 &&
+          user_choice != 4 && user_choice != 5 && user_choice != 6 &&
+          user_choice != 9) {
+        cout << "Invalid!\n\n";
+        this_thread::sleep_for(chrono::seconds(3));
+        break;
+      } else {
+        input = true;
+      }
     }
-}
+    switch (user_choice) {
+      case 1:
+        travel_menu();
+        break;
+      case 2:
+        inventory_menu();
+        break;
+      case 3:
+        get_level_up_menu();
+        break;
+      case 4:
+        user_stats_menu();
+        break;
+      case 5:
+        save_game();
+        break;
+      case 6:
+        hof_menu();
+        break;
+      case 9:
+        playing = false;
+        break;
+    }
+  }
 }
 
 void game::save_game() {
-    ofstream outFile(file_name,ios::app);
+  ofstream outFile(file_name, ios::app);
 
-    if (outFile.is_open()) {
-        outFile << user.get_as_string()<<endl;
-        
-    }
-    outFile.close();
+  if (outFile.is_open()) {
+    outFile << user.get_as_string() << endl;
+  }
+  outFile.close();
 }
 
 void game::load_game() {
-    ifstream outFile(file_name,ios::in);
-    if(outFile.is_open())   {
+  ifstream outFile(file_name, ios::in);
+  if (outFile.is_open()) {
+  }
+}
+
+void game::breed_menu() {
+  user.breeding();
+
+  int return_breed;
+  bool input = false;
+  string choice;
+  while (input == false) {
+    cout << "\n\nPress 9 to Return To Main Menu: ";
+    cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        return_breed = stoi(choice);
+
+    if (return_breed == 9) {
+      return;
     }
-}
 
-void game::breed_menu(){
-    int return_breed;
-    user.breeding();
-    bool input = false;
-
-    while (input == false) {
-        cout <<"\n\nPress 9 to Return To Main Menu: " ;
-
-        if(!(cin >> return_breed)){
-            cin.clear();
-            cin.ignore();
-        }
-        if(return_breed==9){
-            return;
-         }
-
-    if(return_breed!=9){
-        cout<<"Invalid Input!";
-        this_thread::sleep_for(chrono::seconds(1));
+    if (return_breed != 9) {
+      cout << "Invalid Input!";
+      this_thread::sleep_for(chrono::seconds(1));
     }
-}
-}
-
-void game::welcome(){
-    
-    system("Clear");
-    cout<< "/$$      /$$           /$$"   <<endl;
-    cout<< "| $$  /$ | $$          | $$" <<endl;
-    cout<< "| $$ /$$$| $$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ "<<endl;
-    cout<< "| $$/$$ $$ $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$" <<endl;
-    cout<< "| $$$$_  $$$$| $$$$$$$$| $$| $$      | $$  | $$| $$ | $$ | $$| $$$$$$$$"<<endl;
-    cout<< "| $$$/ |  $$$| $$_____/| $$| $$      | $$  | $$| $$ | $$ | $$| $$_____/" <<endl;
-    cout<< "| $$/   |  $$|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$" <<endl;
-    cout<< "|__/     |_/ |_______/|__/ |_______/ |______/ |__/ |__/ |__/ |_______/" <<endl;
-    this_thread::sleep_for(chrono::seconds(1));
-
-    cout<< "                       /$$$$$$$$   "<<endl;
-    cout<< "                      |__  $$__/    "<<endl;
-    cout<<"                          | $$  /$$$$$$ "<<endl;
-    cout<<"                          | $$ /$$__  $$"<<endl;
-    cout<<"                          | $$| $$  | $$"<<endl;
-    cout<<"                          | $$| $$  | $$"<<endl;
-    cout<<"                          | $$|  $$$$$$/"<<endl;
-    cout<<"                          |__/|______/ "<<endl;
-    this_thread::sleep_for(chrono::seconds(1));
-
-    cout<<"/$$$$$$$$|      /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<<endl;
-    cout<<"| $$_____/      | $$  | $$ /$$__  $$| $$__  $$ /$$__  $$| $$_____/ /$$__  $$| $$"<<endl;
-    cout<<"| $$            | $$  | $$| $$  | $$| $$  | $$| $$  |__/| $$      | $$  |__/| $$"<<endl;
-    cout<<"| $$$$$         | $$$$$$$$| $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$   |  $$$$$$ | $$"<<endl;
-    cout<<"| $$__/         | $$__  $$| $$  | $$| $$__  $$ |____  $$| $$__/   |____  $$|__/"<< endl;
-    cout<<"| $$            | $$  | $$| $$  | $$| $$  | $$ /$$  | $$| $$       /$$  | $$    "<<endl;
-    cout<<"| $$$$$$$$      | $$  | $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$$|  $$$$$$/ /$$"<<endl;
-    cout<<"|________/      |__/  |__/ |______/ |__/  |__/ |______/ |________/ |______/ |__/"<<endl;
-    this_thread::sleep_for(chrono::seconds(2));
-    system("Clear");
+  }
 }
 
-void game::inventory_menu(){
-    user.print_inventory();
-    int leave;
+void game::welcome() {
+  system("Clear");
+  cout << "/$$      /$$           /$$" << endl;
+  cout << "| $$  /$ | $$          | $$" << endl;
+  cout << "| $$ /$$$| $$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ "<< endl;
+  cout << "| $$/$$ $$ $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$"<< endl;
+  cout << "| $$$$_  $$$$| $$$$$$$$| $$| $$      | $$  | $$| $$ | $$ | $$| $$$$$$$$"<< endl;
+  cout << "| $$$/ |  $$$| $$_____/| $$| $$      | $$  | $$| $$ | $$ | $$| $$_____/"<< endl;
+  cout << "| $$/   |  $$|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$ | $$ | $$|  $$$$$$$"<< endl;
+  cout << "|__/     |_/ |_______/|__/ |_______/ |______/ |__/ |__/ |__/ |_______/"<< endl;
+  this_thread::sleep_for(chrono::seconds(1));
 
-     bool input = false;
+  cout << "                       /$$$$$$$$   " << endl;
+  cout << "                      |__  $$__/    " << endl;
+  cout << "                          | $$  /$$$$$$ " << endl;
+  cout << "                          | $$ /$$__  $$" << endl;
+  cout << "                          | $$| $$  | $$" << endl;
+  cout << "                          | $$| $$  | $$" << endl;
+  cout << "                          | $$|  $$$$$$/" << endl;
+  cout << "                          |__/|______/ " << endl;
+  this_thread::sleep_for(chrono::seconds(1));
 
-    while (input == false) {
-        cout <<"\n\nPress 9 to Return To Main Menu: " ;
-
-        if(!(cin >> leave)){
-            cin.clear();
-            cin.ignore();
-        }
-
-        if(leave==9){
-            return;
-        } else {
-            cout<<"Invalid Input!";
-            this_thread::sleep_for(chrono::seconds(1));
-        }
-
-     }
+  cout << "/$$$$$$$$|      /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<< endl;
+  cout << "| $$_____/      | $$  | $$ /$$__  $$| $$__  $$ /$$__  $$| $$_____/ /$$__  $$| $$"<< endl;
+  cout << "| $$            | $$  | $$| $$  | $$| $$  | $$| $$  |__/| $$      | $$  |__/| $$"<< endl;
+  cout << "| $$$$$         | $$$$$$$$| $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$   |  $$$$$$ | $$" << endl;
+  cout << "| $$__/         | $$__  $$| $$  | $$| $$__  $$ |____  $$| $$__/   |____  $$|__/"<< endl;
+  cout << "| $$            | $$  | $$| $$  | $$| $$  | $$ /$$  | $$| $$       /$$  | $$    "<< endl;
+  cout << "| $$$$$$$$      | $$  | $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$$|  $$$$$$/ /$$"<<endl;
+  cout << "|________/      |__/  |__/ |______/ |__/  |__/ |______/ |________/ |______/ |__/"<< endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  system("Clear");
 }
 
-void game::user_stats_menu(){
-    
-    int leave_stats;
-    
-    user.print_user_stats();
+void game::inventory_menu() {
+  user.print_inventory();
+  int leave;
 
-    bool input = false;
+  bool input = false;
 
-    while (input == false) {
-        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+  while (input == false) {
+    cout << "\n\nPress 9 to Return To Main Menu: ";
 
-        if(!(cin >> leave_stats)){
-            cin.clear();
-            cin.ignore();
-        }
-        if(leave_stats==9){
-        return;
-     }else {
-            cout<<"Invalid Input!";
-            this_thread::sleep_for(chrono::seconds(1));
-        }
+    if (!(cin >> leave)) {
+      cin.clear();
+      cin.ignore();
     }
-}
 
-
-void game::racetrack_menu(){
-    system("Clear");
-    
-    cout<<" /$$$$$$$                                      /$$$$$$$$                           /$$       "<<endl;
-    cout<<"| $$__  $$                                    |__  $$__/                          | $$       "<<endl;
-    cout<<"| $$  | $$  /$$$$$$   /$$$$$$$  /$$$$$$          | $$  /$$$$$$  /$$$$$$   /$$$$$$$| $$   /$$"<<endl;
-    cout<<"| $$$$$$$/ |____  $$ /$$_____/ /$$__  $$         | $$ /$$__  $$|____  $$ /$$_____/| $$  /$$/"<<endl;
-    cout<<"| $$__  $$  /$$$$$$$| $$      | $$$$$$$$         | $$| $$  |__/ /$$$$$$$| $$      | $$$$$$/  "<<endl;
-    cout<<"| $$  | $$ /$$__  $$| $$      | $$_____/         | $$| $$      /$$__  $$| $$      | $$_  $$  "<<endl;
-    cout<<"| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$         | $$| $$     |  $$$$$$$|  $$$$$$$| $$ |  $$"<<endl;
-    cout<<"|__/  |__/ |_______/ |_______/ |_______/         |__/|__/      |_______/ |_______/|__/  |__/"<<endl;
-    //get division to pass into functions
-    int division;
-    bool input = false;
-
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n** Choose The Division You Wish To Race In **";
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<< "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
-
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n* Division 1 *";
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\nPrize Money = 500 for win";
-    cout<<"\nExp = 100 for win";
-    
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n* Divison 2 *";
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\nPrize Money = 1000 for win";
-    cout<<"\nExp = 250 for win";
-
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n* Divison 3 *";
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\nPrize Money = 1500 for win";
-    cout<<"\nExp = 500 for win";
-
-    this_thread::sleep_for(chrono::seconds(1));
-while (input == false) {
-    cout << "\n\nChoose Your Race Division: " << endl;
-        if(!(cin >> division)){
-            cin.clear();
-            cin.ignore();
-        }
-    
-    if (division != 1 && division != 2 && division != 3) {
-            cout << "Invalid\n\n";
+    if (leave == 9) {
+      return;
     } else {
-        input = true;
+      cout << "Invalid Input!";
+      this_thread::sleep_for(chrono::seconds(1));
     }
+  }
 }
-    userhorse* ptr = user.get_horse_for_race();
 
-    cout<<"\n Do You Want To Add A Boost To Your Horse ";
-    int boost_choice;
-    cout<<"\n\n 1. Yes";
-    cout<<"\n 2. No";
-    cout<<"\n\n Choice: ";
-    cin>>boost_choice;
-    // add while to check if valid inout
+void game::user_stats_menu() {
+  int leave_stats;
 
-    double boost_amount;
-    if(boost_choice == 1){
-        item boost = user.boost_menu();
-        boost_amount = boost.get_boost();
-        cout<<"Boost of "<<boost_amount<<" Has Been Applied!\n"<<endl;
-        this_thread::sleep_for(chrono::seconds(1));
+  user.print_user_stats();
+
+  bool input = false;
+
+  while (input == false) {
+    cout << "\n\nPress 9 to Return To Main Menu: ";
+
+    if (!(cin >> leave_stats)) {
+      cin.clear();
+      cin.ignore();
+    }
+    if (leave_stats == 9) {
+      return;
+    } else {
+      cout << "Invalid Input!";
+      this_thread::sleep_for(chrono::seconds(1));
+    }
+  }
+}
+
+void game::racetrack_menu() {
+  system("Clear");
+
+  cout << " /$$$$$$$                                      /$$$$$$$$                           /$$       "<< endl;
+  cout << "| $$__  $$                                    |__  $$__/                          | $$       "<< endl;
+  cout << "| $$  | $$  /$$$$$$   /$$$$$$$  /$$$$$$          | $$  /$$$$$$  /$$$$$$   /$$$$$$$| $$   /$$"<< endl;
+  cout << "| $$$$$$$/ |____  $$ /$$_____/ /$$__  $$         | $$ /$$__  $$|____  $$ /$$_____/| $$  /$$/"<< endl;
+  cout << "| $$__  $$  /$$$$$$$| $$      | $$$$$$$$         | $$| $$  |__/ /$$$$$$$| $$      | $$$$$$/  "<< endl;
+  cout << "| $$  | $$ /$$__  $$| $$      | $$_____/         | $$| $$      /$$__  $$| $$      | $$_  $$  "<< endl;
+  cout << "| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$         | $$| $$     |  $$$$$$$|  $$$$$$$| $$ |  $$"<< endl;
+  cout << "|__/  |__/ |_______/ |_______/ |_______/         |__/|__/      |_______/ |_______/|__/  |__/" << endl;
+  // get division to pass into functions
+  int division;
+  bool input = false;
+
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n** Choose The Division You Wish To Race In **";
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
+
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n\n* Division 1 *";
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\nPrize Money = 500 for win";
+  cout << "\nExp = 100 for win";
+
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n\n* Divison 2 *";
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\nPrize Money = 1000 for win";
+  cout << "\nExp = 250 for win";
+
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n\n* Divison 3 *";
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\nPrize Money = 1500 for win";
+  cout << "\nExp = 500 for win";
+
+  this_thread::sleep_for(chrono::seconds(1));
+  while (input == false) {
+    cout << "\n\nChoose Your Race Division: " << endl;
+    if (!(cin >> division)) {
+      cin.clear();
+      cin.ignore();
     }
 
-    srand(time(NULL));
-    comphorse c1;
+    if (division != 1 && division != 2 && division != 3) {
+      cout << "Invalid\n\n";
+    } else {
+      input = true;
+    }
+  }
+  userhorse* ptr = user.get_horse_for_race();
 
-    c1.set_div(division);
-    c1.set_bot_names(division);
-    c1.set_rand_race_time();
-    ptr->set_rand_race_time();
-    this_thread::sleep_for(chrono::seconds(2));
+  cout << "\n Do You Want To Add A Boost To Your Horse ";
+  int boost_choice;
+  cout << "\n\n 1. Yes";
+  cout << "\n 2. No";
+  cout << "\n\n Choice: ";
+  cin >> boost_choice;
+  // add while to check if valid inout
 
-    ptr->add_boost(boost_amount);
-  
-    User* user_ptr = &user;
-
-    racetrack.get_winner(c1, ptr, user_ptr);
+  double boost_amount;
+  if (boost_choice == 1) {
+    item boost = user.boost_menu();
+    boost_amount = boost.get_boost();
+    cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
     this_thread::sleep_for(chrono::seconds(1));
+  }
 
-    return;
+  srand(time(NULL));
+  comphorse c1;
+
+  c1.set_div(division);
+  c1.set_bot_names(division);
+  c1.set_rand_race_time();
+  ptr->set_rand_race_time();
+  this_thread::sleep_for(chrono::seconds(2));
+
+  ptr->add_boost(boost_amount);
+
+  User* user_ptr = &user;
+
+  racetrack.get_winner(c1, ptr, user_ptr);
+  this_thread::sleep_for(chrono::seconds(1));
+
+  return;
 }
 
+void game::get_level_up_menu() { user.level_up_menu(); }
 
-void game:: get_level_up_menu() {
-    user.level_up_menu();
-}
+void game::hof_menu() {
+  system("Clear");
+  cout << " /$$   /$$                                                          "
+          "/$$$$$$   /$$$$$$        /$$$$$$$$ "
+       << endl;
+  cout << "| $$  | $$                                                         "
+          "/$$__  $$ /$$__  $$      | $$_____/ "
+       << endl;
+  cout << "| $$  | $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$$      | "
+          "$$  | $$| $$  |__/      | $$    /$$$$$$  /$$$$$$/$$$$   /$$$$$$  "
+       << endl;
+  cout << "| $$$$$$$$ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$_____/      | "
+          "$$  | $$| $$$$          | $$$$$|____  $$| $$_  $$_  $$ /$$__  $$ "
+       << endl;
+  cout << "| $$__  $$| $$  | $$| $$  | $$ |  $$/$$/| $$$$$$$$|  $$$$$$       | "
+          "$$  | $$| $$_/          | $$__/ /$$$$$$$| $$ | $$ | $$| $$$$$$$$ "
+       << endl;
+  cout << "| $$  | $$| $$  | $$| $$  | $$  |  $$$/ | $$_____/ |____  $$      | "
+          "$$  | $$| $$            | $$   /$$__  $$| $$ | $$ | $$| $$_____/ "
+       << endl;
+  cout << "| $$  | $$|  $$$$$$/|  $$$$$$/   |  $/  |  $$$$$$$ /$$$$$$$/      | "
+          " $$$$$$/| $$            | $$  |  $$$$$$$| $$ | $$ | $$|  $$$$$$$"
+       << endl;
+  cout << "|__/  |__/ |______/  |______/     |_/    |_______/|_______/        "
+          "|______/ |__/            |__/   |_______/|__/ |__/ |__/ |_______/ "
+       << endl;
 
-void game::hof_menu(){
-    system("Clear");
-    cout<<" /$$   /$$                                                          /$$$$$$   /$$$$$$        /$$$$$$$$ "<<endl;
-    cout<<"| $$  | $$                                                         /$$__  $$ /$$__  $$      | $$_____/ "<<endl;
-    cout<<"| $$  | $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$$      | $$  | $$| $$  |__/      | $$    /$$$$$$  /$$$$$$/$$$$   /$$$$$$  "<<endl;
-    cout<<"| $$$$$$$$ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$_____/      | $$  | $$| $$$$          | $$$$$|____  $$| $$_  $$_  $$ /$$__  $$ "<<endl;
-    cout<<"| $$__  $$| $$  | $$| $$  | $$ |  $$/$$/| $$$$$$$$|  $$$$$$       | $$  | $$| $$_/          | $$__/ /$$$$$$$| $$ | $$ | $$| $$$$$$$$ "<<endl;
-    cout<<"| $$  | $$| $$  | $$| $$  | $$  |  $$$/ | $$_____/ |____  $$      | $$  | $$| $$            | $$   /$$__  $$| $$ | $$ | $$| $$_____/ "<<endl;
-    cout<<"| $$  | $$|  $$$$$$/|  $$$$$$/   |  $/  |  $$$$$$$ /$$$$$$$/      |  $$$$$$/| $$            | $$  |  $$$$$$$| $$ | $$ | $$|  $$$$$$$"<<endl;
-    cout<<"|__/  |__/ |______/  |______/     |_/    |_______/|_______/        |______/ |__/            |__/   |_______/|__/ |__/ |__/ |_______/ "<<endl;
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "\n\n1. View Hooves Of Fame" << endl;
+  cout << "2. Add Horse To Hall Of Fame" << endl;
+  cout << "\n9. Return To Main Menu";
 
+  bool input = false;
+  int hof_choice;
+  while (input == false) {
+    cout << "\nChoice: " << endl;
+    if (!(cin >> hof_choice)) {
+      cin.clear();
+      cin.ignore();
+    }
 
+    if (hof_choice == 9) {
+      return;
+    }
 
-    this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n1. View Hooves Of Fame"<<endl;
-    cout<<"2. Add Horse To Hall Of Fame"<<endl;
-    cout<<"\n9. Return To Main Menu";
-
-    bool input = false;
-    int hof_choice;
-    while (input == false) {
-        cout << "\nChoice: " << endl;
-            if(!(cin >> hof_choice)){
-                cin.clear();
-                cin.ignore();
-            }
-        
-        if(hof_choice==9){
-            return;
-        }
-
-        if (hof_choice != 1 && hof_choice != 2 && hof_choice != 9) {
-                cout << "Invalid\n\n";
-        } else {
-            input = true;
-        }
-}
-if(hof_choice==1){
+    if (hof_choice != 1 && hof_choice != 2 && hof_choice != 9) {
+      cout << "Invalid\n\n";
+    } else {
+      input = true;
+    }
+  }
+  if (hof_choice == 1) {
     fstream myFile;
-    myFile.open("halloffame.txt",ios::in);
-        if(myFile.is_open()){
-            string line;
-            system("Clear");
-            cout<< "** Hooves Of Fame List **\n"<<endl;
-        
-            while (getline(myFile,line)){
-                cout << line <<endl;
-            }
-            myFile.close();
-        }
+    myFile.open("halloffame.txt", ios::in);
+    if (myFile.is_open()) {
+      string line;
+      system("Clear");
+      cout << "** Hooves Of Fame List **\n" << endl;
+
+      while (getline(myFile, line)) {
+        cout << line << endl;
+      }
+      myFile.close();
+    }
     bool input = false;
     int leave_view;
     while (input == false) {
-        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+      cout << "\n\nPress 9 to Return To Main Menu: ";
 
-        if(!(cin >> leave_view)){
-            cin.clear();
-            cin.ignore();
-        }
-        if(leave_view==9){
+      if (!(cin >> leave_view)) {
+        cin.clear();
+        cin.ignore();
+      }
+      if (leave_view == 9) {
         return;
-     }else {
-            cout<<"Invalid Input!";
-            this_thread::sleep_for(chrono::seconds(1));
-        }
+      } else {
+        cout << "Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+      }
     }
-}
+  }
 
-
- else if (hof_choice==2){
+  else if (hof_choice == 2) {
     user.add_to_hof();
     return;
-}
+  }
 }
