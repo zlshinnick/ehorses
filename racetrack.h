@@ -10,17 +10,17 @@
 
 class Racetrack {
     public:
-    Racetrack();
-    double fastest_time;
-    vector<string> fastest_horse;
+    Racetrack(); // Default constructor
+    double fastest_time; // Variable to store fastest time
+    vector<string> fastest_horse; // Vector to store fastest horse
 
-    string winner;
+    string winner; // Variable to store winner
 
-    vector<double> racetrack_times;
-    vector<string> racetrack_names;
+    vector<double> racetrack_times; // Vector to store horse times/speeds
+    vector<string> racetrack_names; // Vector to store horse names
 
     
-    void get_winner(comphorse vec, userhorse* name, User* user);
+    void get_winner(comphorse vec, userhorse* name, User* user); // Function to get winner
 
-    void clear_racetrack();
+    void clear_racetrack(); // Function to clear racetrack stats
 };

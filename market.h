@@ -17,7 +17,6 @@ class market{
         userhorse get_horse(); // Function to get a horse from the market
         void print_market(); // Function to print the market
         void welcome_market(); // Function to welcome the user to the market
-
 };
 
 #endif 

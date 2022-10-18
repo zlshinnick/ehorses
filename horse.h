@@ -32,5 +32,4 @@ class horse {
 
     // Virtual function to set race time of comphorses and userhorses
     virtual void set_rand_race_time() = 0;
-
 };
