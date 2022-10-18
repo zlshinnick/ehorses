@@ -10,6 +10,7 @@
 
 Racetrack::Racetrack() {}
 
+// NOT USED
 // userhorse Racetrack::get_users_horse(stable user_stable) {
 //     cout<<"Select Horse To Race"<<endl<<endl;
 //     user_stable.print_stable();
