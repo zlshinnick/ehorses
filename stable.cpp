@@ -131,55 +131,57 @@ void stable::set_parents(){ // Function to set parents
 
 }
 
-void stable::breed() { // Function to breed horses
+void stable::breed(){ // Function to breed horses
     system("Clear");
-    breeding_ground_ascii(); // ASCII art
-    if (num_of_horses < 2) {
-        cout << "You Can Not Breed, You Need At Least 2 Horses";
+    breeding_ground_ascii();    // ASCII art
+    if(num_of_horses<2){ // Checking user has atleast 2 horses
+        cout<<"You Can Not Breed, You Need At Least 2 Horses";
         this_thread::sleep_for(chrono::seconds(1));
         return;
     }
 
 
-    int choice = 1 ;
-    cout << "Do You Want To Breed Horses" << endl << endl;
+    int choice =1 ;
+    cout<<"Do You Want To Breed Horses"<<endl<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout << "1. Yes" << endl;
+    cout<<"1. Yes"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout << "2. No";
+    cout<<"2. No";
     this_thread::sleep_for(chrono::seconds(1));
-    cout << "\n\nChoice: ";
+    cout<<"\n\nChoice: ";
 
-    cin >> choice;
+    cin>>choice;
 
-    if (choice == 2 ) {
+    if(choice ==2 ){
         return;
     }
 
-    set_parents(); // Setting parents
+    set_parents();  // Setting parents
 
-    string horsie_name;
-    cout << "Set Foal Name: ";
-    cin >> horsie_name;
-    bool baby =  add_bred_horse(horsie_name);
+    string name;
+    cout<<"Set Foal Name: ";
+    cin.ignore();
+    cin.clear();
+    getline (cin,name);
 
-    if (baby == true) {
+    bool baby =  add_bred_horse(name);
+
+    if(baby == true){
         this_thread::sleep_for(chrono::seconds(1));
-        cout << p1.get_name() << " And "<<p2.get_name() << " Are Breeding Please Wait" << endl << endl;
+        cout<<p1.get_name()<<" And "<<p2.get_name()<<" Are Breeding Please Wait"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(3));
-        cout << p1.get_name() << " Has Given Birth" << endl << endl;
+        cout<<p1.get_name()<<" Has Given Birth"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
 
 
-        cout <<horsie_name << " Has Been Born And Added To Stables" << endl << endl;
+        cout<<name<<" Has Been Born And Added To Stables"<<endl<<endl;
         this_thread::sleep_for(chrono::seconds(2));
     }
 
-    if(baby == false) {
-        cout << " Baby Not Born, Parents Cant Be Same Generation!";
+    if(baby == false){
+        cout<<" Baby Not Born, Parents Cant Be Same Generation!";
     }
 }
-
 void stable::stable_menu(double* bank) { // Function to display stable menu
     system("Clear");
     cout << "  /$$$$$$   /$$               /$$       /$$                    " << endl;
