@@ -66,7 +66,7 @@ void game::initialize_game() {
 void game::travel_menu() {
   system("Clear");
   cout << "Where Would You Like to Travel?" << endl;
-  cout << "1: Stables" << endl;
+  cout << "\n1: Stables" << endl;
   cout << "2: Racetrack" << endl;
   cout << "3: Horse Market" << endl;
   cout << "4: Boost Store" << endl;
@@ -79,7 +79,7 @@ void game::travel_menu() {
   bool input = false;
 
   while (input == false) {
-        cout << "Choice:";
+        cout << "\nChoice:";
         cin >> choice;
       while(!check_number(choice)) {
         cout << "Invalid input, choose again: ";
