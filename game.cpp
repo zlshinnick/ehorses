@@ -176,7 +176,7 @@ void game::main_menu() {
     cout << "3: Level Up" << endl;
     cout << "4: User Stats" << endl;
     cout << "5: Save Game" << endl;
-    cout << "6: Hall Of Fame" << endl;
+    cout << "6: Hooves Of Fame" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
     
@@ -352,13 +352,19 @@ void game::user_stats_menu(){
 void game::racetrack_menu(){
     system("Clear");
     
-    cout<<"** Welcome To The Racetrack **\n\n";
-
+    cout<<" /$$$$$$$                                      /$$$$$$$$                           /$$       "<<endl;
+    cout<<"| $$__  $$                                    |__  $$__/                          | $$       "<<endl;
+    cout<<"| $$  | $$  /$$$$$$   /$$$$$$$  /$$$$$$          | $$  /$$$$$$  /$$$$$$   /$$$$$$$| $$   /$$"<<endl;
+    cout<<"| $$$$$$$/ |____  $$ /$$_____/ /$$__  $$         | $$ /$$__  $$|____  $$ /$$_____/| $$  /$$/"<<endl;
+    cout<<"| $$__  $$  /$$$$$$$| $$      | $$$$$$$$         | $$| $$  |__/ /$$$$$$$| $$      | $$$$$$/  "<<endl;
+    cout<<"| $$  | $$ /$$__  $$| $$      | $$_____/         | $$| $$      /$$__  $$| $$      | $$_  $$  "<<endl;
+    cout<<"| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$         | $$| $$     |  $$$$$$$|  $$$$$$$| $$ |  $$"<<endl;
+    cout<<"|__/  |__/ |_______/ |_______/ |_______/         |__/|__/      |_______/ |_______/|__/  |__/"<<endl;
     //get division to pass into functions
     int division;
     bool input = false;
 
-
+    this_thread::sleep_for(chrono::seconds(1));
     cout<<"\n** Choose The Division You Wish To Race In **";
     this_thread::sleep_for(chrono::seconds(1));
     cout<< "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
@@ -439,9 +445,19 @@ void game:: get_level_up_menu() {
 
 void game::hof_menu(){
     system("Clear");
-    cout<<"** Welcome To The Hall Of Fame ** ";
+    cout<<" /$$   /$$                                                          /$$$$$$   /$$$$$$        /$$$$$$$$ "<<endl;
+    cout<<"| $$  | $$                                                         /$$__  $$ /$$__  $$      | $$_____/ "<<endl;
+    cout<<"| $$  | $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$$      | $$  | $$| $$  |__/      | $$    /$$$$$$  /$$$$$$/$$$$   /$$$$$$  "<<endl;
+    cout<<"| $$$$$$$$ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$_____/      | $$  | $$| $$$$          | $$$$$|____  $$| $$_  $$_  $$ /$$__  $$ "<<endl;
+    cout<<"| $$__  $$| $$  | $$| $$  | $$ |  $$/$$/| $$$$$$$$|  $$$$$$       | $$  | $$| $$_/          | $$__/ /$$$$$$$| $$ | $$ | $$| $$$$$$$$ "<<endl;
+    cout<<"| $$  | $$| $$  | $$| $$  | $$  |  $$$/ | $$_____/ |____  $$      | $$  | $$| $$            | $$   /$$__  $$| $$ | $$ | $$| $$_____/ "<<endl;
+    cout<<"| $$  | $$|  $$$$$$/|  $$$$$$/   |  $/  |  $$$$$$$ /$$$$$$$/      |  $$$$$$/| $$            | $$  |  $$$$$$$| $$ | $$ | $$|  $$$$$$$"<<endl;
+    cout<<"|__/  |__/ |______/  |______/     |_/    |_______/|_______/        |______/ |__/            |__/   |_______/|__/ |__/ |__/ |_______/ "<<endl;
+
+
+
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"\n\n1. View Hall Of Fame"<<endl;
+    cout<<"\n\n1. View Hooves Of Fame"<<endl;
     cout<<"2. Add Horse To Hall Of Fame"<<endl;
     cout<<"\n9. Return To Main Menu";
 
@@ -470,7 +486,7 @@ if(hof_choice==1){
         if(myFile.is_open()){
             string line;
             system("Clear");
-            cout<< "** Hall of fame **\n"<<endl;
+            cout<< "** Hooves Of Fame List **\n"<<endl;
         
             while (getline(myFile,line)){
                 cout << line <<endl;

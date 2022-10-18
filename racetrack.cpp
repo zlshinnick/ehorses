@@ -58,7 +58,7 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
     }
     if (fastest_horse.size() == 1) {
 
-        cout << "\n"<< fastest_horse[0] << "is the winner with a speed of " << fastest_time << " km/h!" << endl;
+        cout << "\n"<< fastest_horse[0] << " is the winner with a speed of " << fastest_time << " km/h!" << endl;
 
     } else {
 
