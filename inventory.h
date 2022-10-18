@@ -13,6 +13,5 @@ class inventory{
         void print_inventory(); // Prints inventory
         int get_num_items(){return num_of_items;} // Returns number of items in inventory
         item select_boost(); // Selects boost from inventory
-
 };
 #endif
