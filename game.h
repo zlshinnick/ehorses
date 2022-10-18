@@ -9,9 +9,9 @@
 
 class game{
     private:
-    //choose what is happening in the game (ie. goto main menu)
+    // Choose what is happening in the game (ie. goto main menu)
         int choice;
-    //know when game has started
+    // Know when game has started
         bool playing;
 
         market market;
@@ -22,28 +22,24 @@ class game{
 
     public:
         game();
-
-        //operators
-
-        //functions
-        void main_menu();
-        void travel_menu();
-        void initialize_game();
-        void save_game();
-        void load_game();
-        void shop_menu();
-        void market_menu();
-        void breed_menu();
-        void welcome();
-        void inventory_menu();
-        void user_stats_menu();
-        void get_level_up_menu();
-        void hof_menu();
+        // Functions
+        void main_menu(); // Displays main menu
+        void travel_menu(); // Displays travel menu
+        void initialize_game(); // Initialises game
+        void save_game(); // Saves game
+        void load_game(); // Loads game
+        void shop_menu(); // Displays shop menu
+        void market_menu(); // Displays market menu
+        void breed_menu(); // Displays breed menu
+        void welcome(); // Displays welcome message
+        void inventory_menu(); // Displays inventory menu
+        void user_stats_menu(); // Displays user stats menu
+        void get_level_up_menu(); // Displays level up menu
+        void hof_menu(); // Displays hooves of fame menu
         
-        void racetrack_menu();
-        //accecssors
-        int get_playing();
-        //modifys
+        void racetrack_menu(); // Displays racetrack menu
+        // Accessors
+        int get_playing(); // Returns playing status
 
 
 

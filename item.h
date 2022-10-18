@@ -4,19 +4,17 @@
 
 using namespace std;
 
-class item{
+class item {
     private:
         string name;
         int price;
         double boost;
 
     public:
-        item();
-        item(string name, int price, double boost);
-        string get_name();
-        int get_price();
-        double get_boost();
-
-
+        item(); // Default constructor
+        item(string name, int price, double boost); // Constructor
+        string get_name(); // Returns name of item
+        int get_price(); // Returns price of item
+        double get_boost(); // Returns boost of item
 };
 #endif 

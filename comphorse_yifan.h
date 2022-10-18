@@ -16,16 +16,10 @@ class comphorse : public horse {
     int rand_num;
     int divisionC;
     
-    vector<string> bot_names;
-    vector<string> set_bot_names(int div);
-    int set_div(int div);
-    vector<double> bot_race_times;
-    //calling this function will assign random time in an interval based on the division parameter
-    void set_bot_race_times(int div);
-
-    vector<comphorse> bot_times_and_names (int div);
-
-    //virtual function in horse which needs definition
-    void set_rand_race_time();
+    vector<string> bot_names; // Vector to store bot names
+    vector<string> set_bot_names(int div); // Function to set bot names
+    int set_div(int div); // Function to set division to be used by virtual function
+    vector<double> bot_race_times; // Vector to store bot race times
+    void set_rand_race_time(); // Virtual function to set bot race times
 };
 
