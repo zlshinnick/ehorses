@@ -90,11 +90,15 @@ void userhorse::set_rand_race_time() {
 //for when user horse levels up
 void userhorse::level_up() {
   if (level < 3) {
-    this->max_speed = max_speed - 1;
-    this->min_speed = min_speed - 1;
+    this->max_speed = max_speed + 1;
+    this->min_speed = min_speed + 1;
     this->level = level + 1;
+    cout<<"Level Up Success! ";
     return;
   } else {
+    cout<<"Horse Is Already Maximum Level! ";
+    this_thread::sleep_for(chrono::seconds(1));
+
     return;
   }
 }
@@ -115,3 +119,5 @@ void userhorse::win_D2() {
 void userhorse::win_D3() {
   this->num_wins += 1;
 }
+
+

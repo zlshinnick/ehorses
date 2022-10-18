@@ -44,4 +44,5 @@ class userhorse : public horse {
     void win_D1();
     void win_D2();
     void win_D3();
+
 };

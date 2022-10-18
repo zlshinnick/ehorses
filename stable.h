@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
+#include <fstream>
+
 
 class stable{
     private:
@@ -29,8 +31,9 @@ class stable{
 
         void print_stable();
         void initialize();
-        void stable_menu();
+        void stable_menu(double* bank);
         void change_name_menu();
+        void level_up_menu(double* bank);
 
         userhorse* get_horse_for_race();
         //breeding functions 
@@ -41,7 +44,8 @@ class stable{
         bool add_bred_horse(string _name);
 
         void breeding_ground_ascii();
-
+        void get_horse_hof();
+        void add_to_hof(int horse_choice);
 
 };
 #endif

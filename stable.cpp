@@ -159,7 +159,9 @@ void stable::breed(){
 
     string name;
     cout<<"Set Foal Name: ";
-    cin>>name;
+    cin.ignore();
+    cin.clear();
+    getline (cin,name);
 
     bool baby =  add_bred_horse(name);
 
@@ -180,7 +182,7 @@ void stable::breed(){
     }
 }
 
-void stable::stable_menu() {
+void stable::stable_menu(double* bank) {
     system("Clear");
     cout<<"  /$$$$$$   /$$               /$$       /$$                    "<<endl;
     cout<<" /$$__  $$ | $$              | $$      | $$                     "<<endl;
@@ -201,7 +203,7 @@ void stable::stable_menu() {
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"2. Change The Name of A Horse"<<endl;
     this_thread::sleep_for(chrono::seconds(1));
-    cout<<"3. Feed a Horse"<<endl<<endl;
+    cout<<"3. Upgrade A Horse"<<endl<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout<<"9. Return To Main Menu";
     this_thread::sleep_for(chrono::seconds(1));
@@ -222,6 +224,9 @@ void stable::stable_menu() {
         change_name_menu();
         cout<<"\nPress 9 to Return To Main Menu: ";
         cin>>choice;
+        break;
+    case 3:
+        level_up_menu(bank);
         break;
     case 9:
         return;
@@ -258,7 +263,7 @@ void stable::change_name_menu(){
     cout<<"9. None";
     this_thread::sleep_for(chrono::seconds(1));
     int choice;
-    cout<<"Select Horse: ";
+    cout<<"\n\nSelect Horse: ";
     cin>>choice;
 
     while(choice!=9){
@@ -270,7 +275,7 @@ void stable::change_name_menu(){
             getline (cin,name);
             array[choice].set_name(name);
             this_thread::sleep_for(chrono::seconds(1));
-            cout<<"\n\nThe Horses Name is Now"<<array[choice].get_name();
+            cout<<"\n\nThe Horses Name is Now "<<array[choice].get_name();
             this_thread::sleep_for(chrono::seconds(2));
 
             return;
@@ -313,4 +318,200 @@ userhorse* stable::get_horse_for_race(){
     userhorse* horse_for_race =&array[index];
     
     return horse_for_race;
+}
+
+void stable::level_up_menu(double* bank){
+    system("Clear");
+    cout<<"** Which Horse Would You Like To Upgrade ** ";
+    this_thread::sleep_for(chrono::seconds(1));
+    for(int i = 0;i<num_of_horses;i++){
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n\n"<<array[i].get_name()<<endl;
+        cout<<"Level: "<<array[i].get_level()<<endl;
+        cout<<"Max Speed: "<<array[i].get_max()<<endl;;
+        
+
+    }
+    cout<<"\n";
+    for(int i = 0; i<num_of_horses;i++){
+        cout<<i<<": "<<array[i].get_name()<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+
+    }
+
+    bool input = false;
+    int horse_choice;
+    while (input == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+
+        cout <<"\nChoice:" ;
+        if(!(cin >> horse_choice)){
+            cin.clear();
+            cin.ignore();
+        }
+        if (horse_choice < 0 || horse_choice >num_of_horses) {
+            cout << "Invalid!\n\n";
+            this_thread::sleep_for(chrono::seconds(1));
+            
+        } else {
+            input = true;
+        }
+
+        cout<<array[horse_choice].get_name()<<" Has Been Selected \n";
+
+        int level_choice;
+        switch(array[horse_choice].get_level()){
+            case 1:
+                cout<<"\n"<< array[horse_choice].get_name()<< " Is Level 1\n\n";
+                this_thread::sleep_for(chrono::seconds(1));
+                cout<<"To Upgrade To Level 2 is $500"<<endl;
+                this_thread::sleep_for(chrono::seconds(1));
+                cout<<"\nWould You Like To Upgrade? ";
+                this_thread::sleep_for(chrono::seconds(1));
+
+                
+                cout<<"\n\n 1. Yes";
+                cout<<"\n 2. No";
+                this_thread::sleep_for(chrono::seconds(1));
+
+                cout<<"\n\n Choice: ";
+                cin>>level_choice;
+
+                if(level_choice==2){
+                    break;
+                } else if(level_choice == 1){
+                    if( *bank > 500){
+                    array[horse_choice].level_up();
+                    *bank -= 500;
+                    }
+                }
+                break;
+                // make sure this is input erroor proof
+            case 2: 
+                cout<<"\n"<< array[horse_choice].get_name()<< " Is Level 2\n";
+                this_thread::sleep_for(chrono::seconds(1));
+                cout<<"To Upgrade To Level 3 is $100";
+                this_thread::sleep_for(chrono::seconds(1));
+                cout<<"Would You Like To Upgrade? ";
+                this_thread::sleep_for(chrono::seconds(1));
+
+                cout<<"\n\n 1. Yes";
+                cout<<"\n 2. No";
+                cout<<"\n\n Choice: ";
+                cin>>level_choice;
+
+                if(level_choice==2){
+                    break;
+                } else if(level_choice == 1){
+                    if( *bank > 1000){
+                    array[horse_choice].level_up();
+                    *bank -= 1000;
+                    }
+                }
+                break;
+
+            case 3:
+                cout<<"\n"<< array[horse_choice].get_name()<< " Is Max Level \n";
+                this_thread::sleep_for(chrono::seconds(1));
+                break;
+        }
+
+    }
+    
+     int return_level_up;
+     bool inputing = false;
+
+    while (inputing == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+        cout <<"\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> return_level_up)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_level_up==9){
+            return;
+         }
+
+    if(return_level_up!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+
+}
+
+void stable::get_horse_hof(){
+cout<<"\n** Select Which Horse You Would Like To Add **\n\n";
+this_thread::sleep_for(chrono::seconds(1));
+for(int i = 0; i<num_of_horses;i++){
+    cout<<i<<": "<<array[i].get_name();
+    this_thread::sleep_for(chrono::seconds(1));
+    if(array[i].get_wins()>=5){
+        cout<<": Eligible"<<endl;
+    }else{
+        cout<<": Not Eleigible"<<endl;
+    }
+}
+
+    bool input = false;
+    int horse_choice;
+    while (input == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+
+        cout <<"\nChoice:" ;
+        if(!(cin >> horse_choice)){
+            cin.clear();
+            cin.ignore();
+        }
+        if (horse_choice < 0 || horse_choice >num_of_horses) {
+            cout << "Invalid!\n\n";
+            this_thread::sleep_for(chrono::seconds(1));
+            
+        } else {
+            input = true;
+        }
+    }
+
+
+    if(array[horse_choice].get_wins()<5){
+        cout<<"This Horse Does Not Have 5 Wins and Can Not Be Added To Hall Of Fame!"<<endl;
+        } else {
+        add_to_hof(horse_choice);
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n"<<array[horse_choice].get_name()<<" Has Been Added To The Hall Of Fame "<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+
+    }
+    
+
+     int return_hof;
+     bool inputing = false;
+
+    while (inputing == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+        cout <<"\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> return_hof)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_hof==9){
+            return;
+         }
+
+    if(return_hof!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+}
+
+void stable::add_to_hof(int horse_choice){
+        ofstream outFile("halloffame.txt",ios::app);
+
+        if (outFile.is_open()) {
+            outFile << array[horse_choice].get_name()<<endl;
+        }
+    outFile.close();
 }

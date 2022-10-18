@@ -14,7 +14,7 @@ User::User() {
 
 void User::initialize(string user_name){
     name = user_name;
-    bank_account = 1000;
+    bank_account = 10000;
     user_wins = 0;
     exp = 0;
     level = 1;
@@ -131,8 +131,7 @@ void User::breeding(){
 }
 
 void User::call_stable_menu(){
-    cout<<"hello"<<endl;
-    stable.stable_menu();
+    stable.stable_menu(&bank_account);
     
     return;
 }
@@ -243,4 +242,8 @@ void User::level_up_menu(){
 item User::boost_menu(){
     item boost = inventory.select_boost();
     return boost;
+}
+
+void User::add_to_hof(){
+    stable.get_horse_hof();
 }

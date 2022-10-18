@@ -38,6 +38,7 @@ class game{
         void inventory_menu();
         void user_stats_menu();
         void get_level_up_menu();
+        void hof_menu();
         
         void racetrack_menu();
         //accecssors
