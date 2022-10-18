@@ -30,6 +30,7 @@ class User{
         void initialize_stable();
         void print_user_stats();
         void level_up_menu();
+        void add_to_hof();
     
         //accessors
         string get_name();

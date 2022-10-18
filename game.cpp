@@ -80,7 +80,7 @@ void game::travel_menu() {
     bool input = false;
 
     while (input == false) {
-        cout <<"Choice:" ;
+        cout <<"\nChoice:" ;
         if(!(cin >> user_choice_travel)){
             cin.clear();
             cin.ignore();
@@ -176,7 +176,7 @@ void game::main_menu() {
     cout << "3: Level Up" << endl;
     cout << "4: User Stats" << endl;
     cout << "5: Save Game" << endl;
-    cout << "6: Load Game" << endl;
+    cout << "6: Hall Of Fame" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
     
@@ -217,6 +217,7 @@ void game::main_menu() {
             save_game();
             break;
         case 6:
+        hof_menu();
             break;
         case 9:
             playing = false;
@@ -426,7 +427,7 @@ while (input == false) {
     User* user_ptr = &user;
 
     racetrack.get_winner(c1, ptr, user_ptr);
-    this_thread::sleep_for(chrono::seconds(5));
+    this_thread::sleep_for(chrono::seconds(1));
 
     return;
 }
@@ -434,4 +435,69 @@ while (input == false) {
 
 void game:: get_level_up_menu() {
     user.level_up_menu();
+}
+
+void game::hof_menu(){
+    system("Clear");
+    cout<<"** Welcome To The Hall Of Fame ** ";
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"\n\n1. View Hall Of Fame"<<endl;
+    cout<<"2. Add Horse To Hall Of Fame"<<endl;
+    cout<<"\n9. Return To Main Menu";
+
+    bool input = false;
+    int hof_choice;
+    while (input == false) {
+        cout << "\nChoice: " << endl;
+            if(!(cin >> hof_choice)){
+                cin.clear();
+                cin.ignore();
+            }
+        
+        if(hof_choice==9){
+            return;
+        }
+
+        if (hof_choice != 1 && hof_choice != 2 && hof_choice != 9) {
+                cout << "Invalid\n\n";
+        } else {
+            input = true;
+        }
+}
+if(hof_choice==1){
+    fstream myFile;
+    myFile.open("halloffame.txt",ios::in);
+        if(myFile.is_open()){
+            string line;
+            system("Clear");
+            cout<< "** Hall of fame **\n"<<endl;
+        
+            while (getline(myFile,line)){
+                cout << line <<endl;
+            }
+            myFile.close();
+        }
+    bool input = false;
+    int leave_view;
+    while (input == false) {
+        cout <<"\n\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> leave_view)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(leave_view==9){
+        return;
+     }else {
+            cout<<"Invalid Input!";
+            this_thread::sleep_for(chrono::seconds(1));
+        }
+    }
+}
+
+
+ else if (hof_choice==2){
+    user.add_to_hof();
+    return;
+}
 }

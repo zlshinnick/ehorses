@@ -14,7 +14,8 @@
         "__threading_support": "cpp",
         "chrono": "cpp",
         "istream": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "__tuple": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

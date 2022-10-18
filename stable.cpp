@@ -261,7 +261,7 @@ void stable::change_name_menu(){
     cout<<"9. None";
     this_thread::sleep_for(chrono::seconds(1));
     int choice;
-    cout<<"Select Horse: ";
+    cout<<"\n\nSelect Horse: ";
     cin>>choice;
 
     while(choice!=9){
@@ -273,7 +273,7 @@ void stable::change_name_menu(){
             getline (cin,name);
             array[choice].set_name(name);
             this_thread::sleep_for(chrono::seconds(1));
-            cout<<"\n\nThe Horses Name is Now"<<array[choice].get_name();
+            cout<<"\n\nThe Horses Name is Now "<<array[choice].get_name();
             this_thread::sleep_for(chrono::seconds(2));
 
             return;
@@ -437,4 +437,79 @@ void stable::level_up_menu(double* bank){
     }
 }
 
+}
+
+void stable::get_horse_hof(){
+cout<<"\n** Select Which Horse You Would Like To Add **\n\n";
+this_thread::sleep_for(chrono::seconds(1));
+for(int i = 0; i<num_of_horses;i++){
+    cout<<i<<": "<<array[i].get_name();
+    this_thread::sleep_for(chrono::seconds(1));
+    if(array[i].get_wins()>=5){
+        cout<<": Eligible"<<endl;
+    }else{
+        cout<<": Not Eleigible"<<endl;
+    }
+}
+
+    bool input = false;
+    int horse_choice;
+    while (input == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+
+        cout <<"\nChoice:" ;
+        if(!(cin >> horse_choice)){
+            cin.clear();
+            cin.ignore();
+        }
+        if (horse_choice < 0 || horse_choice >num_of_horses) {
+            cout << "Invalid!\n\n";
+            this_thread::sleep_for(chrono::seconds(1));
+            
+        } else {
+            input = true;
+        }
+    }
+
+
+    if(array[horse_choice].get_wins()<5){
+        cout<<"This Horse Does Not Have 5 Wins and Can Not Be Added To Hall Of Fame!"<<endl;
+        } else {
+        add_to_hof(horse_choice);
+        this_thread::sleep_for(chrono::seconds(1));
+        cout<<"\n"<<array[horse_choice].get_name()<<" Has Been Added To The Hall Of Fame "<<endl;
+        this_thread::sleep_for(chrono::seconds(1));
+
+    }
+    
+
+     int return_hof;
+     bool inputing = false;
+
+    while (inputing == false) {
+        this_thread::sleep_for(chrono::seconds(1));
+        cout <<"\nPress 9 to Return To Main Menu: " ;
+
+        if(!(cin >> return_hof)){
+            cin.clear();
+            cin.ignore();
+        }
+        if(return_hof==9){
+            return;
+         }
+
+    if(return_hof!=9){
+        cout<<"Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+}
+
+void stable::add_to_hof(int horse_choice){
+        ofstream outFile("halloffame.txt",ios::app);
+
+        if (outFile.is_open()) {
+            outFile << array[horse_choice].get_name()<<endl;
+        }
+    outFile.close();
 }

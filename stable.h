@@ -6,6 +6,8 @@
 #include <algorithm>
 #include <vector>
 #include <iostream>
+#include <fstream>
+
 
 class stable{
     private:
@@ -42,7 +44,8 @@ class stable{
         bool add_bred_horse(string _name);
 
         void breeding_ground_ascii();
-
+        void get_horse_hof();
+        void add_to_hof(int horse_choice);
 
 };
 #endif

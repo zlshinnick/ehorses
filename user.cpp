@@ -243,3 +243,7 @@ item User::boost_menu(){
     item boost = inventory.select_boost();
     return boost;
 }
+
+void User::add_to_hof(){
+    stable.get_horse_hof();
+}

@@ -119,3 +119,5 @@ void userhorse::win_D2() {
 void userhorse::win_D3() {
   this->num_wins += 1;
 }
+
+
