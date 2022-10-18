@@ -15,37 +15,38 @@ class stable{
         userhorse* array;
         int max;
 
-        //breeding attributes
+        // Breeding attributes
         userhorse p1;
         userhorse p2;
 
     public:
-        stable();
-        stable(int size);
+        stable(); // Default constructor
+        stable(int size); // Constructor
 
-        int get_current_num_horses();
+        int get_current_num_horses(); // Returns number of horses in stable
 
-        userhorse* get_horses();
+        userhorse* get_horses(); // Returns array of horses in stable
 
-        bool add_horse(userhorse h);
+        bool add_horse(userhorse h); // Adds horse to stable if there is space
 
-        void print_stable();
-        void initialize();
-        void stable_menu(double* bank);
-        void change_name_menu();
-        void level_up_menu(double* bank);
+        void print_stable(); // Prints stable
+        void initialize(); // Initialises stable
+        void stable_menu(double* bank); // Stable menu
+        void change_name_menu(); // Change name menu
+        void level_up_menu(double* bank); // Level up menu
 
-        userhorse* get_horse_for_race();
-        //breeding functions 
-        void set_parents();
-      
-        void breed();
+        userhorse* get_horse_for_race(); // Returns horse for race
+        
+        // Breeding functions 
+        void set_parents(); // Sets parents for breeding
 
-        bool add_bred_horse(string _name);
+        void breed(); // Breeds horses
 
-        void breeding_ground_ascii();
-        void get_horse_hof();
-        void add_to_hof(int horse_choice);
+        bool add_bred_horse(string _name); // Adds bred horse to stable
 
+        void breeding_ground_ascii(); // Prints ascii art for breeding ground
+        void get_horse_hof(); // Gets horse for hooves of fame
+        void add_to_hof(int horse_choice); // Adds horse to hooves of fame
 };
+
 #endif

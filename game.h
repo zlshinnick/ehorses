@@ -40,9 +40,6 @@ class game{
         void racetrack_menu(); // Displays racetrack menu
         // Accessors
         int get_playing(); // Returns playing status
-
-
-
 };
 
 #endif

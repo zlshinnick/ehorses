@@ -27,7 +27,6 @@ class bred_horse : public userhorse {
     void set_parents(string dad_name, double dad_max, double dad_min, string mum_name, double mum_max, double mum_min);
 
     void print_parents();
-
 };
 
 #endif
