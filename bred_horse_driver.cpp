@@ -41,5 +41,4 @@ system("Clear");
     b1.print_horse();
     cout << "output  parents:" << endl;
     b1.print_parents(); 
-    
 }
