@@ -105,7 +105,7 @@ void stable::set_parents(){
 
     int index_second = 0;
 
-    cout<<"Select Parent 2 For Breeding"<<endl<<endl;
+    cout<<"\nSelect Parent 2 For Breeding"<<endl<<endl;
 
 
     for(int i =0;i<num_of_horses;i++){
@@ -253,7 +253,7 @@ void stable::breeding_ground_ascii(){
 }
 
 void stable::change_name_menu(){
-    cout<<"** Which Horse Would You Like To Change The Name Of"<<endl<<endl;
+    cout<<"** Which Horse Would You Like To Change The Name Of **"<<endl<<endl;
     this_thread::sleep_for(chrono::seconds(1));
     for(int i =0;i<num_of_horses;i++){
         cout<<i<<". "<<array[i].get_name();
@@ -390,7 +390,7 @@ void stable::level_up_menu(double* bank){
             case 2: 
                 cout<<"\n"<< array[horse_choice].get_name()<< " Is Level 2\n";
                 this_thread::sleep_for(chrono::seconds(1));
-                cout<<"To Upgrade To Level 3 is $100";
+                cout<<"To Upgrade To Level 3 is $100"<<endl;
                 this_thread::sleep_for(chrono::seconds(1));
                 cout<<"Would You Like To Upgrade? ";
                 this_thread::sleep_for(chrono::seconds(1));

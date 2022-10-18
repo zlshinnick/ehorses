@@ -58,7 +58,7 @@ void userhorse::level_up() {
     this->max_speed = max_speed + 1;
     this->min_speed = min_speed + 1;
     this->level = level + 1;
-    cout << "Level Up Success! " << endl;;
+    cout << "\nLevel Up Success! " << endl;;
     return;
   } else {
     cout<<"Horse Is Already Maximum Level! ";

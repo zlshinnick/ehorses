@@ -5,6 +5,8 @@ using namespace std;
 #include "userhorse.h"
 
 int main() {
+system("Clear");
+
     //driver function to test userhorse
     system("Clear");
     cout << endl; cout << endl;

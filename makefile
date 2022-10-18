@@ -26,7 +26,17 @@ run_race_zach:
 	g++ -c raceGraphics.cpp -I"\\Desktop\SFML-2.5.1-macos-clang\include"
 	g++ raceGraphics.o -o raceGraphics -L"\Desktop\SFML-2.5.1-macos-clang\lib" -lsfml-graphics -lsfml-window -lsfml-system
 	./raceGraphics
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 12c1d71b64ba7ed8b9adc570b678474e2d943342
 run_test_userhorse:
 	g++ horse.cpp userhorse.cpp userhorse_driver.cpp -o test
 	./test
+
+run_test_bred_horse:
+	g++ horse.cpp userhorse.cpp bred_horse.cpp bred_horse_driver.cpp -o test
+	./test
+
+
