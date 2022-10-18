@@ -383,6 +383,10 @@ void stable::level_up_menu(double* bank) { // Function to level up a horse
                     if ( *bank > 500){
                     array[horse_choice].level_up();
                     *bank -= 500;
+                    } else{
+                        cout<<"\nInsufficent Funds!"<<endl;
+                        this_thread::sleep_for(chrono::seconds(2));
+
                     }
                 }
                 break;

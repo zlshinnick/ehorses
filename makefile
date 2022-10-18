@@ -2,7 +2,7 @@ run_yifan:
 	g++ horse.cpp comphorse_yifan.cpp racetrack.cpp userhorse.cpp user.cpp yifansDriver.cpp -o runy
 	./runy
 
-run_zach:
+run_game:
 	g++ main.cpp user.cpp userhorse.cpp game.cpp horse.cpp  stable.cpp  shop.cpp item.cpp  market.cpp inventory.cpp bred_horse.cpp racetrack.cpp comphorse_yifan.cpp -o run_zachs
 	./run_zachs
 

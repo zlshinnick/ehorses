@@ -31,11 +31,19 @@ item shop::get_item() { // Function to get item from shop
     cout << "\n\nWhich Item Would You Like To Purchase?" << endl;
     this_thread::sleep_for(chrono::seconds(1));
     int choice_item;
+<<<<<<< HEAD
+    cout<<"0: Carrot(boost = 0.5 km/ph)"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"1: Sugar (boost = 1 km/ph)"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+    cout<<"2: Apple (boost = 2 km/ph)"<<endl;
+=======
     cout << "0: Carrot(boost = 0.5 seconds)" << endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout << "1: Sugar (boost = 1 seconds)" << endl;
     this_thread::sleep_for(chrono::seconds(1));
     cout << "2: Apple (boost = 2 seconds)" << endl;
+>>>>>>> fd4b9119ad05fdc952d90668e19a488e154ef733
     this_thread::sleep_for(chrono::seconds(1));
     cout << "9: None";
     this_thread::sleep_for(chrono::seconds(1));

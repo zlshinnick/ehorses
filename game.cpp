@@ -68,7 +68,7 @@ void game::initialize_game() {
 void game::travel_menu() {
   system("Clear");
   cout << "Where Would You Like to Travel?" << endl;
-  cout << "1: Stables" << endl;
+  cout << "\n1: Stables" << endl;
   cout << "2: Racetrack" << endl;
   cout << "3: Horse Market" << endl;
   cout << "4: Boost Store" << endl;
@@ -81,7 +81,7 @@ void game::travel_menu() {
   bool input = false;
 
   while (input == false) {
-        cout << "Choice:";
+        cout << "\nChoice:";
         cin >> choice;
       while(!check_number(choice)) {
         cout << "Invalid input, choose again: ";
@@ -194,8 +194,7 @@ void game::main_menu() {
     cout << "2: Inventory" << endl;
     cout << "3: Level Up" << endl;
     cout << "4: User Stats" << endl;
-    cout << "5: Save Game" << endl;
-    cout << "6: Hooves Of Fame" << endl;
+    cout << "5: Hooves Of Fame" << endl;
     cout << "9: Quit" << endl;
     cout << endl;
 
@@ -214,8 +213,7 @@ void game::main_menu() {
         user_choice = stoi(choice);
 
       if (user_choice != 1 && user_choice != 2 && user_choice != 3 &&
-          user_choice != 4 && user_choice != 5 && user_choice != 6 &&
-          user_choice != 9) {
+          user_choice != 4 && user_choice != 5 && user_choice != 9) {
         cout << "Invalid!\n\n";
         this_thread::sleep_for(chrono::seconds(3));
         break;
@@ -237,10 +235,7 @@ void game::main_menu() {
         user_stats_menu();
         break;
       case 5:
-        save_game();
-        break;
-      case 6:
-        hof_menu();
+                hof_menu();
         break;
       case 9:
         playing = false;
@@ -438,10 +433,10 @@ void game::racetrack_menu() { // Displays racetrack menu
   bool input2 = false;
   string choice;
   while (input2 == false) {
-      cout << "\n Do You Want To Add A Boost To Your Horse ";
+      cout << "\nDo You Want To Add A Boost To Your Horse ";
       
-      cout << "\n 1. Yes";
-      cout << "\n 2. No\n\n";
+      cout << "\n1. Yes";
+      cout << "\n2. No\n\n";
       this_thread::sleep_for(chrono::seconds(1));
       cout << "Choice: ";
       cin >> choice;
@@ -456,7 +451,9 @@ void game::racetrack_menu() { // Displays racetrack menu
         cout << "Invalid Input!";
         this_thread::sleep_for(chrono::seconds(1));
       }
-
+      if(boost_choice==2){
+        input2 = true;
+      }
       if (boost_choice == 1) {
           item boost = user.boost_menu();
           boost_amount = boost.get_boost();
@@ -467,7 +464,7 @@ void game::racetrack_menu() { // Displays racetrack menu
           input2 = true;
 
         } else  {
-        cout<<"No Boost Applied\n"<<endl;
+          cout<<"No Boost Applied\n"<<endl;
           input2 = true;
 
       }
@@ -487,6 +484,7 @@ void game::racetrack_menu() { // Displays racetrack menu
 
   User* user_ptr = &user;
 
+  system("Clear");
   cout << "\nHorses are racing..." << endl;
   this_thread::sleep_for(chrono::seconds(2));
   cout << "..." << endl;
