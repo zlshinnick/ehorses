@@ -383,6 +383,10 @@ void stable::level_up_menu(double* bank){
                     if( *bank > 500){
                     array[horse_choice].level_up();
                     *bank -= 500;
+                    } else{
+                        cout<<"\nInsufficent Funds!"<<endl;
+                        this_thread::sleep_for(chrono::seconds(2));
+
                     }
                 }
                 break;

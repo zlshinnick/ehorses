@@ -14,7 +14,7 @@ User::User() {
 
 void User::initialize(string user_name){
     name = user_name;
-    bank_account = 10000;
+    bank_account = 0;
     user_wins = 0;
     exp = 0;
     level = 1;

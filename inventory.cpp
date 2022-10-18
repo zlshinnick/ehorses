@@ -22,8 +22,8 @@ void inventory::remove_item(int index) { // Removes item from inventory
 void inventory::print_inventory() { // Prints inventory
 
     if (num_of_items == 0) {
-        cout << "\nInventory Is Empty!\n";
-        cout << "Visit General Store To Buy Boosts" << endl;
+        cout << "\nInventory Is Empty!"<< endl;
+        cout << "\nVisit General Store To Buy Boosts" << endl;
         return; // Terminates code if inventory is empty
     } else {
         bool empty;
@@ -45,8 +45,8 @@ void inventory::print_inventory() { // Prints inventory
             
             }
         } else {
-            cout << "\nInventory Is Empty!";
-            cout << "\nVisit General Store To Buy Boosts"; // No return needed because end of function
+            cout << "\nInventory Is Empty!"<<endl;;
+            cout << "\nVisit General Store To Buy Boosts"<<endl; // No return needed because end of function
         }
     }
 }
