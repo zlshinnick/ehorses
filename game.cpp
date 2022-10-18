@@ -513,13 +513,13 @@ void game::hof_menu() {
 
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\n\n1. View Hooves Of Fame" << endl;
-  cout << "2. Add Horse To Hall Of Fame" << endl;
+  cout << "2. Add Horse To Hooves Of Fame" << endl;
   cout << "\n9. Return To Main Menu";
 
   bool input = false;
   int hof_choice;
   while (input == false) {
-    cout << "\nChoice: " << endl;
+    cout << "\nChoice: ";
     if (!(cin >> hof_choice)) {
       cin.clear();
       cin.ignore();

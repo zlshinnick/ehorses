@@ -173,7 +173,7 @@ void stable::breed() { // Function to breed horses
         this_thread::sleep_for(chrono::seconds(2));
 
 
-        cout <<  << " Has Been Born And Added To Stables" << endl << endl;
+        cout << " Has Been Born And Added To Stables" << endl << endl;
         this_thread::sleep_for(chrono::seconds(2));
     }
 
