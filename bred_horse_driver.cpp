@@ -34,7 +34,7 @@ system("Clear");
     b1.print_parents();
 
     
-    cout << "\n\nsetting with parents" << endl;
+    cout << "\nsetting with parents" << endl;
     b1.set_bred_horse("baby", max_ave, min_ave, gen);
     b1.set_parents(p1.get_name(),p1.get_max(), p1.get_min(), p2.get_name(), p2.get_max(), p2.get_min());
 
