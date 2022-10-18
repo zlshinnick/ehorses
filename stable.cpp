@@ -3,6 +3,7 @@
 #include "horse.h"
 #include <chrono>
 #include <thread>
+#include <string>
 
 stable::stable() { // Default constructor
     max = 0;
@@ -157,13 +158,10 @@ void stable::breed() { // Function to breed horses
 
     set_parents(); // Setting parents
 
-    string name;
+    string horsie_name;
     cout << "Set Foal Name: ";
-    cin.ignore();
-    cin.clear();
-    getline (cin, name);
-
-    bool baby =  add_bred_horse(name);
+    cin >> horsie_name;
+    bool baby =  add_bred_horse(horsie_name);
 
     if (baby == true) {
         this_thread::sleep_for(chrono::seconds(1));
@@ -173,7 +171,7 @@ void stable::breed() { // Function to breed horses
         this_thread::sleep_for(chrono::seconds(2));
 
 
-        cout << " Has Been Born And Added To Stables" << endl << endl;
+        cout <<horsie_name << " Has Been Born And Added To Stables" << endl << endl;
         this_thread::sleep_for(chrono::seconds(2));
     }
 
@@ -519,6 +517,6 @@ void stable::add_to_hof(int horse_choice){ // Adds the horse to the hall of fame
     outFile.close();
 }
 
-void stable::~stable(){
+stable::~stable(){
     delete[] array;
 }

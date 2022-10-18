@@ -49,7 +49,7 @@ class stable{
         void add_to_hof(int horse_choice); // Adds horse to hooves of fame
 
 
-        void ~stable();
+        ~stable();
 };
 
 #endif
