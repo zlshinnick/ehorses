@@ -62,6 +62,6 @@ class User {
         void user_wonD3(); // Function to add to user stats if they win division 3
     
 
-
+        void delete_stable(); // deleteing the dyanmic memory of stable
         userhorse* get_horse_for_race(); // Returns horse for race
 };

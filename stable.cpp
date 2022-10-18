@@ -518,3 +518,7 @@ void stable::add_to_hof(int horse_choice){ // Adds the horse to the hall of fame
         }
     outFile.close();
 }
+
+void stable::~stable(){
+    delete[] array;
+}

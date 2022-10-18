@@ -266,3 +266,7 @@ item User::boost_menu() { // Function to boost menu
 void User::add_to_hof() { // Function to add user to hooves of fame
     stable.get_horse_hof();
 }
+
+void User::delete_stable(){
+    stable.~stable();
+}

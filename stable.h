@@ -47,6 +47,9 @@ class stable{
         void breeding_ground_ascii(); // Prints ascii art for breeding ground
         void get_horse_hof(); // Gets horse for hooves of fame
         void add_to_hof(int horse_choice); // Adds horse to hooves of fame
+
+
+        void ~stable();
 };
 
 #endif

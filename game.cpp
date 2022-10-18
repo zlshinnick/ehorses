@@ -238,6 +238,7 @@ void game::main_menu() {
                 hof_menu();
         break;
       case 9:
+        
         playing = false;
         break;
     }
