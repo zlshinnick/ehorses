@@ -1,6 +1,9 @@
+#ifndef USERHORSE_H
+#define USERHORSE_H
+
 #include <string>
 #include "horse.h"
-#pragma once
+
 using namespace std;
 
 class userhorse : public horse {
@@ -44,3 +47,5 @@ class userhorse : public horse {
     void win_D3(); // When division 3 is won
 
 };
+
+#endif

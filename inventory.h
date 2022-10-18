@@ -1,7 +1,8 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include "item.h"
-class inventory{
+
+class inventory {
     private:
         item* user_inventory;
         int num_of_items;

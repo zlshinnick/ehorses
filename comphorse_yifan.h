@@ -1,8 +1,10 @@
+#ifndef COMPHORSE_YIFAN_H
+#define COMPHORSE_YIFAN_H
+
 #include <string>
 #include <vector>
 #include "horse.h"
 
-#pragma once
 
 using namespace std;
 
@@ -23,3 +25,4 @@ class comphorse : public horse {
     void set_rand_race_time(); // Virtual function to set bot race times
 };
 
+#endif

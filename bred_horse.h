@@ -1,5 +1,6 @@
 #ifndef BRED_HORSE_H
 #define BRED_HORSE_H
+
 #include <string>
 #include "horse.h"
 #include "userhorse.h"

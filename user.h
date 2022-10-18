@@ -1,8 +1,10 @@
+#ifndef USER_H
+#define USER_H
+
 #include "horse.h"
 #include "stable.h"
 #include "inventory.h"
 #include <iostream>
-#pragma once
 #include <string>
 using namespace std;
 
@@ -65,3 +67,5 @@ class User {
         void delete_stable(); // deleteing the dyanmic memory of stable
         userhorse* get_horse_for_race(); // Returns horse for race
 };
+
+#endif

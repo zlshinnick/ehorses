@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+
 #include "user.h"
 #include "shop.h"
 #include "item.h"
