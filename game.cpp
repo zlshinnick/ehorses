@@ -171,7 +171,7 @@ void game::main_menu() {
   bool playing = true;
   while (playing == true) {
     system("Clear");
-    cout << "************ MAIN MENU ******" << endl;
+    cout << "********* MAIN MENU *********" << endl;
     cout << "1: Travel" << endl;
     cout << "2: Inventory" << endl;
     cout << "3: Level Up" << endl;
@@ -370,7 +370,7 @@ void game::racetrack_menu() {
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\n** Choose The Division You Wish To Race In **";
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
+  cout << "\n\n* Division 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
 
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\n\n* Division 1 *";
@@ -379,20 +379,20 @@ void game::racetrack_menu() {
   cout << "\nExp = 100 for win";
 
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 2 *";
+  cout << "\n\n* Division 2 *";
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\nPrize Money = 1000 for win";
   cout << "\nExp = 250 for win";
 
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 3 *";
+  cout << "\n\n* Division 3 *";
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\nPrize Money = 1500 for win";
   cout << "\nExp = 500 for win";
 
   this_thread::sleep_for(chrono::seconds(1));
   while (input == false) {
-    cout << "\n\nChoose Your Race Division: " << endl;
+    cout << "\n\nChoose Your Race Division: ";
     if (!(cin >> division)) {
       cin.clear();
       cin.ignore();
@@ -429,11 +429,18 @@ void game::racetrack_menu() {
   c1.set_bot_names(division);
   c1.set_rand_race_time();
   ptr->set_rand_race_time();
-  this_thread::sleep_for(chrono::seconds(2));
+  
 
   ptr->add_boost(boost_amount);
 
   User* user_ptr = &user;
+
+  cout << "\nHorses are racing..." << endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  cout << "..." << endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  cout << "..." << endl << endl;
+  this_thread::sleep_for(chrono::seconds(2));
 
   racetrack.get_winner(c1, ptr, user_ptr);
   this_thread::sleep_for(chrono::seconds(1));
