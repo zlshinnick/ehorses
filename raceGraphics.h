@@ -8,5 +8,5 @@
 class graphics : public Racetrack {
     graphics();
 
-    void draw_horses(Racetrack track);
+    void draw_horses(Racetrack track); // Function to draw horses
 };    

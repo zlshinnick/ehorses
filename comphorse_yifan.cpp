@@ -11,25 +11,22 @@
 
 using namespace std;
 
+// Constructor
 comphorse::comphorse () {
-
 }
 
-
+// Outputs the bot information (name: racetime)
 void comphorse::get_bot_info() {
 
     for (int i = 0; i < 7; i++) {
 
         cout << bot_names[i] << ": " << bot_race_times[i] << " km/h" << endl;
     }
-
-
 }
 
 vector<string> comphorse::set_bot_names(int div) {
 
-    if (div == 1) {
-
+    if (div == 1) { // Sets horse names for first division
         rand_num = rand() % 3;
         switch (rand_num) {
             case 0:
@@ -163,10 +160,7 @@ vector<string> comphorse::set_bot_names(int div) {
                 break;
         }
 
-    } else if (div == 2) {
-        
-        //bot_names = {};
-
+    } else if (div == 2) { // Sets horse names for second division
         rand_num = rand() % 3;
         switch (rand_num) {
             case 0:
@@ -300,10 +294,7 @@ vector<string> comphorse::set_bot_names(int div) {
                 break;
         }
 
-    } else if (div == 3) {
-        
-       // bot_names = {""};
-
+    } else if (div == 3) { // Sets horse names for third division
         rand_num = rand() % 3;
         switch (rand_num) {
             case 0:
@@ -432,37 +423,33 @@ vector<string> comphorse::set_bot_names(int div) {
                 bot_names.push_back("Golden Mile");
                 break;
 
-            default:
+            default: // Outputs "Error" for unexpected value
                 cout << "Error" << endl;
                 break;
         }
 
-    } else {
-
+    } else { // Outputs "Error" for unexpected division value
         cout << "Invalid Input" << endl;
-       // bot_names = {""};
     }
 
     return bot_names;
 
 }
 
-int comphorse::set_div(int div) {
+int comphorse::set_div(int div) { // Sets the division for the virtual function
     divisionC = div;
     return divisionC;
 }
 
-void comphorse::set_rand_race_time() {
-        //assigning a time based on level
+void comphorse::set_rand_race_time() { // Virtual function to set the random race time
+        // Assigning a time based on division
     if (divisionC == 1) {
-      //bots in division 1 will have a random time between 8 and 11 seconds
-    
+      // Bots in division 1 will have a random time between 8 and 11 seconds
         for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
+            // Creates random number between 0.0 and 3.0
             double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
-
-            this -> race_time = rand_n + 8; // speeds between 8 and 11  
+            rand_n /= 10;
+            this -> race_time = rand_n + 8; // Speeds between 8 and 11  
 
             bot_race_times.push_back(race_time);
         }
@@ -470,11 +457,10 @@ void comphorse::set_rand_race_time() {
     } else if (divisionC == 2) {
 
         for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
+            // Creates random number between 0.0 and 3.0
             double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
-
-            this -> race_time = rand_n + 12; // speeds between 12 and 15
+            rand_n /= 10;
+            this -> race_time = rand_n + 12; // Speeds between 12 and 15
 
             bot_race_times.push_back(race_time);
         }
@@ -482,19 +468,17 @@ void comphorse::set_rand_race_time() {
     } else if (divisionC == 3) {
 
         for (int i = 0; i < 8; i++) {
-            //creates random number between 0.0 and 3.0
+            // Creates random number between 0.0 and 3.0
             double rand_n = (rand()%300)/10;
-            rand_n /= 10;  //creates random number between 0.0 and 3.0
-
-            this -> race_time = rand_n + 16; // speeds between 16 and 19
+            rand_n /= 10;
+            this -> race_time = rand_n + 16; // Speeds between 16 and 19
 
             bot_race_times.push_back(race_time);
         }
 
     } else {
 
-        cout << "Invalid Input" << endl;
+        cout << "Invalid Input" << endl; // Error for unexpected division value
 
-       // bot_race_times = {};
     }
 }

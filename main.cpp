@@ -2,13 +2,13 @@
 #include "user.h"
 #include "math.h"
 #include "stable.h"
-int main(){
-    srand(time(NULL));
+int main() {
 
+    srand(time(NULL)); // Seed random number generator
 
-    game game;
-    game.initialize_game();
-    game.main_menu();   
+    game game; // Create game object
+    game.initialize_game(); // Initialise game
+    game.main_menu(); // Display main menu
 
     
 }

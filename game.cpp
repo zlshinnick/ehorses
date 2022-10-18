@@ -8,41 +8,43 @@
 using namespace std;
 
 game::game() {
-  // choice = 0;
+  // Choice = 0;
   playing = true;
   file_name = "gamesave.txt";
 }
 
-int game::get_playing() { return playing; }
+int game::get_playing() { 
+  return playing; 
+}
 
 void game::initialize_game() {
-  // setting up user
-  welcome();
+  // Setting up user
+  welcome(); // Outputs welcome message
   string name;
-  cout << "Enter Name For User: ";
+  cout << "Enter Name For User: "; // Asks user for name
   getline(cin, name);
   user.initialize(name);
 
-  // setting up stables with first horse
+  // Setting up stables with first horse
   string horse_name;
-  cout << "Enter Name For Your First Horse: ";
+  cout << "Enter Name For Your First Horse: "; // Asks user for horse name
   getline(cin, horse_name);
 
   userhorse h1 = userhorse();
   h1.set_userhorse(horse_name, 16.7, 12.2);
   user.add_horse_to_stable(h1);
-  this_thread::sleep_for(chrono::seconds(2));
+  this_thread::sleep_for(chrono::seconds(2)); // Delays for 2 seconds
   cout << endl << h1.get_name() << " Has Been Added To Stables" << endl;
   this_thread::sleep_for(chrono::seconds(2));
   system("Clear");
 
-  // creating shop
-  item Carrot = item("Carrot", 100, 0.5);  // carrot makes slowest time faster
-  item Sugar = item("Sugar", 250, 1);      // sugar makes faster time faster
-  item Saddle = item("Apple", 600, 2);     // saddle increases both by 0.5
+  // Creating shop
+  item Carrot = item("Carrot", 100, 0.5);  // Carrot makes slowest time faster
+  item Sugar = item("Sugar", 250, 1);      // Sugar makes faster time faster
+  item Saddle = item("Apple", 600, 2);     // Saddle increases both by 0.5
   shop.initialize(Carrot, Sugar, Saddle);
 
-  // creating market
+  // Creating market
   userhorse m1 = userhorse();
   userhorse m2 = userhorse();
   userhorse m3 = userhorse();
@@ -99,7 +101,7 @@ void game::travel_menu() {
     }
   }
 
-  switch (user_choice_travel) {
+  switch (user_choice_travel) { // Calls travel function
     case 1:
       user.call_stable_menu();
       break;
@@ -288,7 +290,7 @@ void game::breed_menu() {
   }
 }
 
-void game::welcome() {
+void game::welcome() { // Welcome message
   system("Clear");
   cout << " /$$      /$$           /$$" << endl;
   cout << "| $$  /$ | $$          | $$" << endl;
@@ -322,7 +324,7 @@ void game::welcome() {
   system("Clear");
 }
 
-void game::inventory_menu() {
+void game::inventory_menu() { // Displays inventory
   user.print_inventory();
   int leave;
 
@@ -345,12 +347,12 @@ void game::inventory_menu() {
 
     if (leave != 9) {
       cout << "Invalid Input!";
-      this_thread::sleep_for(chrono::seconds(1));
+      this_thread::sleep_for(chrono::seconds(1)); // Delays for one second
     }
   }
 }
 
-void game::user_stats_menu() {
+void game::user_stats_menu() { // Displays user stats
   int leave_stats;
 
   user.print_user_stats();
@@ -376,7 +378,7 @@ void game::user_stats_menu() {
   }
 }
 
-void game::racetrack_menu() {
+void game::racetrack_menu() { // Displays racetrack menu
   system("Clear");
 
   cout << " /$$$$$$$                                      /$$$$$$$$                           /$$       "<< endl;
@@ -387,7 +389,7 @@ void game::racetrack_menu() {
   cout << "| $$  | $$ /$$__  $$| $$      | $$_____/         | $$| $$      /$$__  $$| $$      | $$_  $$  "<< endl;
   cout << "| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$         | $$| $$     |  $$$$$$$|  $$$$$$$| $$ |  $$"<< endl;
   cout << "|__/  |__/ |_______/ |_______/ |_______/         |__/|__/      |_______/ |_______/|__/  |__/" << endl;
-  // get division to pass into functions
+  // Get division to pass into functions
   int division;
   bool input = false;
 
@@ -397,17 +399,17 @@ void game::racetrack_menu() {
   cout << "\n\n* Division 1: Easy \n* Division 2: Medium \n* Division 3: Hard\n\n";
 
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "* Division 1 *";
+  cout << "* Division 1 *"; // Winnings for divison 1
   cout << "\nPrize Money = 500 for win";
   cout << "\nExp = 100 for win\n\n";
   this_thread::sleep_for(chrono::seconds(1));
 
-  cout << "* Division 2 *";
+  cout << "* Division 2 *"; // Winnings for division 2
   cout << "\nPrize Money = 1000 for win";
   cout << "\nExp = 250 for win\n\n";
   this_thread::sleep_for(chrono::seconds(1));
 
-  cout << "* Division 3 *";
+  cout << "* Division 3 *"; // Winnings for division 3
   cout << "\nPrize Money = 1500 for win";
   cout << "\nExp = 500 for win\n\n";
   this_thread::sleep_for(chrono::seconds(1));
@@ -429,39 +431,56 @@ void game::racetrack_menu() {
   cout << "\n\nYour stables: " << endl;
   this_thread::sleep_for(chrono::seconds(1));
   userhorse* ptr = user.get_horse_for_race();
-
-  cout << "\n Do You Want To Add A Boost To Your Horse ";
-  int boost_choice;
-  cout << "\n 1. Yes";
-  cout << "\n 2. No\n\n";
-  this_thread::sleep_for(chrono::seconds(1));
-  cout << "Choice: ";
-  cin >> boost_choice;
-  //ENSURE VALID INPUT
   
-
   double boost_amount;
-  if (boost_choice == 1) {
-    item boost = user.boost_menu();
-    boost_amount = boost.get_boost();
 
-    if(boost_amount>0){
-    cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
-    this_thread::sleep_for(chrono::seconds(1));
-    } else{
-      cout<<"No Boost Applied\n"<<endl;
-    this_thread::sleep_for(chrono::seconds(1));
+  int boost_choice;
+  bool input2 = false;
+  string choice;
+  while (input2 == false) {
+      cout << "\n Do You Want To Add A Boost To Your Horse ";
+      
+      cout << "\n 1. Yes";
+      cout << "\n 2. No\n\n";
+      this_thread::sleep_for(chrono::seconds(1));
+      cout << "Choice: ";
+      cin >> choice;
 
+    while(!check_number(choice)) {
+          cout << "Invalid input, choose again: ";
+          cin >> choice;
+        }
+    boost_choice = stoi(choice);
+      
+      if (boost_choice != 1 && boost_choice !=2) {
+        cout << "Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+      }
+
+      if (boost_choice == 1) {
+          item boost = user.boost_menu();
+          boost_amount = boost.get_boost();
+
+        if(boost_amount>0){
+          cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
+          this_thread::sleep_for(chrono::seconds(1));
+          input2 = true;
+
+        } else  {
+        cout<<"No Boost Applied\n"<<endl;
+          input2 = true;
+
+      }
     }
-  }
+    }
 
   srand(time(NULL));
   comphorse c1;
 
-  c1.set_div(division);
-  c1.set_bot_names(division);
-  c1.set_rand_race_time();
-  ptr->set_rand_race_time();
+  c1.set_div(division); // Sets division for computer horses
+  c1.set_bot_names(division); // Sets computer horse names
+  c1.set_rand_race_time(); // Sets random race time (virtual function)
+  ptr->set_rand_race_time(); 
   
 
   ptr->add_boost(boost_amount);
