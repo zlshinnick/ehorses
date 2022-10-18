@@ -22,8 +22,8 @@ void inventory::remove_item(int index){
 void inventory::print_inventory(){
 
     if(num_of_items==0){
-        cout<<"\nInventory Is Empty!";
-        cout<<"\n Visit General Store To Buy Boosts";
+        cout<<"\nInventory Is Empty!\n";
+        cout<<"Visit General Store To Buy Boosts"<<endl;
         return;
     }else{
         bool empty;
@@ -55,7 +55,7 @@ item inventory::select_boost(){
         print_inventory();
         int item_choice;
 
-        cout<<"Select Boost: ";
+        cout<<"Choice: ";
         cin>>item_choice;
 
         item temp =  user_inventory[item_choice];
