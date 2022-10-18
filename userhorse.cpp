@@ -7,9 +7,9 @@
 #include "userhorse.h"
 using namespace std;
 
-//default constructor
+// Default constructor
 userhorse::userhorse() {
-  this->name="";
+  this->name = "";
   this->max_speed = 0;
   this->min_speed = 0;
   this->level = 1;
@@ -18,9 +18,9 @@ userhorse::userhorse() {
   int num_wins_test = 0;
 }
 
-//setting userhorse variables (esstenitally a constructor)
+// Setting userhorse variables (esstenitally a constructor)
 void userhorse::set_userhorse(string _name, double max, double min) {
-  this->name=_name;
+  this->name = _name;
   this->max_speed = max;
   this->min_speed = min;
   this->level = 1;
@@ -28,7 +28,7 @@ void userhorse::set_userhorse(string _name, double max, double min) {
   this->generation = 1;
 }
 
-//get and set functions for attributes of userhorse
+// Get and set functions for attributes of userhorse
 void userhorse::set_max(double max){ this->max_speed = max;}
 double userhorse::get_max() { return max_speed;}
 
@@ -44,16 +44,16 @@ int userhorse::get_price() { return price;}
 int userhorse::get_wins() {return num_wins;}
 int userhorse::get_generation() {return generation;}
 
-//print functions
-void userhorse::output_name() {cout << name << endl;}
-void userhorse::output_max() {cout << max_speed << endl;}
-void userhorse::output_min() {cout << min_speed << endl;}
-void userhorse::output_wins() {cout << num_wins << endl;}
+// Print functions
+void userhorse::output_name() {cout << name << endl;} // Outputs name
+void userhorse::output_max() {cout << max_speed << endl;} // Outputs max speed
+void userhorse::output_min() {cout << min_speed << endl;} // Outputs min speed
+void userhorse::output_wins() {cout << num_wins << endl;} // Outputs number of wins
 
-//functions for in game features
-void userhorse::increment_wins() {this->num_wins++;}
+// Functions for in game features
+void userhorse::increment_wins() {this->num_wins++;} // Increments num_wins by 1
 
-void userhorse::level_up() {
+void userhorse::level_up() { // Levels up
   if (level < 3) {
     this->max_speed = max_speed + 1;
     this->min_speed = min_speed + 1;
@@ -61,7 +61,7 @@ void userhorse::level_up() {
     cout << "\nLevel Up Success! " << endl;;
     return;
   } else {
-    cout<<"Horse Is Already Maximum Level! ";
+    cout << "Horse Is Already Maximum Level!";
     this_thread::sleep_for(chrono::seconds(1));\
     return;
   }
@@ -71,27 +71,27 @@ void userhorse::add_boost(double t) {
     this->race_time += t;
 }
 
-//virtual function which sets random race time before each race
+// Virtual function which sets random race time before each race
 void userhorse::set_rand_race_time() {
   
-  //getting min and max from horse
+  // Getting min and max from horse
   double dmin = this->min_speed;
   double dmax = this->max_speed;
 
-  //converting to int to generate random num  
+  // Converting to int to generate random num  
   int min = dmin * 10;
   int max = dmax * 10;
   int range = max - min;
 
-  //generate random num
+  // Generate random num
   double random =min + (rand() % range);
-  random = random / 10; //convert back to one decimal place
+  random = random / 10; // Convert back to one decimal place
 
-  //calling function to set_race_t
+  // Calling function to set_race_t
   set_race_t(random);
 }
 
-//functions for when horse wins a respective race
+// Functions for when horse wins a respective race
 void userhorse::win_D1() {this->num_wins += 1;}
 void userhorse::win_D2() {this->num_wins += 1;}
 void userhorse::win_D3() {this->num_wins += 1;}
