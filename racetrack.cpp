@@ -21,8 +21,8 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) { // Func
 
     }
 
-    racetrack_times.push_back(name -> get_race_t()); // Adds user time to race vector
-    racetrack_names.push_back(name -> get_name()); // Adds user name to race vector
+    racetrack_times.push_back(name->get_race_t()); // Adds user time to race vector
+    racetrack_names.push_back(name->get_name()); // Adds user name to race vector
 
     fastest_time = *max_element(racetrack_times.begin(), racetrack_times.end()); // Finds fastest time (highest speed)
 
@@ -69,14 +69,14 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) { // Func
     if (fastest_time == name->get_race_t()) { // If user wins
 
         if ((vec.bot_race_times[0] >= 8) && (vec.bot_race_times[0] <= 11)) { // win d1
-            user -> user_wonD1(); // Adds win to user
-            name -> win_D1(); // Adds win to horse
+            user->user_wonD1(); // Adds win to user
+            name->win_D1(); // Adds win to horse
         } else if ((vec.bot_race_times[0] >= 12) && (vec.bot_race_times[0] <= 15)) { // win d2
-            user -> user_wonD2();
-            name -> win_D2();
+            user->user_wonD2();
+            name->win_D2();
         } else if ((vec.bot_race_times[0] >= 16) && (vec.bot_race_times[0] <= 19)) { // win d3
-            user -> user_wonD3();
-            name -> win_D3();
+            user->user_wonD3();
+            name->win_D3();
         } else {
             cout << "error" << endl; // Error
         }
