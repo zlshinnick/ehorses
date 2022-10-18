@@ -29,7 +29,7 @@ void game::initialize_game() {
   getline(cin, horse_name);
 
   userhorse h1 = userhorse();
-  h1.set_userhorse(horse_name, 50.5, 51.7);
+  h1.set_userhorse(horse_name, 16.7, 12.2);
   user.add_horse_to_stable(h1);
   this_thread::sleep_for(chrono::seconds(2));
   cout << endl << h1.get_name() << " Has Been Added To Stables" << endl;
@@ -49,15 +49,15 @@ void game::initialize_game() {
   userhorse m4 = userhorse();
   userhorse m5 = userhorse();
 
-  m1.set_userhorse("Turtle", 7, 8.5);
+  m1.set_userhorse("Turtle", 8.5, 7);
   m1.set_price(100);
-  m2.set_userhorse("Dog", 7.9, 10.5);
+  m2.set_userhorse("Dog", 10.5, 7.9);
   m2.set_price(250);
-  m3.set_userhorse("Legend", 11.2, 15.5);
+  m3.set_userhorse("Legend", 15.5, 11.25);
   m3.set_price(600);
-  m4.set_userhorse("Bullet", 16.0, 18.5);
+  m4.set_userhorse("Bullet", 18.5, 16.0);
   m4.set_price(1000);
-  m5.set_userhorse("God", 17.75, 20);
+  m5.set_userhorse("God", 20, 17.75);
   m5.set_price(3000);
 
   market.initialize(m1, m2, m3, m4, m5);
@@ -187,7 +187,7 @@ void game::main_menu() {
   bool playing = true;
   while (playing == true) {
     system("Clear");
-    cout << "************ MAIN MENU ******" << endl;
+    cout << "********* MAIN MENU *********" << endl;
     cout << "1: Travel" << endl;
     cout << "2: Inventory" << endl;
     cout << "3: Level Up" << endl;
@@ -290,7 +290,7 @@ void game::breed_menu() {
 
 void game::welcome() {
   system("Clear");
-  cout << "/$$      /$$           /$$" << endl;
+  cout << " /$$      /$$           /$$" << endl;
   cout << "| $$  /$ | $$          | $$" << endl;
   cout << "| $$ /$$$| $$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$ "<< endl;
   cout << "| $$/$$ $$ $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$_  $$_  $$ /$$__  $$"<< endl;
@@ -310,7 +310,7 @@ void game::welcome() {
   cout << "                          |__/|______/ " << endl;
   this_thread::sleep_for(chrono::seconds(1));
 
-  cout << "/$$$$$$$$|      /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<< endl;
+  cout << " /$$$$$$$$|      /$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$  /$$"<< endl;
   cout << "| $$_____/      | $$  | $$ /$$__  $$| $$__  $$ /$$__  $$| $$_____/ /$$__  $$| $$"<< endl;
   cout << "| $$            | $$  | $$| $$  | $$| $$  | $$| $$  |__/| $$      | $$  |__/| $$"<< endl;
   cout << "| $$$$$         | $$$$$$$$| $$  | $$| $$$$$$$/|  $$$$$$ | $$$$$   |  $$$$$$ | $$" << endl;
@@ -318,7 +318,7 @@ void game::welcome() {
   cout << "| $$            | $$  | $$| $$  | $$| $$  | $$ /$$  | $$| $$       /$$  | $$    "<< endl;
   cout << "| $$$$$$$$      | $$  | $$|  $$$$$$/| $$  | $$|  $$$$$$/| $$$$$$$$|  $$$$$$/ /$$"<<endl;
   cout << "|________/      |__/  |__/ |______/ |__/  |__/ |______/ |________/ |______/ |__/"<< endl;
-  this_thread::sleep_for(chrono::seconds(2));
+  this_thread::sleep_for(chrono::seconds(3));
   system("Clear");
 }
 
@@ -394,29 +394,26 @@ void game::racetrack_menu() {
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\n** Choose The Division You Wish To Race In **";
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 1: Easy \n* Division 2: Medium \n* Division 3: Hard";
+  cout << "\n\n* Division 1: Easy \n* Division 2: Medium \n* Division 3: Hard\n\n";
 
   this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Division 1 *";
-  this_thread::sleep_for(chrono::seconds(1));
+  cout << "* Division 1 *";
   cout << "\nPrize Money = 500 for win";
-  cout << "\nExp = 100 for win";
+  cout << "\nExp = 100 for win\n\n";
+  this_thread::sleep_for(chrono::seconds(1));
 
-  this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 2 *";
-  this_thread::sleep_for(chrono::seconds(1));
+  cout << "* Division 2 *";
   cout << "\nPrize Money = 1000 for win";
-  cout << "\nExp = 250 for win";
+  cout << "\nExp = 250 for win\n\n";
+  this_thread::sleep_for(chrono::seconds(1));
 
-  this_thread::sleep_for(chrono::seconds(1));
-  cout << "\n\n* Divison 3 *";
-  this_thread::sleep_for(chrono::seconds(1));
+  cout << "* Division 3 *";
   cout << "\nPrize Money = 1500 for win";
-  cout << "\nExp = 500 for win";
-
+  cout << "\nExp = 500 for win\n\n";
   this_thread::sleep_for(chrono::seconds(1));
+
   while (input == false) {
-    cout << "\n\nChoose Your Race Division: " << endl;
+    cout << "Choose Your Race Division: ";
     if (!(cin >> division)) {
       cin.clear();
       cin.ignore();
@@ -428,22 +425,34 @@ void game::racetrack_menu() {
       input = true;
     }
   }
+
+  cout << "\n\nYour stables: " << endl;
+  this_thread::sleep_for(chrono::seconds(1));
   userhorse* ptr = user.get_horse_for_race();
 
   cout << "\n Do You Want To Add A Boost To Your Horse ";
   int boost_choice;
-  cout << "\n\n 1. Yes";
-  cout << "\n 2. No";
-  cout << "\n\n Choice: ";
+  cout << "\n 1. Yes";
+  cout << "\n 2. No\n\n";
+  this_thread::sleep_for(chrono::seconds(1));
+  cout << "Choice: ";
   cin >> boost_choice;
-  // add while to check if valid inout
+  //ENSURE VALID INPUT
+  
 
   double boost_amount;
   if (boost_choice == 1) {
     item boost = user.boost_menu();
     boost_amount = boost.get_boost();
+
+    if(boost_amount>0){
     cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
     this_thread::sleep_for(chrono::seconds(1));
+    } else{
+      cout<<"No Boost Applied\n"<<endl;
+    this_thread::sleep_for(chrono::seconds(1));
+
+    }
   }
 
   srand(time(NULL));
@@ -453,11 +462,18 @@ void game::racetrack_menu() {
   c1.set_bot_names(division);
   c1.set_rand_race_time();
   ptr->set_rand_race_time();
-  this_thread::sleep_for(chrono::seconds(2));
+  
 
   ptr->add_boost(boost_amount);
 
   User* user_ptr = &user;
+
+  cout << "\nHorses are racing..." << endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  cout << "..." << endl;
+  this_thread::sleep_for(chrono::seconds(2));
+  cout << "..." << endl << endl;
+  this_thread::sleep_for(chrono::seconds(2));
 
   racetrack.get_winner(c1, ptr, user_ptr);
   this_thread::sleep_for(chrono::seconds(1));

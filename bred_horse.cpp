@@ -6,16 +6,17 @@
 #include "bred_horse.h"
 using namespace std;
 
+//constructor
 bred_horse::bred_horse() {
   this->name = "";
   this->max_speed = 0;
   this->min_speed = 0;
   this->level = 1;
-  this->points = 0;
   this->num_wins = 0;
   this-> generation = 0;
 }
 
+//function to set variables during breedings
 void bred_horse::set_bred_horse(string _name, double max, double min, int _generation) {
   this->name = _name;
   this->max_speed = max;
@@ -23,6 +24,7 @@ void bred_horse::set_bred_horse(string _name, double max, double min, int _gener
   this->generation = _generation;
 }
 
+//function to set variables during breedings
 void bred_horse::set_parents(string d_name, double d_max, double d_min, string m_name, double m_max, double m_min) {
   this->dad_name = d_name;
   this->dad_max_speed = d_max;
@@ -31,4 +33,10 @@ void bred_horse::set_parents(string d_name, double d_max, double d_min, string m
   this->mum_name = m_name;
   this->mum_max_speed = m_max;
   this->mum_min_speed = m_min;
+}
+
+//printing parents
+void bred_horse::print_parents() {
+  cout << "Parent 1 Name: "<< dad_name <<".   Parent 1 Max Speed: "<< dad_max_speed << endl;
+  cout << "Parent 2 Name: "<< dad_name <<".   Parent 2 Max Speed: "<< dad_max_speed << endl;
 }
