@@ -53,9 +53,10 @@ void inventory::print_inventory(){
 
 item inventory::select_boost(){
         print_inventory();
+
         int item_choice;
 
-        cout<<"Select Boost: ";
+        cout<<"\nSelect Boost: ";
         cin>>item_choice;
 
         item temp =  user_inventory[item_choice];

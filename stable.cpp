@@ -110,7 +110,7 @@ void stable::set_parents(){
 
     for(int i =0;i<num_of_horses;i++){
         if(i!=index_first){
-            cout<<i<<array[i].get_name()<<endl;
+            cout<<i<<": "<<array[i].get_name()<<endl;
         }
     }
 

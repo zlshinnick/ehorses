@@ -127,18 +127,27 @@ void game::shop_menu() {
   if (new_item.get_name() != "") {
     user.purchase_item(new_item);
   }
-  cout << "Press 9 to Return To Main Menu: ";
-  cin >> return_shop;
 
-  if (return_shop == 9) {
-    return;
-  }
 
-  while (return_shop != 9) {
-    cout << "Invalid Input!";
-    this_thread::sleep_for(chrono::seconds(1));
+bool input = false;
+  string choice;
+  while (input == false) {
     cout << "\n\nPress 9 to Return To Main Menu: ";
-    cin >> return_shop;
+    cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        return_shop = stoi(choice);
+
+    if (return_shop == 9) {
+      return;
+    }
+
+    if (return_shop != 9) {
+      cout << "Invalid Input!";
+      this_thread::sleep_for(chrono::seconds(1));
+    }
   }
 }
 
@@ -150,18 +159,25 @@ void game::market_menu() {
   if (new_horse.get_name() != "") {
     user.purchase_horse(new_horse);
   }
-  cout << "Press 9 to Return To Main Menu: ";
-  cin >> return_market;
-
-  if (return_market == 9) {
-    return;
-  }
-
-  while (return_market != 9) {
-    cout << "Invalid Input!";
-    this_thread::sleep_for(chrono::seconds(1));
+    bool input = false;
+  string choice;
+  while (input == false) {
     cout << "\n\nPress 9 to Return To Main Menu: ";
-    cin >> return_market;
+    cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        return_market = stoi(choice);
+
+    if (return_market == 9) {
+      return;
+    }
+
+    if (return_market != 9) {
+      cout << "Invalid Input!";
+      this_thread::sleep_for(chrono::seconds(1));
+    }
   }
 }
 
@@ -312,17 +328,22 @@ void game::inventory_menu() {
 
   bool input = false;
 
+
+  string choice;
   while (input == false) {
     cout << "\n\nPress 9 to Return To Main Menu: ";
-
-    if (!(cin >> leave)) {
-      cin.clear();
-      cin.ignore();
-    }
+    cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        leave = stoi(choice);
 
     if (leave == 9) {
       return;
-    } else {
+    }
+
+    if (leave != 9) {
       cout << "Invalid Input!";
       this_thread::sleep_for(chrono::seconds(1));
     }
@@ -333,19 +354,22 @@ void game::user_stats_menu() {
   int leave_stats;
 
   user.print_user_stats();
-
   bool input = false;
-
+  string choice;
   while (input == false) {
     cout << "\n\nPress 9 to Return To Main Menu: ";
+    cin >> choice;
+      while(!check_number(choice)) {
+        cout << "Invalid input, choose again: ";
+        cin >> choice;
+      }
+        leave_stats = stoi(choice);
 
-    if (!(cin >> leave_stats)) {
-      cin.clear();
-      cin.ignore();
-    }
     if (leave_stats == 9) {
       return;
-    } else {
+    }
+
+    if (leave_stats != 9) {
       cout << "Invalid Input!";
       this_thread::sleep_for(chrono::seconds(1));
     }
@@ -445,30 +469,14 @@ void game::get_level_up_menu() { user.level_up_menu(); }
 
 void game::hof_menu() {
   system("Clear");
-  cout << " /$$   /$$                                                          "
-          "/$$$$$$   /$$$$$$        /$$$$$$$$ "
-       << endl;
-  cout << "| $$  | $$                                                         "
-          "/$$__  $$ /$$__  $$      | $$_____/ "
-       << endl;
-  cout << "| $$  | $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$$      | "
-          "$$  | $$| $$  |__/      | $$    /$$$$$$  /$$$$$$/$$$$   /$$$$$$  "
-       << endl;
-  cout << "| $$$$$$$$ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$_____/      | "
-          "$$  | $$| $$$$          | $$$$$|____  $$| $$_  $$_  $$ /$$__  $$ "
-       << endl;
-  cout << "| $$__  $$| $$  | $$| $$  | $$ |  $$/$$/| $$$$$$$$|  $$$$$$       | "
-          "$$  | $$| $$_/          | $$__/ /$$$$$$$| $$ | $$ | $$| $$$$$$$$ "
-       << endl;
-  cout << "| $$  | $$| $$  | $$| $$  | $$  |  $$$/ | $$_____/ |____  $$      | "
-          "$$  | $$| $$            | $$   /$$__  $$| $$ | $$ | $$| $$_____/ "
-       << endl;
-  cout << "| $$  | $$|  $$$$$$/|  $$$$$$/   |  $/  |  $$$$$$$ /$$$$$$$/      | "
-          " $$$$$$/| $$            | $$  |  $$$$$$$| $$ | $$ | $$|  $$$$$$$"
-       << endl;
-  cout << "|__/  |__/ |______/  |______/     |_/    |_______/|_______/        "
-          "|______/ |__/            |__/   |_______/|__/ |__/ |__/ |_______/ "
-       << endl;
+  cout << " /$$   /$$                                                          /$$$$$$   /$$$$$$        /$$$$$$$$ "<< endl;
+  cout << "| $$  | $$                                                         /$$__  $$ /$$__  $$      | $$_____/ "<< endl;
+  cout << "| $$  | $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$$$$$   /$$$$$$$      | $$  | $$| $$  |__/      | $$    /$$$$$$  /$$$$$$/$$$$   /$$$$$$  "<< endl;
+  cout << "| $$$$$$$$ /$$__  $$ /$$__  $$|  $$  /$$//$$__  $$ /$$_____/      | $$  | $$| $$$$          | $$$$$|____  $$| $$_  $$_  $$ /$$__  $$ "<< endl;
+  cout << "| $$__  $$| $$  | $$| $$  | $$ |  $$/$$/| $$$$$$$$|  $$$$$$       | $$  | $$| $$_/          | $$__/ /$$$$$$$| $$ | $$ | $$| $$$$$$$$ "<< endl;
+  cout << "| $$  | $$| $$  | $$| $$  | $$  |  $$$/ | $$_____/ |____  $$      | $$  | $$| $$            | $$   /$$__  $$| $$ | $$ | $$| $$_____/ "<< endl;
+  cout << "| $$  | $$|  $$$$$$/|  $$$$$$/   |  $/  |  $$$$$$$ /$$$$$$$/      |  $$$$$$/| $$            | $$  |  $$$$$$$| $$ | $$ | $$|  $$$$$$$"<< endl;
+  cout << "|__/  |__/ |______/  |______/     |_/    |_______/|_______/        |______/ |__/            |__/   |_______/|__/ |__/ |__/ |_______/ "<< endl;
 
   this_thread::sleep_for(chrono::seconds(1));
   cout << "\n\n1. View Hooves Of Fame" << endl;

@@ -22,7 +22,12 @@ run_test_graphics_yifan:
 
 
 run_test_graphics_zach:
-	g++ -c raceGraphics.cpp -I"C:\Desktop\SFML-2.5.1-macos-clang\include"
+	g++ -c raceGraphics.cpp -I" \Desktop\SFML-2.5.1-macos-clang\include"
 	g++ raceGraphics.o main.cpp user.cpp userhorse.cpp game.cpp horse.cpp stable.cpp shop.cpp item.cpp market.cpp inventory.cpp bred_horse.cpp 
-	racetrack.cpp comphorse_yifan.cpp -o run_test -L"C:\Desktop\SFML-2.5.1-macos-clang\lib" -lsfml-graphics -lsfml-window -lsfml-system
+	racetrack.cpp comphorse_yifan.cpp -o run_test -L" \Desktop\SFML-2.5.1-macos-clang\lib" -lsfml-graphics -lsfml-window -lsfml-system
 	./run_test
+
+run_race_zach:
+	g++ -c raceGraphics.cpp -I"\\Desktop\SFML-2.5.1-macos-clang\include"
+	g++ raceGraphics.o -o raceGraphics -L"\Desktop\SFML-2.5.1-macos-clang\lib" -lsfml-graphics -lsfml-window -lsfml-system
+	./raceGraphics
