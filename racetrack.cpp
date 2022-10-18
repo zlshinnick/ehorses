@@ -99,7 +99,7 @@ void Racetrack::get_winner(comphorse vec, userhorse* name, User* user) {
     }
     clear_racetrack();
     int return_race;
-     bool inputing = false;
+    bool inputing = false;
 
     while (inputing == false) {
         this_thread::sleep_for(chrono::seconds(1));
