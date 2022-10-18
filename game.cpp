@@ -429,31 +429,48 @@ void game::racetrack_menu() {
   cout << "\n\nYour stables: " << endl;
   this_thread::sleep_for(chrono::seconds(1));
   userhorse* ptr = user.get_horse_for_race();
-
-  cout << "\n Do You Want To Add A Boost To Your Horse ";
-  int boost_choice;
-  cout << "\n 1. Yes";
-  cout << "\n 2. No\n\n";
-  this_thread::sleep_for(chrono::seconds(1));
-  cout << "Choice: ";
-  cin >> boost_choice;
-  //ENSURE VALID INPUT
   
-
   double boost_amount;
-  if (boost_choice == 1) {
-    item boost = user.boost_menu();
-    boost_amount = boost.get_boost();
 
-    if(boost_amount>0){
-    cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
-    this_thread::sleep_for(chrono::seconds(1));
-    } else{
-      cout<<"No Boost Applied\n"<<endl;
-    this_thread::sleep_for(chrono::seconds(1));
+  int boost_choice;
+  bool input2 = false;
+  string choice;
+  while (input2 == false) {
+      cout << "\n Do You Want To Add A Boost To Your Horse ";
+      
+      cout << "\n 1. Yes";
+      cout << "\n 2. No\n\n";
+      this_thread::sleep_for(chrono::seconds(1));
+      cout << "Choice: ";
+      cin >> choice;
 
+    while(!check_number(choice)) {
+          cout << "Invalid input, choose again: ";
+          cin >> choice;
+        }
+    boost_choice = stoi(choice);
+      
+      if (boost_choice != 1 && boost_choice !=2) {
+        cout << "Invalid Input!";
+        this_thread::sleep_for(chrono::seconds(1));
+      }
+
+      if (boost_choice == 1) {
+          item boost = user.boost_menu();
+          boost_amount = boost.get_boost();
+
+        if(boost_amount>0){
+          cout << "Boost of " << boost_amount << " Has Been Applied!\n" << endl;
+          this_thread::sleep_for(chrono::seconds(1));
+          input2 = true;
+
+        } else  {
+        cout<<"No Boost Applied\n"<<endl;
+          input2 = true;
+
+      }
     }
-  }
+    }
 
   srand(time(NULL));
   comphorse c1;
