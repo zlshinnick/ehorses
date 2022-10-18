@@ -100,7 +100,7 @@ void userhorse::level_up() {
 }
 
 void userhorse::add_boost(double t) {
-    this->race_time = race_time - t;
+    this->race_time = race_time + t;
 
 }
 
