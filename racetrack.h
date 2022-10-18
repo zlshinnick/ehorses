@@ -1,3 +1,6 @@
+#ifndef RACETRACK_H
+#define RACETRACK_H
+
 #include <iostream>
 #include "comphorse_yifan.h"
 #include <vector>
@@ -6,7 +9,6 @@
 #include <string>
 #include "stable.h"
 #include "user.h"
-#pragma once
 
 class Racetrack {
     public:
@@ -24,3 +26,5 @@ class Racetrack {
 
     void clear_racetrack(); // Function to clear racetrack stats
 };
+
+#endif
